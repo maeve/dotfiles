@@ -25,6 +25,7 @@ brew 'rust'
 brew 'sqlite'
 brew 'stern'
 brew 'wget'
+brew 'yadm'
 
 tap 'caskroom/cask'
 cask_args appdir: '/Applications'
