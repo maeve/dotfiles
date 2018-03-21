@@ -15,4 +15,17 @@ if [ "$system_type" = "Darwin" ]; then
     brew bundle --global
   fi
 
+  if [ -d "$HOME/.iterm2" ]; then
+    echo "configuring iterm2"
+    #defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.iterm2"
+  fi
+
+  if [ ! -f "$HOME/.local/share/nvim/site/autoload/plug.vim" ]; then
+    echo "Downloading vim-plug"
+    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  fi
+
+  echo "Bootstrapping neovim"
+  nvim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
 fi
