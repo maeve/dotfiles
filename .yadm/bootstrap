@@ -15,10 +15,8 @@ if [ "$system_type" = "Darwin" ]; then
     brew bundle --global
   fi
 
-  if [ -d "$HOME/.iterm2" ]; then
-    echo "configuring iterm2"
-    #defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.iterm2"
-  fi
+  echo "Updating yadm submodules"
+  yadm submodule update --init --recursive
 
   if [ ! -f "$HOME/.local/share/nvim/site/autoload/plug.vim" ]; then
     echo "Downloading vim-plug"
@@ -28,4 +26,10 @@ if [ "$system_type" = "Darwin" ]; then
 
   echo "Bootstrapping neovim"
   nvim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
+
+  # if [ -d "$HOME/.iterm2" ]; then
+  #   echo "Configuring iterm2"
+  #   defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.iterm2"
+  # fi
+
 fi
