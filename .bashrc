@@ -11,13 +11,12 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 # added by travis gem
-[ -f /Users/maeverevels/.travis/travis.sh ] && source /Users/maeverevels/.travis/travis.sh
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
 # k8s cheats
 kc() { kubectl -it exec $1 -- rails c; }
 alias k.='kubectl config current-context'
 alias ku='kubectl config use-context '
-knc() { kubectl config set-context $1 --namespace=$1 --user=maeve.revels-default --cluster=deuce.g5devops.com; }
 alias kp='kubectl get pods '
 alias kd='kubectl describe '
 alias k='kubectl'
