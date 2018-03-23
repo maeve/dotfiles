@@ -11,5 +11,3 @@ export SPRING_TMP_PATH='/tmp'
 
 [ -f ~/.bash_secrets ] && source ~/.bash_secrets
 [ -f ~/.bashrc ] && source ~/.bashrc
-
-eval "$(rbenv init -)"

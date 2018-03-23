@@ -26,3 +26,6 @@ alias heroku=/usr/local/bin/heroku
 
 # go cheats
 alias gocov='go test -coverprofile=c.out && go tool cover -html=c.out'
+
+eval "$(rbenv init -)"
+eval "$(direnv hook bash)"

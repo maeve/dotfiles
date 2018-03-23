@@ -1,4 +1,5 @@
 brew 'dep'
+brew 'direnv'
 brew 'fontconfig'
 brew 'freetype'
 brew 'geoip'
