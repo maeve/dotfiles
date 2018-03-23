@@ -44,9 +44,13 @@ if [ "$system_type" = "Darwin" ]; then
     defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.iterm2"
   fi
 
-  if command -v base16_tomorrow-night >/dev/null 2>&1; then
-    echo "Setting up 256 color space for terminal"
-    base16_tomorrow-night
+  if [ ! -f "$HOME/.base16_theme" ]; then
+    echo "Configuring terminal for 256 colors"
+    ln -s $HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh .base16_theme
+    . .base16_theme
   fi
+
+  echo "Updating the yadm repo origin URL"
+  yadm remote set-url origin "git@github.com:maeve/dotfiles.git"
 
 fi
