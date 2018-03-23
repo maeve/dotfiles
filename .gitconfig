@@ -1,0 +1,9 @@
+# This is Git's per-user configuration file.
+[user]
+	name = maeve
+	email = maeve.revels@getg5.com
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore_global
+[branch]
+	autosetuprebase = always
