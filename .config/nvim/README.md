@@ -2,9 +2,11 @@
 
 This is my (neo)vim configuration. Insert obligatory Rifleman's Creed reference. Yadda yadda.
 
-Primarily for Rails development.
+Primarily for Ruby and Go development.
 
 ## Installation
+
+**Note**: all of these steps will be automatically performed by `yadm bootstrap`.
 
 For OS X using [homebrew](https://brew.sh/).
 

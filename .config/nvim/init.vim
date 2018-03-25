@@ -1,6 +1,5 @@
-"
-" Plugins (via vim-plug)
-"
+
+" Plugins {{{
 call plug#begin('~/.local/share/nvim/plugged')
 
 " fuzzy find
@@ -117,9 +116,12 @@ Plug 'tpope/vim-unimpaired'
 
 call plug#end()
 
-"
-" Global
-"
+" }}}
+
+" Global {{{
+" tell vim to look for file-specific settings in a special comment
+" at the beginning or end of each file
+set modelines=1
 
 " autoread filesystem changes
 " (sort of, see https://github.com/neovim/neovim/issues/1936)
@@ -204,11 +206,9 @@ augroup golangstyle
   autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
   autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 augroup END
+" }}}
 
-"
-" Bindings
-"
-
+" Bindings {{{
 " fuzzy find
 noremap <leader><leader> :Files<cr>
 noremap <leader>bb :Buffers<cr>
@@ -307,3 +307,7 @@ noremap <right> <nop>
 " noremap j <nop>
 " noremap k <nop>
 " noremap l <nop>
+" }}}
+
+" file-specific fold options
+" vim:foldmethod=marker:foldlevel=0
