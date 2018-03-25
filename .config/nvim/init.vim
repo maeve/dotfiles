@@ -1,16 +1,24 @@
+set nocompatible
 
 " Plugins {{{
 
-" Install vim-plug if it's not already here
+" Install vim-plug {{{
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
   silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+" }}}
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-" fuzzy find
+" Install missing plugins on startup {{{
+if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
+  autocmd VimEnter * PlugInstall | q
+endif
+" }}}
+
+" fuzzy find {{{
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -23,45 +31,45 @@ command! -bang -nargs=* Rg
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
+" }}}
 
-" file explorer
+" file explorer {{{
 Plug 'tpope/vim-vinegar'
 let g:netrw_liststyle=0 " thin
+"}}}
 
-" git
+" git {{{
+
+" local git goodness
 Plug 'tpope/vim-fugitive'
+
+" github support
 Plug 'tpope/vim-rhubarb'
 
+" show git diff +/- in the sign column
 Plug 'airblade/vim-gitgutter'
 
-" linting
+"}}}
+
+" linting {{{
 Plug 'w0rp/ale'
 let g:airline#extensions#ale#enabled = 1
+" }}}
 
-" ruby/rails development
+" ruby/rails {{{
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 
-" colors
-Plug 'chriskempson/base16-vim'
-
-" terminal goodies
-Plug 'kassio/neoterm'
-let g:neoterm_repl_ruby = 'pry'
-
-" change surroundings (brackets, parens, quotes, etc)
-Plug 'tpope/vim-surround'
-
 " toggle between different styles of ruby blocks ({} vs do/end)
 Plug 'jgdavey/vim-blockle'
+" }}}
 
-" auto-close code blocks
-Plug 'tpope/vim-endwise'
+" terminal goodies {{{
+Plug 'kassio/neoterm'
+let g:neoterm_repl_ruby = 'pry'
+" }}}
 
-" auto-close paired punctuation (brackets, parens, quotes)
-Plug 'jiangmiao/auto-pairs'
-
-" status line
+" status line {{{
 Plug 'vim-airline/vim-airline'
 let g:airline_powerline_fonts=1
 
@@ -73,8 +81,9 @@ let g:airline_section_c =
 
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='base16'
+"}}}
 
-" markdown live preview
+" markdown live preview {{{
 function! BuildComposer(info)
   if a:info.status != 'unchanged' || a:info.force
     !cargo build --release
@@ -82,13 +91,40 @@ function! BuildComposer(info)
 endfunction
 
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
+" }}}
+
+" testing support {{{
+Plug 'janko-m/vim-test'
+let test#strategy = "neoterm" " execute test commands with neoterm
+"}}}
+
+" python {{{
+" autocompletion
+Plug 'davidhalter/jedi-vim'
+let g:jedi#use_splits_not_buffers = 'left'
+" }}}
+
+" go {{{
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+
+" manage my imports for me
+let g:go_fmt_command = 'goimports'
+" }}}
+
+" colors
+Plug 'chriskempson/base16-vim'
+
+" change surroundings (brackets, parens, quotes, etc)
+Plug 'tpope/vim-surround'
+
+" auto-close code blocks
+Plug 'tpope/vim-endwise'
+
+" auto-close paired punctuation (brackets, parens, quotes)
+Plug 'jiangmiao/auto-pairs'
 
 " coffeescript support
 Plug 'kchmck/vim-coffee-script'
-
-" testing support
-Plug 'janko-m/vim-test'
-let test#strategy = "neoterm" " execute test commands with neoterm
 
 " syntax highlighting for liquid templates
 Plug 'tpope/vim-liquid'
@@ -108,16 +144,8 @@ Plug 'tpope/vim-commentary'
 " readline style insertion
 Plug 'tpope/vim-rsi'
 
-" python autocompletion
-Plug 'davidhalter/jedi-vim'
-let g:jedi#use_splits_not_buffers = 'left'
-
 " base64 support
 Plug 'christianrondeau/vim-base64'
-
-" go
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-let g:go_fmt_command = 'goimports'
 
 " paired mappings (e.g. cnext/cprevious)
 Plug 'tpope/vim-unimpaired'
@@ -186,8 +214,9 @@ endif
 " leaders
 let mapleader=","
 let maplocalleader="\\"
+"}}}
 
-" go
+" go {{{
 augroup golangstyle
   autocmd!
   autocmd FileType go set tabstop=2 shiftwidth=2 noexpandtab
