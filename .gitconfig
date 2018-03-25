@@ -3,7 +3,7 @@
 	name = maeve
 	email = maeve.revels@getg5.com
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = ~/.gitignore_global
 [branch]
 	autosetuprebase = always
