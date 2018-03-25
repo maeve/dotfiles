@@ -33,7 +33,7 @@ if [ "$system_type" = "Darwin" ]; then
   # TODO: need to investigate whether this is the best way to bootstrap
   # vim-plug
   echo "Bootstrapping neovim"
-  nvim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
+  nvim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+GoInstallBinaries' '+qall'
 
   if [ -d "$HOME/.iterm2" ]; then
     echo "Configuring iterm2"
