@@ -28,8 +28,8 @@ Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 
 " linting
-Plug 'neomake/neomake'
-autocmd! BufWritePost * Neomake " run on every save
+Plug 'w0rp/ale'
+let g:airline#extensions#ale#enabled = 1
 
 " ruby/rails development
 Plug 'tpope/vim-rails'

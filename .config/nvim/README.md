@@ -136,7 +136,7 @@ For OS X using [homebrew](https://brew.sh/).
 * Git: [vim-fugitive](https://github.com/tpope/vim-fugitive) with [vim-rhubarb](https://github.com/tpope/vim-rhubarb)
 * Rails: [vim-rails](https://github.com/tpope/vim-rails)
 * Color schemes: [base16-vim](https://github.com/chriskempson/base16-vim)
-* Linting: [neomake](https://github.com/neomake/neomake)
+* Linting: [ale](https://github.com/w0rp/ale)
 * Terminal goodies: [neoterm](https://github.com/kassio/neoterm)
 * Surroundings (quotes, parens, and more): [vim-surround](https://github.com/tpope/vim-surround)
 * Auto-close programming constructs: [vim-endwise](https://github.com/tpope/vim/endwise)
