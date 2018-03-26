@@ -53,7 +53,14 @@ Plug 'airblade/vim-gitgutter'
 
 " linting {{{
 Plug 'w0rp/ale'
+
+" integrate it into the status bar
 let g:airline#extensions#ale#enabled = 1
+
+" use signs from neomake
+let g:ale_sign_error="✖"
+let g:ale_sign_warning="⚠"
+let g:ale_sign_info="ℹ"
 " }}}
 
 " ruby/rails {{{
@@ -164,6 +171,11 @@ set modelines=1
 set autoread
 au FocusGained * :checktime
 
+" autosave before make
+" (I am specifically NOT setting autowriteall because sometimes
+" I like to be able to quit a buffer without saving)
+set autowrite
+
 " line numbers
 set number " display in the left gutter
 set numberwidth=3 " width of line number gutter
@@ -177,12 +189,18 @@ set nowrap " disable automatic wrapping in view mode
 
 set visualbell " quiet please
 
-" colors
+" colors {{{
 set background=dark
 if filereadable(expand('~/.vimrc_background'))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
+
+" We have to configure plugin-specific highlight groups after vim-plug has
+" already finished initializing
+highlight ALEErrorSign ctermfg=1 guifg=#cc6666
+highlight link ALEInfoSign Question
+"}}}
 
 " show tab chars and trailing spaces
 set listchars=tab:▷⋅,trail:·
@@ -234,8 +252,8 @@ augroup golangstyle
 
   autocmd FileType go nmap <leader>gb :<C-u>call <SID>build_go_files()<CR>
   autocmd FileType go nmap <leader>gr <Plug>(go-run)
-  autocmd FileType go nmap <leader>gt <Plug>(go-test)
-  autocmd FileType go nmap <leader>gT <Plug>(go-test-func)
+  autocmd FileType go nmap <leader>gT <Plug>(go-test)
+  autocmd FileType go nmap <leader>gt <Plug>(go-test-func)
   autocmd FileType go nmap <leader>gc <Plug>(go-coverage-toggle)
 
   " rails.vim-inspired switch commands, stolen from vim-go docs
