@@ -198,7 +198,7 @@ endif
 
 " We have to configure plugin-specific highlight groups after vim-plug has
 " already finished initializing
-highlight ALEErrorSign ctermfg=1 guifg=#cc6666
+highlight link ALEErrorSign ErrorMsg
 highlight link ALEInfoSign Question
 "}}}
 
