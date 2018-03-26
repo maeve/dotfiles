@@ -154,7 +154,7 @@ For OS X using [homebrew](https://brew.sh/).
 * Killring/yank history: [nvim-miniyank](https://github.com/bfredl/nvim-miniyank)
 * Code comments: [vim-commentary](https://github.com/tpope/vim-commentary)
 * Readline syntax: [vim-rsi](https://github.com/tpope/vim-rsi)
-* Toggle between ruby block styles: [vim-blockle](https://github.com/jgdavey/vim-blockle)
+* Toggle between single/multi-line constructs: [splitjoin.vim](https://github.com/AndrewRadev/splitjoin.vim)
 * Python autocompletion: [jedi-vim](https://github.com/davidhalter/jedi-vim)
 * Base64 support: [vim-base64](https://github.com/christianrondeau/vim-base64)
 * Go: [vim-go](https://github.com/fatih/vim-go)

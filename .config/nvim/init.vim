@@ -66,9 +66,6 @@ let g:ale_sign_info="ℹ"
 " ruby/rails {{{
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
-
-" toggle between different styles of ruby blocks ({} vs do/end)
-Plug 'jgdavey/vim-blockle'
 " }}}
 
 " terminal goodies {{{
@@ -156,6 +153,10 @@ Plug 'christianrondeau/vim-base64'
 
 " paired mappings (e.g. cnext/cprevious)
 Plug 'tpope/vim-unimpaired'
+
+" transform various constructs from one-line to multi-line
+" in a variety of programming languages
+Plug 'AndrewRadev/splitjoin.vim'
 
 call plug#end()
 
