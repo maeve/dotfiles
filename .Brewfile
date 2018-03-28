@@ -12,14 +12,14 @@ brew 'hugo'
 brew 'imagemagick'
 brew 'jid'
 brew 'jq'
-brew 'mysql@5.6'
+brew 'mysql@5.6', restart_service: true
 brew 'neovim'
-brew 'nginx'
+brew 'nginx', restart_service: true
 brew 'node'
 brew 'phantomjs'
-brew 'postgresql'
+brew 'postgresql', restart_service: true
 brew 'rbenv'
-brew 'redis'
+brew 'redis', restart_service: true
 brew 'ripgrep'
 brew 'ruby-build'
 brew 'rust'
