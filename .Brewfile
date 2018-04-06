@@ -9,10 +9,10 @@ brew 'go'
 brew 'heroku'
 brew 'highlight'
 brew 'hugo'
-brew 'imagemagick'
+brew 'imagemagick@6', link: true
 brew 'jid'
 brew 'jq'
-brew 'mysql@5.6', restart_service: true
+brew 'mysql@5.6', restart_service: true, link: true
 brew 'neovim'
 brew 'nginx', restart_service: true
 brew 'node'
@@ -25,6 +25,7 @@ brew 'ruby-build'
 brew 'rust'
 brew 'sqlite'
 brew 'stern'
+brew 'v8'
 brew 'wget'
 brew 'yadm'
 
