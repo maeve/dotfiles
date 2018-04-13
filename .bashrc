@@ -1,4 +1,5 @@
 alias ll='ls -lahG'
+alias g='git'
 alias load_cms='/usr/local/bin/heroku pg:pull DATABASE_URL orion-cms -a '
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
