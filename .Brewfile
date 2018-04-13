@@ -1,3 +1,4 @@
+brew 'awscli'
 brew 'dep'
 brew 'direnv'
 brew 'fontconfig'
