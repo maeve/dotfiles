@@ -221,6 +221,9 @@ set splitbelow " open horizontal split below current window
 set splitright " open vertical split to right of current window
 set diffopt+=vertical " default diff to vertical split
 
+" allow mouse interaction in all modes
+set mouse=a
+
 " shared clipboard
 if has("clipboard")
   set clipboard=unnamed " copy to the system clipboard
