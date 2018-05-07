@@ -1,4 +1,5 @@
 brew 'awscli'
+brew 'bash-completion'
 brew 'dep'
 brew 'direnv'
 brew 'fontconfig'

@@ -1,3 +1,5 @@
+[ -f /usr/local/etc/bash_completion ] && source /usr/local/etc/bash_completion
+
 alias ll='ls -lahG'
 alias g='git'
 alias load_cms='/usr/local/bin/heroku pg:pull DATABASE_URL orion-cms -a '
@@ -15,9 +17,9 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
 # k8s cheats
-kc() { kubectl -it exec $1 -- rails c; }
+kr() { kubectl -it exec $1 -- rails c; }
 alias k.='kubectl config current-context'
-alias ku='kubectl config use-context '
+alias kc='kubectl config use-context '
 alias kp='kubectl get pods '
 alias kd='kubectl describe '
 alias k='kubectl'

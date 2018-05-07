@@ -67,4 +67,7 @@ if [ "$system_type" = "Darwin" ]; then
       "$(rbenv root)/plugins/rbenv-aliases"
     rbenv alias --auto
   fi
+
+  echo "Installing kubectl bash completion"
+  kubectl completion bash > $(brew --prefix)/etc/bash_completion.d/kubectl
 fi
