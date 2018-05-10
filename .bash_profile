@@ -9,6 +9,7 @@ export OPENSSL_LIBRARIES='/usr/local/opt/openssl/lib'
 export XDG_RUNTIME_DIR=${TMPDIR}runtime-${USER}
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export SPRING_TMP_PATH='/tmp'
+export KOPS_MFA_ARN='arn:aws:iam::459931222334:mfa/maeve.revels'
 
 [ -f ~/.bash_secrets ] && source ~/.bash_secrets
 [ -f ~/.bashrc ] && source ~/.bashrc
