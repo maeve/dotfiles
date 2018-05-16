@@ -77,7 +77,7 @@ For OS X using [homebrew](https://brew.sh/).
 	brew cask install font-hack-nerd-font
 	```
 
-  To see the full list of patched fonts available:
+	To see the full list of patched fonts available:
 
 	```bash
 	brew cask search nerd-font
@@ -105,16 +105,16 @@ For OS X using [homebrew](https://brew.sh/).
 
 3.	To enable base16 color schemes in the 256 colorspace, add the following to your `.bashrc`:
 
-```bash
-  BASE16_SHELL=$HOME/.config/base16-shell/
-  [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-```
+	```bash
+	BASE16_SHELL=$HOME/.config/base16-shell/
+	[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+	```
 
-then start a new shell and run the script for your chosen scheme, for example:
+	then start a new shell and run the script for your chosen scheme, for example:
 
-```bash
-  base16_tomorrow-night
-```
+	```bash
+	base16_tomorrow-night
+	```
 
 ### Vim Configuration
 
