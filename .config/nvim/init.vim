@@ -192,8 +192,9 @@ set numberwidth=3 " width of line number gutter
 set scrolloff=1
 
 " wrapping
-set textwidth=0 " disable automatic wrapping in insert mode
-set nowrap " disable automatic wrapping in view mode
+set wrap
+set textwidth=79
+set formatoptions=qrn1
 
 set visualbell " quiet please
 
