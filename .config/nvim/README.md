@@ -77,16 +77,13 @@ For OS X using [homebrew](https://brew.sh/).
 	brew cask install font-hack-nerd-font
 	```
 
-To see the full list of patched fonts available:
+  To see the full list of patched fonts available:
 
-```
-```bash
-brew cask search nerd-font
-```
+	```bash
+	brew cask search nerd-font
+	```
 
-```
-
-1.	Set the font in iterm2:
+2.	Set the font in iterm2:
 
 	1.	Go to Preferences > Profiles > Text
 	2.	Click on Change Font and select the nerd-font you installed (e.g. hack)
