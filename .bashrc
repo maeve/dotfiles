@@ -30,5 +30,7 @@ alias heroku=/usr/local/bin/heroku
 # go cheats
 alias gocov='go test -coverprofile=c.out && go tool cover -html=c.out'
 
+alias runjet='jet steps --key-path=ci/codeship.aes --debug --ci-branch=v-jet-test --ci-commit-id=$(git rev-parse HEAD) --ci-committer-username=`whoami` --ci-repo-name=${PWD##*/} -e CI_NAME=codeship'
+
 eval "$(rbenv init -)"
 eval "$(direnv hook bash)"
