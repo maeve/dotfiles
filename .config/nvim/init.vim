@@ -97,6 +97,13 @@ endfunction
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 " }}}
 
+" markdown formatting {{{
+Plug 'moorereason/vim-markdownfmt'
+" use mdfmt with support for front matter
+let g:markdownfmt_command = 'mdfmt'
+au FileType markdown nmap <leader>s :<C-u>call markdownfmt#Format()<CR>
+" }}}
+
 " testing support {{{
 Plug 'janko-m/vim-test'
 let test#strategy = "neoterm" " execute test commands with neoterm

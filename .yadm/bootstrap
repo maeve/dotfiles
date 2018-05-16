@@ -70,4 +70,9 @@ if [ "$system_type" = "Darwin" ]; then
 
   echo "Installing kubectl bash completion"
   kubectl completion bash > $(brew --prefix)/etc/bash_completion.d/kubectl
+
+  if [ ! -d "$HOME/src/github.com/moorereason/mdfmt" ]; then
+    echo "Installing markdown formatter"
+    go get -u github.com/moorereason/mdfmt
+  fi
 fi
