@@ -87,16 +87,6 @@ Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='base16'
 "}}}
 
-" markdown live preview {{{
-function! BuildComposer(info)
-  if a:info.status != 'unchanged' || a:info.force
-    !cargo build --release
-  endif
-endfunction
-
-Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
-" }}}
-
 " markdown formatting {{{
 Plug 'moorereason/vim-markdownfmt'
 " use mdfmt with support for front matter

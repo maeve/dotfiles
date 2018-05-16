@@ -141,7 +141,6 @@ Plugins
 -	Auto-close paired punctuation: [auto-pairs](https://github.com/jiangmiao/auto-pairs)
 -	Status line: [vim-airline](https://github.com/vim-airline/vim-airline) with [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
 -	Display git diff in gutter: [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
--	Live markdown preview: [vim-markdown-composer](https://github.com/euclio/vim-markdown-composer)
 -	Coffeescript: [vim-coffee-script](https://github.com/kchmck/vim-coffee-script)
 -	Test support: [vim-test](https://github.com/janko-m/vim-test)
 -	Liquid support: [vim-liquid](https://github.com/tpope/vim-liquid)
