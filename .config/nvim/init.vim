@@ -91,7 +91,6 @@ let g:airline_theme='base16'
 Plug 'moorereason/vim-markdownfmt'
 " use mdfmt with support for front matter
 let g:markdownfmt_command = 'mdfmt'
-au FileType markdown nmap <leader>s :<C-u>call markdownfmt#Format()<CR>
 " }}}
 
 " testing support {{{
@@ -262,6 +261,13 @@ augroup golangstyle
   autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
   autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
   autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+augroup END
+" }}}
+
+" markdown {{{
+augroup mdstyle
+  autocmd FileType markdown nmap <leader>s :<C-u>call markdownfmt#Format()<CR>
+  autocmd FileTYpe markdown setlocal spell
 augroup END
 " }}}
 
