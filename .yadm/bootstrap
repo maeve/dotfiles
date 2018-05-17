@@ -75,4 +75,7 @@ if [ "$system_type" = "Darwin" ]; then
     echo "Installing markdown formatter"
     go get -u github.com/moorereason/mdfmt
   fi
+
+  echo "Installing default postgres extensions"
+  psql -d template1 -c 'create extension if not exists hstore;'
 fi
