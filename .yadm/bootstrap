@@ -78,4 +78,7 @@ if [ "$system_type" = "Darwin" ]; then
 
   echo "Installing default postgres extensions"
   psql -d template1 -c 'create extension if not exists hstore;'
+
+  echo "Installing keepercommander"
+  pip3 install --upgrade keepercommander
 fi
