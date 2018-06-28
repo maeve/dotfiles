@@ -31,6 +31,9 @@ brew 'v8'
 brew 'wget'
 brew 'yadm'
 
+tap 'codefresh-io/cli'
+brew 'codefresh'
+
 tap 'caskroom/cask'
 cask_args appdir: '/Applications'
 tap 'caskroom/fonts'
