@@ -18,6 +18,7 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 
 # k8s cheats
 kr() { kubectl -it exec $1 -- rails c; }
+kb() { kubectl -it exec $1 -- /bin/bash; }
 alias k.='kubectl config current-context'
 alias kc='kubectl config use-context '
 alias kp='kubectl get pods '
@@ -39,3 +40,7 @@ alias huge='hugo'
 
 eval "$(rbenv init -)"
 eval "$(direnv hook bash)"
+
+# Make shell prompt k8s context aware
+source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+PS1='$(kube_ps1)'$PS1
