@@ -88,9 +88,15 @@ let g:airline_theme='base16'
 
 " for a shell prompt based on the vim airline theme
 Plug 'edkolev/promptline.vim'
-let g:promptline_preset = 'full'
 let g:promptline_theme = 'airline'
 let g:promptline_powerline_symbols = 1
+let g:promptline_preset = {
+  \'a' : [ '$(kubectl config current-context)' ],
+  \'b' : [ promptline#slices#user() ],
+  \'c' : [ promptline#slices#cwd() ],
+  \'y' : [ promptline#slices#vcs_branch() ],
+  \'warn' : [ promptline#slices#last_exit_code() ]}
+
 "}}}
 
 " markdown formatting {{{
