@@ -14,7 +14,6 @@ brew 'hugo'
 brew 'imagemagick@6', link: true
 brew 'jid'
 brew 'jq'
-brew 'kube-ps1'
 brew 'mysql@5.6', restart_service: true, link: true
 brew 'neovim'
 brew 'nginx', restart_service: true

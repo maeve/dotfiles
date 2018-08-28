@@ -85,6 +85,12 @@ let g:airline_section_c =
 
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='base16'
+
+" for a shell prompt based on the vim airline theme
+Plug 'edkolev/promptline.vim'
+let g:promptline_preset = 'full'
+let g:promptline_theme = 'airline'
+let g:promptline_powerline_symbols = 1
 "}}}
 
 " markdown formatting {{{
@@ -198,6 +204,9 @@ endif
 " already finished initializing
 highlight link ALEErrorSign ErrorMsg
 highlight link ALEInfoSign Question
+highlight ALEError cterm=undercurl ctermfg=1 ctermbg=0
+highlight ALEWarning cterm=undercurl ctermfg=3 ctermbg=0
+highlight ALEInfo cterm=undercurl ctermfg=4 ctermbg=0
 "}}}
 
 " show tab chars and trailing spaces

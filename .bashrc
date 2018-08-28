@@ -2,6 +2,7 @@
 
 alias ll='ls -lahG'
 alias g='git'
+alias d='docker'
 alias load_cms='/usr/local/bin/heroku pg:pull DATABASE_URL orion-cms -a '
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
@@ -33,7 +34,9 @@ alias heroku=/usr/local/bin/heroku
 # go cheats
 alias gocov='go test -coverprofile=c.out && go tool cover -html=c.out'
 
+# TODO remove this when we're done with codeship
 alias runjet='jet steps --key-path=ci/codeship.aes --debug --ci-branch=v-jet-test --ci-commit-id=$(git rev-parse HEAD) --ci-committer-username=`whoami` --ci-repo-name=${PWD##*/} -e CI_NAME=codeship'
+alias cf='codefresh'
 
 # my fingers are stupid sometimes
 alias huge='hugo'
@@ -41,6 +44,5 @@ alias huge='hugo'
 eval "$(rbenv init -)"
 eval "$(direnv hook bash)"
 
-# Make shell prompt k8s context aware
-source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
-PS1='$(kube_ps1)'$PS1
+# Make shell prompt follow airline theme
+source ".promptline.sh"
