@@ -45,4 +45,4 @@ eval "$(rbenv init -)"
 eval "$(direnv hook bash)"
 
 # Make shell prompt follow airline theme
-source ".promptline.sh"
+source "$HOME/.promptline.sh"
