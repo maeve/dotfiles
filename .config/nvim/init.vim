@@ -257,7 +257,7 @@ let maplocalleader="\\"
 " must be set after plug#end() is called
 let g:promptline_preset = {
   \'a' : [ '$(kubectl config current-context)' ],
-  \'c' : [ promptline#slices#cwd() ],
+  \'c' : [ '\w' ],
   \'y' : [ promptline#slices#vcs_branch() ],
   \'warn' : [ promptline#slices#last_exit_code() ]}
 " }}}
