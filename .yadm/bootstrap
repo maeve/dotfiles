@@ -81,4 +81,12 @@ if [ "$system_type" = "Darwin" ]; then
 
   echo "Installing keepercommander"
   pip3 install --upgrade keepercommander
+
+  if [ ! -d "$HOME/google-cloud-sdk" ]; then
+    echo "Installing Google Cloud SDK"
+    curl https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-218.0.0-darwin-x86_64.tar.gz --output ~/Downloads/google-cloud-sdk.tar.gz
+    tar xzvf ~/Downloads/google-cloud-sdk.tar.gz -C $HOME
+    source $HOME/.bashrc
+    gcloud init
+  fi
 fi
