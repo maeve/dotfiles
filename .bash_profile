@@ -1,6 +1,7 @@
 #!/bin/bash
 
-export PATH='./bin':$PATH:'/usr/local/opt/go/libexec/bin'
+export PATH='./bin':$PATH:'/usr/local/opt/go/libexec/bin':'/Users/maeve/projects/github/rerun'
+
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export EDITOR='/usr/local/bin/nvim'

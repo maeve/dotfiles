@@ -1,6 +1,6 @@
 # This is Git's per-user configuration file.
 [user]
-	name = maeve
+	name = Maeve Revels
 	email = maeve.revels@getg5.com
 [core]
 	editor = nvim

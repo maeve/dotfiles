@@ -12,15 +12,13 @@ brew 'go'
 brew 'heroku'
 brew 'highlight'
 brew 'hugo'
-brew 'imagemagick@6', link: true
+brew 'imagemagick'
 brew 'jid'
 brew 'jq'
-brew 'mysql@5.6', restart_service: true, link: true
+brew 'memcached', restart_service: true
 brew 'neovim'
 brew 'nginx', restart_service: true
-brew 'node'
-brew 'phantomjs'
-brew 'postgresql', restart_service: true
+brew 'nvm'
 brew 'rbenv'
 brew 'redis', restart_service: true
 brew 'ripgrep'

@@ -71,6 +71,7 @@ Plug 'vim-ruby/vim-ruby'
 " terminal goodies {{{
 Plug 'kassio/neoterm'
 let g:neoterm_repl_ruby = 'pry'
+let g:neoterm_default_mod = ':botright'
 " }}}
 
 " status line {{{
@@ -110,7 +111,7 @@ let g:markdownfmt_command = 'mdfmt'
 
 " testing support {{{
 Plug 'janko-m/vim-test'
-let test#strategy = "neoterm" " execute test commands with neoterm
+let test#strategy = 'neovim'
 "}}}
 
 " python {{{
@@ -256,9 +257,9 @@ let maplocalleader="\\"
 " promptline {{{
 " must be set after plug#end() is called
 let g:promptline_preset = {
-  \'a' : [ '$(kubectl config current-context)' ],
-  \'c' : [ '\w' ],
-  \'y' : [ promptline#slices#vcs_branch() ],
+  \'a' : [ promptline#slices#host({ 'only_if_ssh': 1 }), '\w' ],
+  \'b' : [ promptline#slices#vcs_branch() ],
+  \'c' : [ promptline#slices#git_status() ],
   \'warn' : [ promptline#slices#last_exit_code() ]}
 " }}}
 
@@ -350,6 +351,9 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>
 " git status
 nnoremap <leader>g :Gstatus<cr>
 
+" linting
+nnoremap <leader>p :T bundle exec pronto run -c origin/master<cr>
+
 " testing
 nnoremap <leader>r :TestNearest<cr>
 nnoremap <leader>R :TestFile<cr>
@@ -363,8 +367,8 @@ nmap ga <Plug>(EasyAlign)
 " killring/yank history
 
 " ignore shared clipboard and only paste from history in vim
-map <leader>p <Plug>(miniyank-startput)
-map <leader>P <Plug>(miniyank-startPut)
+"map <leader>p <Plug>(miniyank-startput)
+"map <leader>P <Plug>(miniyank-startPut)
 
 " first paste from shared clipboard, and then you can cycle back
 " into vim history
