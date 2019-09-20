@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 [user]
 	name = Maeve Revels
-	email = maeve.revels@getg5.com
+	email = maeve@aha.io
 [core]
 	editor = nvim
 	excludesfile = ~/.gitignore_global

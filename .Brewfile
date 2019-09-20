@@ -15,6 +15,7 @@ brew 'hugo'
 brew 'imagemagick'
 brew 'jid'
 brew 'jq'
+brew 'letsencrypt'
 brew 'memcached', restart_service: true
 brew 'neovim'
 brew 'nginx', restart_service: true

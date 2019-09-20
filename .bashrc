@@ -61,4 +61,18 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 
 # Use same pronto config as CI
-alias ap='RUBOCOP_CONFIG=.rubocop_pronto.yml bundle exec pronto run -c origin/master'
+alias ap='RUBOCOP_CONFIG=.rubocop_pronto.yml bundle exec pronto run -c origin/master --exit-code'
+
+# Local integration webhook
+alias ngrok-http='ngrok http reallybigaha.lvh.me:3000 -subdomain maeve'
+alias ngrok-ssl='ngrok tls -region=us -hostname reallybigaha.betteroff.dev -key /etc/letsencrypt/live/betteroff.dev/privkey.pem -crt /etc/letsencrypt/live/betteroff.dev/fullchain.pem reallybigaha.lvh.me:3000'
+
+# Run unicorn for debugging
+alias fm='bundle exec foreman start'
+alias aha-web='OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES bundle exec unicorn -p 3000 -c ./config/unicorn_dev.rb'
+alias aha-worker='OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES RESQUE_TERM_TIMEOUT=10 TERM_CHILD=1 VERBOSE=1 QUEUE=* bundle exec rake resque:forked_work'
+
+alias please='sudo'
+alias thankyou='exit'
+
+alias be='bundle exec'
