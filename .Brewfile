@@ -1,6 +1,7 @@
 brew 'autojump'
 brew 'awscli'
 brew 'bash-completion'
+brew 'circleci'
 brew 'dep'
 brew 'direnv'
 brew 'fontconfig'
@@ -31,13 +32,9 @@ brew 'v8'
 brew 'wget'
 brew 'yadm'
 
-tap 'codefresh-io/cli'
-brew 'codefresh'
-
 tap 'caskroom/cask'
 cask_args appdir: '/Applications'
 tap 'caskroom/fonts'
 
 cask 'iterm2'
 cask 'font-hack-nerd-font'
-cask 'jet'
