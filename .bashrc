@@ -40,7 +40,7 @@ alias runjet='jet steps --key-path=ci/codeship.aes --debug --ci-branch=v-jet-tes
 alias cf='codefresh'
 
 # my fingers are stupid sometimes
-alias huge='hugo'
+eval $(thefuck --alias)
 
 eval "$(rbenv init -)"
 eval "$(direnv hook bash)"
