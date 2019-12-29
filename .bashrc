@@ -4,7 +4,10 @@ source "$HOME/.git-completion.bash"
 alias ll='ls -lahG'
 alias g='git'
 alias d='docker'
-alias load_cms='/usr/local/bin/heroku pg:pull DATABASE_URL orion-cms -a '
+
+alias r='rails'
+alias rs='bundle exec rspec'
+alias be='bundle exec'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -74,5 +77,4 @@ alias aha-worker='OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES RESQUE_TERM_TIMEOUT=10
 
 alias please='sudo'
 alias thankyou='exit'
-
-alias be='bundle exec'
+alias redshit='ops redshift'
