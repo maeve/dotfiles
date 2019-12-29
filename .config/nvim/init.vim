@@ -57,10 +57,12 @@ Plug 'w0rp/ale'
 " integrate it into the status bar
 let g:airline#extensions#ale#enabled = 1
 
+" autofix js and css
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'css': ['prettier'],
 \}
+let g:ale_fix_on_save = 1
 
 " use signs from neomake
 let g:ale_sign_error="✖"
