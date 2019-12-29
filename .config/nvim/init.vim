@@ -413,6 +413,11 @@ noremap <right> <nop>
 " noremap j <nop>
 " noremap k <nop>
 " noremap l <nop>
+
+" cycle to next/previous ALE warning/error
+nnoremap ]r :ALENextWrap<CR>
+nnoremap [r :ALEPreviousWrap<CR>
+
 " }}}
 
 " file-specific fold options
