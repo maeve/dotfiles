@@ -73,6 +73,11 @@ Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 " }}}
 
+" javascript {{{
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+" }}}
+
 " terminal goodies {{{
 Plug 'kassio/neoterm'
 let g:neoterm_repl_ruby = 'pry'
