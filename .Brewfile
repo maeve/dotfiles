@@ -41,3 +41,6 @@ tap 'caskroom/fonts'
 cask 'iterm2'
 cask 'font-hack-nerd-font'
 cask 'xquartz'
+
+tap 'universal-ctags/universal-ctags'
+brew 'universal-ctags/universal-ctags/universal-ctags', args: ['HEAD']
