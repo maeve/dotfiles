@@ -26,7 +26,7 @@ Plug 'junegunn/fzf.vim'
 " :Rg! - Start fzf in fullscreen and display the preview window above
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --ignore-case --no-ignore
+  \   'rg --column --line-number --no-heading --ignore-case
   \     --hidden --follow --glob "!.git/*" --color=always '.shellescape(<q-args>), 1,
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
