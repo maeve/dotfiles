@@ -1,3 +1,4 @@
+brew 'asdf'
 brew 'autojump'
 brew 'awscli'
 brew 'bash-completion'
@@ -20,15 +21,15 @@ brew 'letsencrypt'
 brew 'memcached', restart_service: true
 brew 'neovim'
 brew 'nginx', restart_service: true
-brew 'nvm'
-brew 'rbenv'
+brew 'overmind'
 brew 'redis', restart_service: true
 brew 'ripgrep'
 brew 'ruby-build'
-brew 'rust'
+brew 'rustup'
 brew 'sqlite'
 brew 'stern'
 brew 'thefuck'
+brew 'tmux'
 brew 'v8'
 brew 'wget'
 brew 'wine'
@@ -39,7 +40,7 @@ cask_args appdir: '/Applications'
 tap 'caskroom/fonts'
 
 cask 'iterm2'
-cask 'font-hack-nerd-font'
+cask 'homebrew/cask-fonts/font-hack-nerd-font'
 cask 'xquartz'
 
 tap 'universal-ctags/universal-ctags'

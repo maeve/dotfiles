@@ -5,6 +5,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+export PATH="$HOME/.cargo/bin:$PATH"
 export EDITOR='/usr/local/bin/nvim'
 export OPENSSL_INCLUDE_DIR='/usr/local/opt/openssl/include'
 export OPENSSL_LIBRARIES='/usr/local/opt/openssl/lib'
