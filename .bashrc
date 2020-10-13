@@ -38,14 +38,9 @@ alias heroku=/usr/local/bin/heroku
 # go cheats
 alias gocov='go test -coverprofile=c.out && go tool cover -html=c.out'
 
-# TODO remove this when we're done with codeship
-alias runjet='jet steps --key-path=ci/codeship.aes --debug --ci-branch=v-jet-test --ci-commit-id=$(git rev-parse HEAD) --ci-committer-username=`whoami` --ci-repo-name=${PWD##*/} -e CI_NAME=codeship'
-alias cf='codefresh'
-
 # my fingers are stupid sometimes
 eval $(thefuck --alias)
 
-# eval "$(rbenv init -)"
 eval "$(direnv hook bash)"
 
 # Make shell prompt follow airline theme
@@ -60,9 +55,6 @@ if [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then . "$HOME/google-clo
 # Fast directory navigation - see https://github.com/wting/autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-
 # Use same pronto config as CI
 alias ap='RUBOCOP_CONFIG=.rubocop_pronto.yml bundle exec pronto run -c origin/master --exit-code'
 
@@ -74,7 +66,7 @@ alias ngrok-ssl='ngrok tls -region=us -hostname reallybigaha.betteroff.dev -key 
 alias fm='bundle exec foreman start'
 alias aha-web='OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES bundle exec unicorn -p 3000 -c ./config/unicorn_dev.rb'
 alias aha-worker='OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES RESQUE_TERM_TIMEOUT=10 TERM_CHILD=1 VERBOSE=1 QUEUE=* bundle exec rake resque:work'
-alias om='bundle exec overmind start'
+alias om='bundle exec overmind'
 alias please='sudo'
 alias thankyou='exit'
 alias redshit='ops redshift'
