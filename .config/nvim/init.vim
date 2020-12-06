@@ -76,11 +76,6 @@ Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 " }}}
 
-" javascript {{{
-Plug 'yuezk/vim-js'
-Plug 'maxmellon/vim-jsx-pretty'
-" }}}
-
 " terminal goodies {{{
 Plug 'kassio/neoterm'
 let g:neoterm_repl_ruby = 'pry'
@@ -182,6 +177,9 @@ Plug 'tpope/vim-unimpaired'
 " transform various constructs from one-line to multi-line
 " in a variety of programming languages
 Plug 'AndrewRadev/splitjoin.vim'
+
+" syntax highlighting
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 

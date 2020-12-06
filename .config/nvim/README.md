@@ -155,5 +155,4 @@ Plugins
 -	Go: [vim-go](https://github.com/fatih/vim-go)
 -	Paired mappings: [vim-unimpaired](https://github.com/tpope/vim-unimpaired)
 -	Markdown formatter: [vim-markdownfmt](https://github.com/moorereason/vim-markdownfmt)
-- Javascript syntax highlighting: [vim-js](https://github.com/yuezk/vim-js)
-- React JSX syntax highlighting: [vim-jsx-pretty](https://github.com/MaxMEllon/vim-jsx-pretty)
+- Syntax highlighting [vim-polyglot](https://github.com/sheerun/vim-polyglot)
