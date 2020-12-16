@@ -71,6 +71,9 @@ alias please='sudo'
 alias thankyou='exit'
 alias redshit='ops redshift'
 
+# aws cheats
+aws-mfa() { aws sts get-session-token --serial-number $AWS_MFA_ARN --token-code $1; }
+
 # Set up asdf after everything else
 . /usr/local/opt/asdf/asdf.sh
 . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
