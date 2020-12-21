@@ -44,7 +44,7 @@ For OS X using [homebrew](https://brew.sh/).
 6.	Install [rust](https://rust-lang.org):
 
 	```bash
-	brew install rust
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 	```
 
 7.	Install [iterm2](https://www.iterm2.com):
