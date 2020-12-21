@@ -22,6 +22,7 @@ brew 'memcached', restart_service: true
 brew 'neovim'
 brew 'nginx', restart_service: true
 brew 'overmind'
+brew 'php'
 brew 'redis', restart_service: true
 brew 'ripgrep'
 brew 'ruby-build'
