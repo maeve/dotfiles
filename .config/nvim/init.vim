@@ -135,6 +135,14 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 let g:go_fmt_command = 'goimports'
 " }}}
 
+" syntax highlighting {{{
+" hilite all the languages automatically
+Plug 'sheerun/vim-polyglot'
+
+" trace hi links (used for debugging vim colorschemes)
+Plug 'gerw/vim-HiLinkTrace'
+" }}}
+
 " colors
 Plug 'chriskempson/base16-vim'
 
@@ -178,9 +186,6 @@ Plug 'tpope/vim-unimpaired'
 " in a variety of programming languages
 Plug 'AndrewRadev/splitjoin.vim'
 
-" syntax highlighting
-Plug 'sheerun/vim-polyglot'
-
 call plug#end()
 
 " }}}
@@ -216,18 +221,23 @@ set visualbell " quiet please
 
 " colors {{{
 set background=dark
+
+" load generated base16 colorscheme
 if filereadable(expand('~/.vimrc_background'))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
 
+" override default highlighting for spelling errors to be readable
+hi SpellBad ctermfg=0
+
 " We have to configure plugin-specific highlight groups after vim-plug has
 " already finished initializing
-highlight link ALEErrorSign ErrorMsg
-highlight link ALEInfoSign Question
-highlight ALEError cterm=undercurl ctermfg=1 ctermbg=0
-highlight ALEWarning cterm=undercurl ctermfg=3 ctermbg=0
-highlight ALEInfo cterm=undercurl ctermfg=4 ctermbg=0
+hi link ALEErrorSign ErrorMsg
+hi link ALEInfoSign Question
+hi ALEError cterm=undercurl ctermfg=1 ctermbg=0
+hi ALEWarning cterm=undercurl ctermfg=3 ctermbg=0
+hi ALEInfo cterm=undercurl ctermfg=4 ctermbg=0
 "}}}
 
 " show tab chars and trailing spaces
@@ -306,7 +316,7 @@ augroup END
 " markdown {{{
 augroup mdstyle
   autocmd FileType markdown nmap <leader>s :<C-u>call markdownfmt#Format()<CR>
-  autocmd FileTYpe markdown setlocal spell
+  autocmd FileType markdown setlocal spell
 augroup END
 " }}}
 

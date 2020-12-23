@@ -156,3 +156,4 @@ Plugins
 -	Paired mappings: [vim-unimpaired](https://github.com/tpope/vim-unimpaired)
 -	Markdown formatter: [vim-markdownfmt](https://github.com/moorereason/vim-markdownfmt)
 - Syntax highlighting [vim-polyglot](https://github.com/sheerun/vim-polyglot)
+- Highlight link tracing (for debugging vim syntax highlighting): [vim-HiLinkTrace](https://github.com/gerw/vim-HiLinkTrace)
