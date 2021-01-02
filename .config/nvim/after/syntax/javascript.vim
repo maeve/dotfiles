@@ -33,3 +33,7 @@ hi link jsModuleAs              Keyword
 hi link jsStorageClass          Keyword
 hi link jsObjectKey             Constant
 hi link jsObjectProp            Constant
+
+" make https://github.com/MaxMEllon/vim-jsx-pretty look more like github
+hi link jsxComponentName  Identifier
+hi link jsxAttrib         Constant
