@@ -20,3 +20,16 @@ syntax match   jsModuleComma    contained /,/            skipwhite skipempty nex
 hi def link jsConstant              Constant
 hi def link jsConstantComponent     Type
 hi def link jsConstantModuleKeyword Type
+
+" make https://github.com/pangloss/vim-javascript look more like github
+hi link jsOperator              Constant
+hi link jsArrowFunction         Constant
+hi link jsNull                  Constant
+hi link jsImport                Keyword
+hi link jsExport                Keyword
+hi link jsExportDefault         Keyword
+hi link jsFrom                  Keyword
+hi link jsModuleAs              Keyword
+hi link jsStorageClass          Keyword
+hi link jsObjectKey             Constant
+hi link jsObjectProp            Constant
