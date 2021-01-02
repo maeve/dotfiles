@@ -3,6 +3,4 @@
 	url = https://github.com/maeve/base16-iterm2.git
 [submodule ".config/base16-shell"]
 	path = .config/base16-shell
-	url = https://github.com/chriskempson/base16-shell.git
-[submodule "base16-iterm2"]
-	url = https://github.com/maeve/base16-iterm2.git
+	url = https://github.com/maeve/base16-shell.git
