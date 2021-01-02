@@ -1,6 +1,10 @@
 syntax case match
 
-syntax match rubyNonIdentifierConstant  /\%(\%(^\|[^.]\)\.\s*\)\@<!\<[[A-Z][A-Z0-9_]*\>\%(\s*(\)\@!/
+syntax match rubyNonClassNameConstant  /\%(\%(^\|[^.]\)\.\s*\)\@<!\<[[A-Z][A-Z0-9_]*\>\%(\s*(\)\@!/
 
-hi def link rubyNonIdentifierConstant Constant
-
+hi link rubyNonClassNameConstant  Constant
+hi link rubyException             Function
+hi link rubyMacro                 Function
+hi link rubyAccess                Keyword
+hi link rubyControl               Keyword
+hi link rubyIdentifier            Constant
