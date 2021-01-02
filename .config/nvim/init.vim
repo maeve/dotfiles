@@ -144,7 +144,7 @@ Plug 'gerw/vim-HiLinkTrace'
 " }}}
 
 " colors
-Plug 'chriskempson/base16-vim'
+Plug 'maeve/base16-vim', { 'branch': 'prettylights' }
 
 " change surroundings (brackets, parens, quotes, etc)
 Plug 'tpope/vim-surround'
@@ -185,6 +185,9 @@ Plug 'tpope/vim-unimpaired'
 " transform various constructs from one-line to multi-line
 " in a variety of programming languages
 Plug 'AndrewRadev/splitjoin.vim'
+
+" language server
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
