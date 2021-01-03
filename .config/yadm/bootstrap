@@ -87,4 +87,7 @@ if [ "$system_type" = "Darwin" ]; then
   python2 -m pip install --user --upgrade pynvim
   gem install neovim
   npm -g install neovim
+
+  echo "Installing dependencies for coc.nvim"
+  gem install solargraph
 fi

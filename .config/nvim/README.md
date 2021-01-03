@@ -157,3 +157,4 @@ Plugins
 -	Markdown formatter: [vim-markdownfmt](https://github.com/moorereason/vim-markdownfmt)
 - Syntax highlighting [vim-polyglot](https://github.com/sheerun/vim-polyglot)
 - Highlight link tracing (for debugging vim syntax highlighting): [vim-HiLinkTrace](https://github.com/gerw/vim-HiLinkTrace)
+- Autocompletion: [coc.nvim](https://github.com/neoclide/coc.nvim)
