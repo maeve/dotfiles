@@ -23,3 +23,4 @@ hi link vimSynOption      Constant
 hi link vimSynKeyRegion   Keyword
 hi link vimGroupList      String
 hi link vimUserFunc       Function
+hi link vimSet            Constant
