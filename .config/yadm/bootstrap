@@ -81,4 +81,10 @@ if [ "$system_type" = "Darwin" ]; then
     asdf plugin-add postgres https://github.com/smashedtoatoms/asdf-postgres
     asdf install
   fi
+
+  echo "Installing extensions for neovim providers"
+  python3 -m pip install --user --upgrade pynvim
+  python2 -m pip install --user --upgrade pynvim
+  gem install neovim
+  npm -g install neovim
 fi
