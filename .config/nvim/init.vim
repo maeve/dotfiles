@@ -73,7 +73,9 @@ let g:ale_sign_info="ℹ"
 
 " ruby/rails {{{
 Plug 'tpope/vim-rails'
+
 Plug 'vim-ruby/vim-ruby'
+let g:ruby_operators = 1
 " }}}
 
 " terminal goodies {{{
