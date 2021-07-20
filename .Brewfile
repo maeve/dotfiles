@@ -11,6 +11,7 @@ brew 'freetype'
 brew 'geoip'
 brew 'gifski'
 brew 'git'
+brew 'gnu-tar'
 brew 'graphviz'
 brew 'go'
 brew 'highlight'
@@ -20,8 +21,10 @@ brew 'jid'
 brew 'jq'
 brew 'letsencrypt'
 brew 'memcached', restart_service: true
+brew 'mkcert'
 brew 'neovim'
 brew 'nginx', restart_service: true
+brew 'nss'
 brew 'overmind'
 brew 'php'
 brew 'redis', restart_service: true
@@ -47,3 +50,9 @@ cask 'xquartz'
 
 tap 'universal-ctags/universal-ctags'
 brew 'universal-ctags/universal-ctags/universal-ctags', args: ['HEAD']
+
+tap 'raggi/ale'
+brew 'openssl-osx-ca', restart_service: true
+
+tap 'hashicorp/tap'
+brew 'hashicorp/tap/terraform'

@@ -59,7 +59,7 @@ if [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then . "$HOME/google-clo
 alias ap='RUBOCOP_CONFIG=.rubocop_pronto.yml bundle exec pronto run -c origin/master --exit-code'
 
 # Local integration webhook
-alias ngrok-http='ngrok http reallybigaha.lvh.me:3000 -subdomain maeve'
+alias ngrok-http='ngrok http reallybigaha.ahalocalhost.com:3000 -subdomain maeve'
 alias ngrok-ssl='ngrok tls -region=us -hostname reallybigaha.betteroff.dev -key /etc/letsencrypt/live/betteroff.dev/privkey.pem -crt /etc/letsencrypt/live/betteroff.dev/fullchain.pem reallybigaha.lvh.me:3000'
 
 # Run unicorn for debugging
