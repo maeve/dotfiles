@@ -1,3 +1,9 @@
+tap 'caskroom/cask'
+tap 'caskroom/fonts'
+tap 'raggi/ale'
+tap 'universal-ctags/universal-ctags'
+tap 'hashicorp/tap'
+
 brew 'asdf'
 brew 'autojump'
 brew 'awscli'
@@ -25,6 +31,7 @@ brew 'mkcert'
 brew 'neovim'
 brew 'nginx', restart_service: true
 brew 'nss'
+brew 'openssl-osx-ca', restart_service: true
 brew 'overmind'
 brew 'php'
 brew 'redis', restart_service: true
@@ -34,25 +41,17 @@ brew 'rustup'
 brew 'sqlite'
 brew 'stern'
 brew 'thefuck'
+brew 'terraform'
+brew 'terraform-ls'
 brew 'tmux'
+brew 'universal-ctags', args: ['HEAD']
 brew 'v8'
 brew 'wget'
 brew 'wine'
 brew 'yadm'
 
-tap 'caskroom/cask'
 cask_args appdir: '/Applications'
-tap 'caskroom/fonts'
 
 cask 'iterm2'
 cask 'homebrew/cask-fonts/font-hack-nerd-font'
 cask 'xquartz'
-
-tap 'universal-ctags/universal-ctags'
-brew 'universal-ctags/universal-ctags/universal-ctags', args: ['HEAD']
-
-tap 'raggi/ale'
-brew 'openssl-osx-ca', restart_service: true
-
-tap 'hashicorp/tap'
-brew 'hashicorp/tap/terraform'

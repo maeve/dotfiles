@@ -15,5 +15,3 @@ curl -fsSL 'https://github.com/TheLocehiliosan/yadm/raw/master/bootstrap' | bash
 You'll have to copy over your `~/.ssh` files separately, as well as creating a
 `~/.bash_secrets` file that exports any environment variables containing
 sensitive credentials.
-
-To set up kubernetes credentials, see [dalton](https://dalton.g5marketingcloud.com/service_accounts).

@@ -1,9 +1,7 @@
 Dotvim
 ======
 
-This is my (neo)vim configuration. Insert obligatory Rifleman's Creed reference. Yadda yadda.
-
-Primarily for Ruby and Go development.
+This is my (neo)vim configuration. Insert obligatory Rifleman's Creed reference.
 
 Installation
 ------------
@@ -59,7 +57,13 @@ For OS X using [homebrew](https://brew.sh/).
 	brew install highlight
 	```
 
-9.	There are a number of gems that are handy to have installed in every ruby version you are using. For [rbenv](https://github.com/rbenv/rbenv), add these to your `~/.rbenv/default-gems` file:
+9.	Install [terraform-ls](https://github.com/hashicorp/terraform-ls):
+
+	```bash
+	brew install hashicorp/tap/terraform-ls
+	```
+
+10.	There are a number of gems that are handy to have installed in every ruby version you are using. For [rbenv](https://github.com/rbenv/rbenv), add these to your `~/.rbenv/default-gems` file:
 
 	```text
 	bundler
@@ -158,3 +162,4 @@ Plugins
 - Syntax highlighting [vim-polyglot](https://github.com/sheerun/vim-polyglot)
 - Highlight link tracing (for debugging vim syntax highlighting): [vim-HiLinkTrace](https://github.com/gerw/vim-HiLinkTrace)
 - Autocompletion: [coc.nvim](https://github.com/neoclide/coc.nvim)
+- Terraform: [vim-terraform](https://github.com/hashivim/vim-terraform)
