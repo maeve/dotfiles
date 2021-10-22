@@ -1,13 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 
 system_type=$(uname -s)
 
 if [ "$system_type" = "Darwin" ]; then
-  if [ -f "$HOME/.bash_profile" ]; then
-    echo "Initializing shell"
-    # If this is the very first time we're bootstrapping, then this will not
-    # have been sourced yet; otherwise, it harms nothing
-    source "$HOME/.bash_profile"
+  if ! [ -f "$HOME/.oh-my-zsh" ]; then
+    CHSH=no RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   fi
 
   if ! command -v brew >/dev/null 2>&1; then
@@ -28,9 +25,6 @@ if [ "$system_type" = "Darwin" ]; then
   # Neovim will bootstrap itself the first time it is opened
   nvim '+qall'
 
-  echo "Installing go linters"
-  gometalinter --install
-
   if [ -d "$HOME/.iterm2" ]; then
     echo "Configuring iterm2"
     # If iterm2 has ever been run before, there will be a cached set of prefs
@@ -49,45 +43,5 @@ if [ "$system_type" = "Darwin" ]; then
   echo "Updating the yadm repo origin URL"
   yadm remote set-url origin "git@github.com:maeve/dotfiles.git"
 
-  echo "Bootstrapping asdf"
-
-  echo "Installing kubectl bash completion"
-  kubectl completion bash > $(brew --prefix)/etc/bash_completion.d/kubectl
-
-  if [ ! -d "$HOME/src/github.com/moorereason/mdfmt" ]; then
-    echo "Installing markdown formatter"
-    go get -u github.com/moorereason/mdfmt
-  fi
-
-  echo "Installing default postgres extensions"
-  psql -d template1 -c 'create extension if not exists hstore;'
-
-  echo "Installing keepercommander"
-  pip3 install --upgrade keepercommander
-
-  if [ ! -d "$HOME/google-cloud-sdk" ]; then
-    echo "Installing Google Cloud SDK"
-    curl https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-218.0.0-darwin-x86_64.tar.gz --output ~/Downloads/google-cloud-sdk.tar.gz
-    tar xzvf ~/Downloads/google-cloud-sdk.tar.gz -C $HOME
-    source $HOME/.bashrc
-    gcloud init
-  fi
-
-  if [ ! -d "$HOME/.asdf" ]; then
-    echo "Bootstrapping asdf"
-    asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
-    asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-    ${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring
-    asdf plugin-add postgres https://github.com/smashedtoatoms/asdf-postgres
-    asdf install
-  fi
-
-  echo "Installing extensions for neovim providers"
-  python3 -m pip install --user --upgrade pynvim
-  python2 -m pip install --user --upgrade pynvim
-  gem install neovim
-  npm -g install neovim
-
-  echo "Installing dependencies for coc.nvim"
-  gem install solargraph
+  exec zsh -l
 fi
