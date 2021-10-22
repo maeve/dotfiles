@@ -1,57 +1,13 @@
-tap 'caskroom/cask'
-tap 'caskroom/fonts'
-tap 'raggi/ale'
-tap 'universal-ctags/universal-ctags'
-tap 'hashicorp/tap'
+# set arguments for all 'brew install --cask' commands
+cask_args appdir: "/Applications"
 
-brew 'asdf'
-brew 'autojump'
-brew 'awscli'
-brew 'bash-completion'
-brew 'circleci'
-brew 'composer'
-brew 'dep'
-brew 'direnv'
-brew 'fontconfig'
-brew 'freetype'
-brew 'geoip'
-brew 'gifski'
-brew 'git'
-brew 'gnu-tar'
-brew 'graphviz'
-brew 'go'
-brew 'highlight'
-brew 'hugo'
-brew 'imagemagick'
-brew 'jid'
-brew 'jq'
-brew 'letsencrypt'
-brew 'memcached', restart_service: true
-brew 'mkcert'
-brew 'neovim'
-brew 'nginx', restart_service: true
-brew 'nss'
-brew 'openssl-osx-ca', restart_service: true
-brew 'overmind'
-brew 'php'
-brew 'redis', restart_service: true
-brew 'ripgrep'
-brew 'ruby-build'
-brew 'rustup'
-brew 'sqlite'
-brew 'stern'
-brew 'thefuck'
-brew 'terraform'
-brew 'terraform-ls'
-brew 'tmux'
-brew 'universal-ctags', args: ['HEAD']
-brew 'v8'
-brew 'wget'
-brew 'wine'
-brew 'yadm'
+brew "git"
+brew "mas"
+brew "neovim"
+brew "yadm"
 
-cask_args appdir: '/Applications'
-
-cask 'iterm2'
-cask 'homebrew/cask-fonts/font-hack-nerd-font'
-cask 'xquartz'
+cask "1password"
+cask "google-chrome"
+cask "iterm2"
+cask "slack"
+cask "spotify"
