@@ -7,6 +7,7 @@ brew "neovim"
 brew "yadm"
 
 cask "1password"
+cask "docker"
 cask "google-chrome"
 cask "iterm2"
 cask "slack"
