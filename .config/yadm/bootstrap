@@ -3,13 +3,23 @@
 system_type=$(uname -s)
 
 if [ "$system_type" = "Darwin" ]; then
-  if [ ! -d "$HOME/.oh-my-zsh" ]; then
-    CHSH=no RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  if [ ! -f "$HOME/.ssh/id_ed25519" ]; then
+    ssh-keygen -t ed25519 -C "maeve@aha.io"
+    eval "$(ssh-agent -s)"
+    touch $HOME/.ssh/config
+    echo "Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519" >> $HOME/.ssh/config
+    ssh-add -K $HOME/.ssh/id_ed25519
+    pbcopy < $HOME/.ssh/id_ed25519.pub
+    echo "****************************************************************"
+    echo "The contents of ~/.ssh/id_ed25519.pub have been copied to the clipboard. Register the key on Github at  https://github.com/settings/keys"
+    echo "****************************************************************"
   fi
 
-  if ! command -v brew >/dev/null 2>&1; then
-    echo "Installing homebrew"
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    CHSH=no RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   fi
 
   if [ -f "$HOME/.Brewfile" ]; then
@@ -21,12 +31,12 @@ if [ "$system_type" = "Darwin" ]; then
   echo "Updating yadm submodules"
   yadm submodule update --init --recursive
 
-  echo "Bootstrapping neovim"
   # Neovim will bootstrap itself the first time it is opened
+  echo "Bootstrapping neovim"
   nvim '+qall'
 
   echo "Updating the yadm repo origin URL"
   yadm remote set-url origin "git@github.com:maeve/dotfiles.git"
 
-  exec zsh -l
+  echo "Don't forget to restart your shell!"
 fi
