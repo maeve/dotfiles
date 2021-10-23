@@ -3,7 +3,7 @@
 system_type=$(uname -s)
 
 if [ "$system_type" = "Darwin" ]; then
-  if ! [ -f "$HOME/.oh-my-zsh" ]; then
+  if [ ! -d "$HOME/.oh-my-zsh" ]; then
     CHSH=no RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   fi
 
@@ -24,21 +24,6 @@ if [ "$system_type" = "Darwin" ]; then
   echo "Bootstrapping neovim"
   # Neovim will bootstrap itself the first time it is opened
   nvim '+qall'
-
-  if [ -d "$HOME/.iterm2" ]; then
-    echo "Configuring iterm2"
-    # If iterm2 has ever been run before, there will be a cached set of prefs
-    # we need to blow away first
-    defaults delete com.googlecode.iterm2
-    defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
-    defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.iterm2"
-  fi
-
-  if [ ! -f "$HOME/.base16_theme" ]; then
-    echo "Configuring terminal for 256 colors"
-    ln -s $HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh .base16_theme
-    . .base16_theme
-  fi
 
   echo "Updating the yadm repo origin URL"
   yadm remote set-url origin "git@github.com:maeve/dotfiles.git"
