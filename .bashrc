@@ -6,8 +6,6 @@ alias r='rails'
 alias rs='bundle exec rspec'
 alias be='bundle exec'
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 if [ ! -d $XDG_RUNTIME_DIR ]; then
   mkdir -p $XDG_RUNTIME_DIR
 fi

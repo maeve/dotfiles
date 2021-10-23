@@ -1,6 +1,7 @@
 # set arguments for all 'brew install --cask' commands
 cask_args appdir: "/Applications"
 
+brew "fzf"
 brew "git"
 brew "mas"
 brew "neovim"
