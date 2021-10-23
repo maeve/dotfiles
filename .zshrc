@@ -70,7 +70,7 @@ ZSH_CUSTOM="/Users/maeve/.zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(autojump direnv docker docker-compose fzf git gitfast)
+plugins=(autojump aws direnv docker docker-compose fzf git gitfast)
 
 source $ZSH/oh-my-zsh.sh
 

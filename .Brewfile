@@ -2,6 +2,7 @@
 cask_args appdir: "/Applications"
 
 brew "autojump"
+brew "awscli"
 brew "circleci"
 brew "direnv"
 brew "fzf"
