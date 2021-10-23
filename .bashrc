@@ -1,6 +1,4 @@
 alias ll='ls -lahG'
-alias g='git'
-alias d='docker'
 
 alias r='rails'
 alias rs='bundle exec rspec'
@@ -46,9 +44,6 @@ if [ -f "$HOME/google-cloud-sdk/path.bash.inc" ]; then . "$HOME/google-cloud-sdk
 
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then . "$HOME/google-cloud-sdk/completion.bash.inc"; fi
-
-# Fast directory navigation - see https://github.com/wting/autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # Use same pronto config as CI
 alias ap='RUBOCOP_CONFIG=.rubocop_pronto.yml bundle exec pronto run -c origin/master --exit-code'
