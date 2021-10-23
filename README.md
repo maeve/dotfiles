@@ -6,23 +6,37 @@ For more information, see the [vim config README](.config/nvim/README.md).
 
 ## Installation
 
-1. Install [homebrew](https://brew.sh/):
+1. Install Xcode command lint tools:
+
+```console
+xcode-select --install
+```
+
+2. Install [homebrew](https://brew.sh/):
 
 ```console
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-2. Install [yadm](https://yadm.io/):
+3. Install [yadm](https://yadm.io/):
 
 ```console
 brew install yadm
 ```
 
-3. Bootstrap your environment:
+4. Clone the repository locally:
+
+```console
+yadm clone https://github.com/maeve/dotfiles.git
+```
+
+5. Bootstrap your environment:
 
 ```console
 yadm bootstrap
 ```
 
-Export any environment variables containing sensitive credentials in
+6. Export any environment variables containing sensitive credentials in
 `~/.zshenv.local`.
+
+7. Restart your shell.
