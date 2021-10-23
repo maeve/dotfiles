@@ -1,6 +1,3 @@
-[ -f /usr/local/etc/bash_completion ] && source /usr/local/etc/bash_completion
-source "$HOME/.git-completion.bash"
-
 alias ll='ls -lahG'
 alias g='git'
 alias d='docker'
