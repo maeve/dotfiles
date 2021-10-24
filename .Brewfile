@@ -2,6 +2,7 @@ tap "homebrew/cask"
 # set arguments for all 'brew install --cask' commands
 cask_args appdir: "/Applications"
 
+brew "asdf"
 brew "autojump"
 brew "awscli"
 brew "circleci"
