@@ -5,18 +5,22 @@ cd "$HOME"
 system_type=$(uname -s)
 
 if [ "$system_type" = "Darwin" ]; then
+  # This should always be safe to run, I think
+  echo "Updating yadm submodules"
+  yadm submodule update --init --recursive
+
   if ! xcode-select -p 1>/dev/null; then
     echo "Installing xcode command line tools"
     xcode-select --install
   fi
 
-  # install homebrew if it's missing
   if ! command -v brew >/dev/null 2>&1; then
     echo "Installing homebrew"
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 
   if [ ! -f "$HOME/.ssh/id_ed25519" ]; then
+    echo "Generating SSH key"
     ssh-keygen -t ed25519 -C "maeve@aha.io"
     eval "$(ssh-agent -s)"
     touch $HOME/.ssh/config
@@ -33,6 +37,7 @@ if [ "$system_type" = "Darwin" ]; then
   fi
 
   if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    echo "Installing oh-my-zsh"
     CHSH=yes RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   fi
 
@@ -41,9 +46,9 @@ if [ "$system_type" = "Darwin" ]; then
     brew bundle --global
   fi
 
-  # This should always be safe to run, I think
-  echo "Updating yadm submodules"
-  yadm submodule update --init --recursive
+  echo "Configuring asdf"
+  asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+  asdf install
 
   if [ ! -f "$HOME/.aws/credentials" ]; then
     echo "Configuring aws cli"
@@ -51,7 +56,7 @@ if [ "$system_type" = "Darwin" ]; then
   fi
 
   if [ ! -f "$HOME/.zshenv.local" ]; then
-    echo "Creating .zshenv.local"
+    echo "Creating .zshenv.local (edit to add sensitive environment variables)"
     cp "$HOME/.zshenv.local.example" "$HOME/.zshenv.local"
   fi
 

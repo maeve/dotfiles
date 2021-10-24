@@ -736,6 +736,20 @@
             }
           }
         }
+      },
+      "ruby-build": {
+        "version": "20211019",
+        "bottle": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "all": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/ruby-build/blobs/sha256:d80422ee71fb3d72bfa2f39c392f8a7fc4359d939e6c84a23a64aeb31daaeb8e",
+              "sha256": "d80422ee71fb3d72bfa2f39c392f8a7fc4359d939e6c84a23a64aeb31daaeb8e"
+            }
+          }
+        }
       }
     },
     "cask": {
@@ -800,7 +814,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "3.2.17",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "52ef43f45fe2e564129860258766e7202eb3400b",
+        "Homebrew/homebrew-core": "3a72365b75f4ef7218680628552143ac82653c17",
         "CLT": "13.0.0.0.1.1630607135",
         "Xcode": "13.0",
         "macOS": "11.6"
