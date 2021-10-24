@@ -95,7 +95,7 @@ let g:airline_section_c =
       \"%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#"
 
 Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme='base16'
+" let g:airline_theme='base16'
 
 " for a shell prompt based on the vim airline theme
 function! SetPromptlinePreset(info)
@@ -152,7 +152,7 @@ let g:terraform_align=1
 " }}}
 
 " colors
-Plug 'maeve/base16-vim', { 'branch': 'prettylights' }
+" Plug 'maeve/base16-vim', { 'branch': 'prettylights' }
 
 " change surroundings (brackets, parens, quotes, etc)
 Plug 'tpope/vim-surround'
@@ -245,10 +245,10 @@ set visualbell " quiet please
 set background=dark
 
 " load generated base16 colorscheme
-if filereadable(expand('~/.vimrc_background'))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
+" if filereadable(expand('~/.vimrc_background'))
+"   let base16colorspace=256
+"   source ~/.vimrc_background
+" endif
 
 " override default highlighting for spelling errors to be readable
 hi SpellBad ctermfg=0
