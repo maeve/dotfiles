@@ -45,6 +45,16 @@ if [ "$system_type" = "Darwin" ]; then
   echo "Updating yadm submodules"
   yadm submodule update --init --recursive
 
+  if [ ! -f "$HOME/.aws/credentials" ]; then
+    echo "Configuring aws cli"
+    aws configure
+  fi
+
+  if [ ! -f "$HOME/.zshenv.local" ]; then
+    echo "Creating .zshenv.local"
+    cp "$HOME/.zshenv.local.example" "$HOME/.zshenv.local"
+  fi
+
   # Neovim will bootstrap itself the first time it is opened
   if command -v nvim >/dev/null 2>&1; then
     echo "Bootstrapping neovim"

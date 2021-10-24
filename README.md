@@ -36,7 +36,6 @@ yadm clone https://github.com/maeve/dotfiles.git
 yadm bootstrap
 ```
 
-6. Export any environment variables containing sensitive credentials in
-`~/.zshenv.local`.
+6. Edit `~/.zshenv.local` to add environment variables with sensitive credentials.
 
 7. Restart your shell.
