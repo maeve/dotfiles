@@ -70,13 +70,9 @@ if [ "$system_type" = "Darwin" ]; then
   echo "Updating the yadm repo origin URL"
   yadm remote set-url origin "git@github.com:maeve/dotfiles.git"
 
-  if [ ! -f "$HOME/.docker/config.json" ]; then
+  if [ ! -f "$HOME/.docker" ]; then
     echo "Bootstrapping docker"
-    cp "$HOME/.docker/config.json.example" "$HOME/.docker/config.json"
     open /Applications/Docker.app
-    echo "**************************************************************************"
-    echo "Edit ~/.docker/config.json to set AWS account ID"
-    echo "**************************************************************************"
   fi
 
   echo "Don't forget to restart your shell!"
