@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "28a8896d17d84cc93f75d4e4fc947a8954ac66e6"
+        "revision": "ce669fb231ed1ecad379d1baff69ed17c607852f"
       }
     },
     "brew": {
@@ -903,15 +903,24 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "zoom": {
+        "version": "5.8.1.1983",
+        "options": {
+          "full_name": "zoom",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     }
   },
   "system": {
     "macos": {
       "big_sur": {
-        "HOMEBREW_VERSION": "3.2.17",
+        "HOMEBREW_VERSION": "3.3.0",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "2b0c15ce79a87d121125875ca08cb0fbd1bdd051",
+        "Homebrew/homebrew-core": "9ad685e3f13c01cc56a6b07c762988f5f8c2ef27",
         "CLT": "13.0.0.0.1.1630607135",
         "Xcode": "13.0",
         "macOS": "11.6"

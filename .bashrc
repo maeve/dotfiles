@@ -66,3 +66,5 @@ aws-mfa() { aws sts get-session-token --serial-number $AWS_MFA_ARN --token-code 
 # Set up asdf after everything else
 . /usr/local/opt/asdf/asdf.sh
 . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
