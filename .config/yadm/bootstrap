@@ -50,7 +50,9 @@ if [ "$system_type" = "Darwin" ]; then
   asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
   asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 
-  asdf install
+  echo "Installing asdf dependencies"
+  # Do this inside a shell so that all env vars are set
+  zsh -lc "asdf install"
 
   if [ ! -f "$HOME/.aws/credentials" ]; then
     echo "Configuring aws cli"
