@@ -48,6 +48,8 @@ if [ "$system_type" = "Darwin" ]; then
 
   echo "Configuring asdf"
   asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+  asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+
   asdf install
 
   if [ ! -f "$HOME/.aws/credentials" ]; then
@@ -60,7 +62,6 @@ if [ "$system_type" = "Darwin" ]; then
     cp "$HOME/.zshenv.local.example" "$HOME/.zshenv.local"
   fi
 
-
   # Neovim will bootstrap itself the first time it is opened
   if command -v nvim >/dev/null 2>&1; then
     echo "Bootstrapping neovim"
@@ -70,7 +71,7 @@ if [ "$system_type" = "Darwin" ]; then
   echo "Updating the yadm repo origin URL"
   yadm remote set-url origin "git@github.com:maeve/dotfiles.git"
 
-  if [ ! -f "$HOME/.docker" ]; then
+  if [ ! -d "$HOME/.docker" ]; then
     echo "Bootstrapping docker"
     open /Applications/Docker.app
   fi

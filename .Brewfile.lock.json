@@ -2,7 +2,10 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "ce669fb231ed1ecad379d1baff69ed17c607852f"
+        "revision": "bc6a8e5030d15a74be3e470962e449b395664119"
+      },
+      "homebrew/services": {
+        "revision": "02bb2c3b9a65d5d56c98af7830eb905dcc8737f7"
       }
     },
     "brew": {
@@ -860,7 +863,7 @@
         }
       },
       "slack": {
-        "version": "4.21.0",
+        "version": "4.21.1",
         "options": {
           "full_name": "slack",
           "args": {
@@ -869,7 +872,7 @@
         }
       },
       "iterm2": {
-        "version": "3.4.10",
+        "version": "3.4.11",
         "options": {
           "full_name": "iterm2",
           "args": {
@@ -920,7 +923,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "3.3.0",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "9ad685e3f13c01cc56a6b07c762988f5f8c2ef27",
+        "Homebrew/homebrew-core": "53529b6798c725fd728131a0cac156ead04f0962",
         "CLT": "13.0.0.0.1.1630607135",
         "Xcode": "13.0",
         "macOS": "11.6"

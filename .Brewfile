@@ -1,4 +1,6 @@
 tap "homebrew/cask"
+tap "homebrew/services"
+
 # set arguments for all 'brew install --cask' commands
 cask_args appdir: "/Applications"
 
