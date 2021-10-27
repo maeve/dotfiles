@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "f2232d8993e88be8e4360a76653db2eed84db12c"
+        "revision": "7f71f99338e7b4261abcaebbf7c9cabde0205048"
       },
       "homebrew/services": {
         "revision": "02bb2c3b9a65d5d56c98af7830eb905dcc8737f7"
@@ -921,7 +921,7 @@
         }
       },
       "iterm2": {
-        "version": "3.4.11",
+        "version": "3.4.12",
         "options": {
           "full_name": "iterm2",
           "args": {
@@ -964,6 +964,15 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "visual-studio-code": {
+        "version": "1.61.2",
+        "options": {
+          "full_name": "visual-studio-code",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     }
   },
@@ -972,7 +981,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "3.3.1",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "6ec85f26148c146f6e9c39692bade4760aa79ce9",
+        "Homebrew/homebrew-core": "85db158700e995996b20188e821bb6c0a9f3bd03",
         "CLT": "13.0.0.0.1.1630607135",
         "Xcode": "13.0",
         "macOS": "11.6"
