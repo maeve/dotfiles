@@ -1,6 +1,3 @@
-# Always remove volumes
-alias dcdn="docker compose down -v"
-
 # Yadm
 alias yabs="yadm bootstrap"
 alias yaci="yadm commit"

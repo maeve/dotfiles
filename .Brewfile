@@ -1,5 +1,6 @@
 tap "homebrew/cask"
 tap "homebrew/services"
+tap "mutagen-io/mutagen"
 
 # set arguments for all 'brew install --cask' commands
 cask_args appdir: "/Applications"
@@ -15,6 +16,7 @@ brew "gnu-tar"
 brew "jid"
 brew "jq"
 brew "mkcert"
+brew "mutagen"
 brew "neovim"
 brew "nss"
 brew "openssl@1.1"
