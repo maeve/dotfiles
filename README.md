@@ -6,7 +6,7 @@ For more information, see the [vim config README](.config/nvim/README.md).
 
 ## Installation
 
-1. Install Xcode command lint tools:
+1. Install Xcode command line tools:
 
 ```console
 xcode-select --install
