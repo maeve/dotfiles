@@ -392,7 +392,7 @@ vnoremap <leader>te :TREPLSendSelection<cr>
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>
 
 " git status
-nnoremap <leader>g :Gstatus<cr>
+nnoremap <leader>g :Git<cr>
 
 " linting
 nnoremap <leader>p :T bundle exec pronto run -c origin/master<cr>
