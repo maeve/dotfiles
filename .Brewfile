@@ -30,6 +30,7 @@ brew "wget"
 brew "yadm"
 
 cask "1password"
+cask "chromedriver"
 cask "docker"
 cask "firefox"
 cask "google-chrome"
