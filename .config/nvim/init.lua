@@ -1,3 +1,4 @@
+vim.cmd([[
 set nocompatible
 
 " Plugins {{{
@@ -585,3 +586,4 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 " file-specific fold options
 " vim:foldmethod=marker:foldlevel=0
+]])
