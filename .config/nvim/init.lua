@@ -1,3 +1,5 @@
+require 'plugins'
+
 vim.cmd([[
 set nocompatible
 
