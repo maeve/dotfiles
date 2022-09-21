@@ -1,4 +1,5 @@
-require 'plugins'
+require('plugins')
+require('mappings')
 
 vim.cmd([[
 set nocompatible
@@ -19,21 +20,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
   autocmd VimEnter * PlugInstall | q
 endif
-" }}}
-
-" fuzzy find {{{
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-
-" :Rg - Start fzf with hidden preview window that can be enabled with ? key
-" :Rg! - Start fzf in fullscreen and display the preview window above
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --ignore-case
-  \     --hidden --follow --glob "!.git/*" --color=always '.shellescape(<q-args>), 1,
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \   <bang>0)
 " }}}
 
 " file explorer {{{
@@ -359,10 +345,6 @@ augroup END
 " }}}
 
 " Bindings {{{
-" fuzzy find
-noremap <leader><leader> :Files<cr>
-noremap <leader>bb :Buffers<cr>
-noremap <leader>cc :Commits<cr>
 
 " split window navigation
 nnoremap <leader>h <c-w>h
