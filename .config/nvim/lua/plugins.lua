@@ -27,9 +27,19 @@ return require('packer').startup(function(use)
     run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
   }
 
+  use {
+    'nvim-telescope/telescope-file-browser.nvim',
+    requires = { {'nvim-telescope/telescope.nvim'} },
+    config = function()
+      require('telescope').load_extension('file_browser')
+    end
+  }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
+
   if packer_bootstrap then
     require('packer').sync()
   end
 end)
+

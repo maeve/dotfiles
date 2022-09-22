@@ -22,11 +22,6 @@ if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
 endif
 " }}}
 
-" file explorer {{{
-Plug 'tpope/vim-vinegar'
-let g:netrw_liststyle=0 " thin
-"}}}
-
 " git {{{
 
 " local git goodness
