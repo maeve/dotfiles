@@ -151,9 +151,6 @@ let g:terraform_align=1
 " colors
 " Plug 'maeve/base16-vim', { 'branch': 'prettylights' }
 
-" change surroundings (brackets, parens, quotes, etc)
-Plug 'tpope/vim-surround'
-
 " auto-close code blocks
 Plug 'tpope/vim-endwise'
 
