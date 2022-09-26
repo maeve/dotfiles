@@ -18,11 +18,6 @@ if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
 endif
 " }}}
 
-" project-specific vim config {{{
-Plug 'windwp/nvim-projectconfig'
-require('nvim-projectconfig').setup()
-" }}}
-
 " fuzzy find {{{
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -126,7 +121,20 @@ let g:markdownfmt_command = 'mdfmt'
 
 " testing support {{{
 Plug 'janko-m/vim-test'
-let test#strategy = 'neovim'
+
+function! DockerComposeStrategy(cmd)
+  let docker_cmd = 'docker compose exec web ' . a:cmd
+  call test#strategy#neovim(docker_cmd)
+endfunction
+
+let g:test#custom_strategies = {'docker-compose': function('DockerComposeStrategy')}
+
+" hacky af but it'll do for now
+if getcwd() == '/Users/maeve/projects/aha/aha-app'
+  let test#strategy = 'docker-compose'
+else
+  let test#strategy = 'neovim'
+endif
 "}}}
 
 " python {{{

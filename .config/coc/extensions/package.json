@@ -10,5 +10,7 @@
     "coc-sh": ">=0.6.1",
     "coc-solargraph": ">=1.2.3",
     "coc-tsserver": ">=1.9.13"
-  }
+  },
+  "disabled": [],
+  "locked": []
 }
