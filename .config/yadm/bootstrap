@@ -50,6 +50,7 @@ if [ "$system_type" = "Darwin" ]; then
   echo "Configuring asdf"
   asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
   asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+  asdf plugin-add python https://github.com/asdf-community/asdf-python.git
 
   echo "Installing asdf dependencies"
   # Do this inside a shell so that all env vars are set

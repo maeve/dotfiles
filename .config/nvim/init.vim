@@ -18,6 +18,11 @@ if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
 endif
 " }}}
 
+" project-specific vim config {{{
+Plug 'windwp/nvim-projectconfig'
+require('nvim-projectconfig').setup()
+" }}}
+
 " fuzzy find {{{
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -448,6 +453,9 @@ noremap <right> <nop>
 " cycle to next/previous ALE warning/error
 nnoremap ]r :ALENextWrap<CR>
 nnoremap [r :ALEPreviousWrap<CR>
+
+" pretty print json
+nnoremap <leader>jq :%!jq .<cr>
 
 " coc
 " Use tab for trigger completion with characters ahead and navigate.
