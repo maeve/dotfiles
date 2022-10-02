@@ -188,9 +188,6 @@ Plug 'tpope/vim-unimpaired'
 " in a variety of programming languages
 Plug 'AndrewRadev/splitjoin.vim'
 
-" language server
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 call plug#end()
 
 " }}}

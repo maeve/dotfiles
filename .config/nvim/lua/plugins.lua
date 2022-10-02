@@ -49,6 +49,40 @@ return require('packer').startup(function(use)
     end
   }
 
+  use {
+    -- Install and configure these together so that we can ensure configuration
+    -- load order
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+    'neovim/nvim-lspconfig',
+    config = function()
+      require('mason').setup()
+      require('mason-lspconfig').setup({
+          ensure_installed = {
+            'bashls',
+            'clangd',
+            'cssls',
+            'dockerls',
+            'gopls',
+            'graphql',
+            'html',
+            'jsonls',
+            'jdtls',
+            'tsserver',
+            'sumneko_lua',
+            'marksman',
+            'solargraph',
+            'rust_analyzer',
+            'sqlls',
+            'terraformls',
+            'vimls',
+            'yamlls'
+          },
+          automatic_installation = true
+        })
+    end
+  }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
