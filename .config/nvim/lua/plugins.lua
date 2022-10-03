@@ -23,19 +23,20 @@ return require('packer').startup(function(use)
 
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = { {'nvim-lua/plenary.nvim'} }
-    -- Optional requirements:
-    -- ripgrep
-  }
-
-  use {
-    'nvim-telescope/telescope-fzf-native.nvim',
-    run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+    requires = {
+      { 'nvim-lua/plenary.nvim' },
+      {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+      }
+    },
+    config = function()
+      require('telescope').setup()
+    end
   }
 
   use {
     'nvim-telescope/telescope-file-browser.nvim',
-    requires = { {'nvim-telescope/telescope.nvim'} },
     config = function()
       require('telescope').load_extension('file_browser')
     end
@@ -43,44 +44,47 @@ return require('packer').startup(function(use)
 
   use {
     'kylechui/nvim-surround',
-    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    tag = 'v1.0.0',
     config = function()
-      require('nvim-surround').setup({})
+      require('nvim-surround').setup()
     end
   }
 
   use {
-    -- Install and configure these together so that we can ensure configuration
-    -- load order
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     'neovim/nvim-lspconfig',
     config = function()
       require('mason').setup()
       require('mason-lspconfig').setup({
-          ensure_installed = {
-            'bashls',
-            'clangd',
-            'cssls',
-            'dockerls',
-            'gopls',
-            'graphql',
-            'html',
-            'jsonls',
-            'jdtls',
-            'tsserver',
-            'sumneko_lua',
-            'marksman',
-            'solargraph',
-            'rust_analyzer',
-            'sqlls',
-            'terraformls',
-            'vimls',
-            'yamlls'
-          },
-          automatic_installation = true
-        })
+        ensure_installed = {
+          'bashls',
+          'clangd',
+          'cssls',
+          'dockerls',
+          'gopls',
+          'graphql',
+          'html',
+          'jsonls',
+          'jdtls',
+          'tsserver',
+          'sumneko_lua',
+          'marksman',
+          'solargraph',
+          'rust_analyzer',
+          'sqlls',
+          'terraformls',
+          'vimls',
+          'yamlls'
+        },
+        automatic_installation = true
+      })
     end
+  }
+
+  use {
+    'ms-jpq/coq_nvim',
+    branch = 'coq'
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
