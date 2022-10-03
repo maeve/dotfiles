@@ -24,9 +24,6 @@ endif
 
 " git {{{
 
-" local git goodness
-Plug 'tpope/vim-fugitive'
-
 " github support
 Plug 'tpope/vim-rhubarb'
 
@@ -183,10 +180,6 @@ Plug 'christianrondeau/vim-base64'
 
 " paired mappings (e.g. cnext/cprevious)
 Plug 'tpope/vim-unimpaired'
-
-" transform various constructs from one-line to multi-line
-" in a variety of programming languages
-Plug 'AndrewRadev/splitjoin.vim'
 
 call plug#end()
 
@@ -377,9 +370,6 @@ vnoremap <leader>te :TREPLSendSelection<cr>
 
 " remove trailing spaces
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>
-
-" git status
-nnoremap <leader>g :Git<cr>
 
 " linting
 nnoremap <leader>p :T bundle exec pronto run -c origin/master<cr>

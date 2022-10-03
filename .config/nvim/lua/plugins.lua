@@ -21,6 +21,7 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
+  -- fuzzy find in various contexts, including file browsing
   use {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.0',
@@ -29,21 +30,16 @@ return require('packer').startup(function(use)
       {
         'nvim-telescope/telescope-fzf-native.nvim',
         run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
-      }
+      },
+      { 'nvim-telescope/telescope-file-browser.nvim' }
     },
     config = function()
       require('telescope').setup()
-    end
-  }
-
-  use {
-    'nvim-telescope/telescope-file-browser.nvim',
-    after = 'telescope.nvim',
-    config = function()
       require('telescope').load_extension('file_browser')
     end
   }
 
+  -- change surrounding delimiters (e.g. changing "" to '')
   use {
     'kylechui/nvim-surround',
     tag = 'v1.0.0',
@@ -53,29 +49,33 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'ms-jpq/coq_nvim',
     branch = 'coq',
     requires = {
       { 'ms-jpq/coq.artifacts', branch = 'artifacts' },
       { 'ms-jpq/coq.thirdparty', branch = '3p' }
     },
     config = function()
-      vim.g.coq_settings = { auto_start = 'shut-up' }
       require('coq')
     end
   }
 
+  -- autocompletion and snippets
   use {
     'williamboman/mason-lspconfig.nvim',
-    after = 'coq_nvim',
     requires = {
       'williamboman/mason.nvim',
-      'neovim/nvim-lspconfig'
+      'neovim/nvim-lspconfig',
+      { 'ms-jpq/coq_nvim', branch = 'coq' },
+      { 'ms-jpq/coq.artifacts', branch = 'artifacts' },
+      { 'ms-jpq/coq.thirdparty', branch = '3p' }
     },
     config = function()
+      vim.g.coq_settings = { auto_start = 'shut-up' }
+      local coq = require('coq')
+
       require('mason').setup()
       require('mason-lspconfig').setup(
-        require('coq').lsp_ensure_capabilities({
+        coq.lsp_ensure_capabilities({
           ensure_installed = {
             'bashls',
             'clangd',
@@ -101,6 +101,36 @@ return require('packer').startup(function(use)
       )
     end
   }
+
+  -- git client
+  use {
+    'TimUntersberger/neogit',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'sindrets/diffview.nvim'
+    },
+    config = function()
+      require('neogit').setup({
+        integrations = {
+          diffview = true
+        }
+      })
+    end
+  }
+
+  -- git blame
+  use {
+    'f-person/git-blame.nvim',
+    config = function()
+      vim.g.gitblame_enabled = 0
+    end
+  }
+
+  -- viml plugins where I couldn't find a lua alternative
+
+  -- transform various constructs from one-line to multi-line
+  -- in a variety of programming languages
+  use { 'AndrewRadev/splitjoin.vim' }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
