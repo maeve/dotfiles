@@ -22,7 +22,8 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.0',
     requires = {
       { 'nvim-lua/plenary.nvim' },
       {
@@ -37,6 +38,7 @@ return require('packer').startup(function(use)
 
   use {
     'nvim-telescope/telescope-file-browser.nvim',
+    requires = { 'nvim-telescope/telescope.nvim' },
     config = function()
       require('telescope').load_extension('file_browser')
     end
@@ -51,40 +53,53 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
-    'neovim/nvim-lspconfig',
+    after = 'coq_nvim',
+    requires = {
+      'williamboman/mason.nvim',
+      'neovim/nvim-lspconfig'
+    },
     config = function()
       require('mason').setup()
-      require('mason-lspconfig').setup({
-        ensure_installed = {
-          'bashls',
-          'clangd',
-          'cssls',
-          'dockerls',
-          'gopls',
-          'graphql',
-          'html',
-          'jsonls',
-          'jdtls',
-          'tsserver',
-          'sumneko_lua',
-          'marksman',
-          'solargraph',
-          'rust_analyzer',
-          'sqlls',
-          'terraformls',
-          'vimls',
-          'yamlls'
-        },
-        automatic_installation = true
-      })
+      require('mason-lspconfig').setup(
+        require('coq').lsp_ensure_capabilities({
+          ensure_installed = {
+            'bashls',
+            'clangd',
+            'cssls',
+            'dockerls',
+            'gopls',
+            'graphql',
+            'html',
+            'jsonls',
+            'jdtls',
+            'tsserver',
+            'sumneko_lua',
+            'marksman',
+            'solargraph',
+            'rust_analyzer',
+            'sqlls',
+            'terraformls',
+            'vimls',
+            'yamlls'
+          },
+          automatic_installation = true
+        })
+      )
     end
   }
 
   use {
     'ms-jpq/coq_nvim',
-    branch = 'coq'
+    branch = 'coq',
+    requires = {
+      { 'ms-jpq/coq.artifacts', branch = 'artifacts' },
+      { 'ms-jpq/coq.thirdparty', branch = '3p' }
+    },
+    config = function()
+      vim.g.coq_settings = { auto_start = 'shut-up' }
+      require('coq')
+    end
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
