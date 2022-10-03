@@ -38,7 +38,7 @@ return require('packer').startup(function(use)
 
   use {
     'nvim-telescope/telescope-file-browser.nvim',
-    requires = { 'nvim-telescope/telescope.nvim' },
+    after = 'telescope.nvim',
     config = function()
       require('telescope').load_extension('file_browser')
     end
@@ -49,6 +49,19 @@ return require('packer').startup(function(use)
     tag = 'v1.0.0',
     config = function()
       require('nvim-surround').setup()
+    end
+  }
+
+  use {
+    'ms-jpq/coq_nvim',
+    branch = 'coq',
+    requires = {
+      { 'ms-jpq/coq.artifacts', branch = 'artifacts' },
+      { 'ms-jpq/coq.thirdparty', branch = '3p' }
+    },
+    config = function()
+      vim.g.coq_settings = { auto_start = 'shut-up' }
+      require('coq')
     end
   }
 
@@ -86,19 +99,6 @@ return require('packer').startup(function(use)
           automatic_installation = true
         })
       )
-    end
-  }
-
-  use {
-    'ms-jpq/coq_nvim',
-    branch = 'coq',
-    requires = {
-      { 'ms-jpq/coq.artifacts', branch = 'artifacts' },
-      { 'ms-jpq/coq.thirdparty', branch = '3p' }
-    },
-    config = function()
-      vim.g.coq_settings = { auto_start = 'shut-up' }
-      require('coq')
     end
   }
 
