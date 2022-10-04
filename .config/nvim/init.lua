@@ -27,9 +27,6 @@ endif
 " linting {{{
 Plug 'w0rp/ale'
 
-" integrate it into the status bar
-let g:airline#extensions#ale#enabled = 1
-
 " autofix js and css
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
@@ -56,35 +53,6 @@ Plug 'kassio/neoterm'
 let g:neoterm_repl_ruby = 'pry'
 let g:neoterm_default_mod = ':botright'
 " }}}
-
-" status line {{{
-Plug 'vim-airline/vim-airline'
-let g:airline_powerline_fonts=1
-
-" display buffer number in status line
-let g:airline_section_c =
-      \"%{bufnr('%')}: ".
-      \"%<%f%m %#__accent_red#".
-      \"%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#"
-
-Plug 'vim-airline/vim-airline-themes'
-" let g:airline_theme='base16'
-
-" for a shell prompt based on the vim airline theme
-function! SetPromptlinePreset(info)
-  " we have to define this via a function to ensure that it will only be
-  " executed after the plugin has already been installed
-endfunction
-
-Plug 'edkolev/promptline.vim', { 'do': function('SetPromptlinePreset') }
-let g:promptline_theme = 'airline'
-let g:promptline_powerline_symbols = 1
-
-" enable promptline extension for airline - this will automatically
-" save a snapshot whenever the airline config changes
-let g:airline#extensions#promptline#enabled = 1
-let g:airline#extensions#promptline#snapshot_file = '~/.promptline.sh'
-"}}}
 
 " markdown formatting {{{
 Plug 'moorereason/vim-markdownfmt'
@@ -269,15 +237,6 @@ endif
 let mapleader=","
 let maplocalleader="\\"
 "}}}
-
-" promptline {{{
-" must be set after plug#end() is called
-let g:promptline_preset = {
-  \'a' : [ promptline#slices#host({ 'only_if_ssh': 1 }), '\w' ],
-  \'b' : [ promptline#slices#vcs_branch() ],
-  \'c' : [ promptline#slices#git_status() ],
-  \'warn' : [ promptline#slices#last_exit_code() ]}
-" }}}
 
 " go {{{
 augroup golangstyle

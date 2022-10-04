@@ -74,17 +74,6 @@ return require('packer').startup(function(use)
     end
   }
 
-  use {
-    branch = 'coq',
-    requires = {
-      { 'ms-jpq/coq.artifacts', branch = 'artifacts' },
-      { 'ms-jpq/coq.thirdparty', branch = '3p' }
-    },
-    config = function()
-      require('coq')
-    end
-  }
-
   -- autocompletion and snippets
   use {
     'williamboman/mason-lspconfig.nvim',
@@ -154,7 +143,7 @@ return require('packer').startup(function(use)
     end
   }
 
-  -- git gutter signs (also inline blame but seems slower than git-blame)
+  -- git gutter signs (also blame but seems slower than git-blame)
   use {
     'lewis6991/gitsigns.nvim',
     config = function()
@@ -212,6 +201,19 @@ return require('packer').startup(function(use)
         style = 'storm'
       })
     end
+  }
+
+  -- status line
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    config = {
+      require('lualine').setup({
+        options = {
+          theme = 'tokyonight'
+        }
+      })
+    }
   }
 
   -- viml plugins where I couldn't find a lua alternative
