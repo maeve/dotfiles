@@ -153,6 +153,18 @@ return require('packer').startup(function(use)
     end
   }
 
+  -- git gutter signs (also inline blame but seems slower than git-blame)
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup({
+        yadm = {
+          enable = true
+        }
+      })
+    end
+  }
+
   -- viml plugins where I couldn't find a lua alternative
 
   -- transform various constructs from one-line to multi-line

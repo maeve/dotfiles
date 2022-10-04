@@ -22,16 +22,6 @@ if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
 endif
 " }}}
 
-" git {{{
-
-" github support
-Plug 'tpope/vim-rhubarb'
-
-" show git diff +/- in the sign column
-Plug 'airblade/vim-gitgutter'
-
-"}}}
-
 " linting {{{
 Plug 'w0rp/ale'
 
