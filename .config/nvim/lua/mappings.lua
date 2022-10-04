@@ -10,5 +10,5 @@ vim.keymap.set('n', 'fh', builtin.help_tags, {})
 vim.keymap.set('n', '-', ":Telescope file_browser path=%:p:h<cr>", { noremap = true })
 
 -- git
-vim.keymap.set('n', '<leader>gg', ':Neogit<cr>', { noremap = true })
-vim.keymap.set('n', '<leader>gb', ':GitBlameToggle<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>g', ':Neogit<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>b', ':GitBlameToggle<cr>', { noremap = true })
