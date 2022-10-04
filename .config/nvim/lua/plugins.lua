@@ -34,7 +34,13 @@ return require('packer').startup(function(use)
       { 'nvim-telescope/telescope-file-browser.nvim' }
     },
     config = function()
-      require('telescope').setup()
+      require('telescope').setup({
+        extensions = {
+          file_browser = {
+            cwd_to_path = true
+          }
+        }
+      })
       require('telescope').load_extension('file_browser')
     end
   }
@@ -123,6 +129,7 @@ return require('packer').startup(function(use)
     'f-person/git-blame.nvim',
     config = function()
       vim.g.gitblame_enabled = 0
+      require('gitblame')
     end
   }
 
