@@ -1,6 +1,8 @@
 require('plugins')
 require('mappings')
 
+vim.cmd[[colorscheme tokyonight]]
+
 vim.cmd([[
 set nocompatible
 

@@ -69,7 +69,7 @@ if [ "$system_type" = "Darwin" ]; then
   # Neovim will bootstrap itself the first time it is opened
   if command -v nvim >/dev/null 2>&1; then
     echo "Bootstrapping neovim"
-    nvim '+PlugUpdate' '+PlugClean!' '+CocInstall coc-tsserver coc-solargraph coc-json coc-docker' '+qall'
+    nvim '+PackerCompile' '+PackerInstall' '+qall'
   fi
 
   echo "Updating the yadm repo origin URL"

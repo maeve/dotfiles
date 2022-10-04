@@ -204,6 +204,16 @@ return require('packer').startup(function(use)
     end
   }
 
+  -- Colors
+  use {
+    'folke/tokyonight.nvim',
+    config = function()
+      require('tokyonight').setup({
+        style = 'storm'
+      })
+    end
+  }
+
   -- viml plugins where I couldn't find a lua alternative
 
   -- transform various constructs from one-line to multi-line
