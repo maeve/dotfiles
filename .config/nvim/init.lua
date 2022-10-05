@@ -24,12 +24,6 @@ if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
 endif
 " }}}
 
-" ruby/rails {{{
-Plug 'tpope/vim-rails'
-
-Plug 'vim-ruby/vim-ruby'
-let g:ruby_operators = 1
-" }}}
 
 " terminal goodies {{{
 Plug 'kassio/neoterm'

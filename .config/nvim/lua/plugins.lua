@@ -331,7 +331,14 @@ return require("packer").startup(function(use)
 	-- transform various constructs from one-line to multi-line
 	-- in a variety of programming languages
 	use({ "AndrewRadev/splitjoin.vim" })
+	use({ "tpope/vim-rails" })
 
+	use({
+		"vim-ruby/vim-ruby",
+		config = function()
+			vim.g.ruby_operators = 1
+		end
+	})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then
