@@ -1,7 +1,7 @@
-require('plugins')
-require('mappings')
+require("plugins")
+require("mappings")
 
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd([[colorscheme tokyonight]])
 
 vim.cmd([[
 set nocompatible
@@ -22,23 +22,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
   autocmd VimEnter * PlugInstall | q
 endif
-" }}}
-
-" linting {{{
-Plug 'w0rp/ale'
-
-" autofix js and css
-let g:ale_fixers = {
-\   'javascript': ['prettier'],
-\   'css': ['prettier'],
-\   'rust': ['rustfmt'],
-\}
-let g:ale_fix_on_save = 1
-
-" use signs from neomake
-let g:ale_sign_error="✖"
-let g:ale_sign_warning="⚠"
-let g:ale_sign_info="ℹ"
 " }}}
 
 " ruby/rails {{{
