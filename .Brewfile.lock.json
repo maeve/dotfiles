@@ -1173,6 +1173,33 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "font-caskaydia-cove-nerd-font": {
+        "version": "2.2.2",
+        "options": {
+          "full_name": "font-caskaydia-cove-nerd-font",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "font-fira-code-nerd-font": {
+        "version": "2.2.2",
+        "options": {
+          "full_name": "font-fira-code-nerd-font",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "font-jetbrains-mono-nerd-font": {
+        "version": "2.2.2",
+        "options": {
+          "full_name": "font-jetbrains-mono-nerd-font",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     }
   },
@@ -1189,7 +1216,7 @@
       "monterey": {
         "HOMEBREW_VERSION": "3.6.4",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "4f17317b99e19f1050f5b182ab0a49cdfe230a70",
+        "Homebrew/homebrew-core": "57346f6df1b4dc93bd79ba1bf766343c440a2380",
         "CLT": "14.0.0.0.1.1661618636",
         "Xcode": "14.0",
         "macOS": "12.6"
