@@ -427,9 +427,9 @@ return require("packer").startup(function(use)
 		"akinsho/toggleterm.nvim",
 		tag = "*",
 		config = function()
-      require("toggleterm").setup({
-        open_mapping = [[<leader>ts]]
-      })
+			require("toggleterm").setup({
+				open_mapping = [[<leader>ts]],
+			})
 		end,
 	})
 
@@ -440,12 +440,6 @@ return require("packer").startup(function(use)
 	use({ "AndrewRadev/splitjoin.vim" })
 	use({ "tpope/vim-rails" })
 
-	use({
-		"vim-ruby/vim-ruby",
-		config = function()
-			vim.g.ruby_operators = 1
-		end,
-	})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then
