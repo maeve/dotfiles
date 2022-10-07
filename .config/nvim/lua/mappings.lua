@@ -12,3 +12,10 @@ vim.keymap.set("n", "-", ":Telescope file_browser path=%:p:h<cr>", { noremap = t
 -- git
 vim.keymap.set("n", "<leader>g", ":Neogit<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>b", ":GitBlameToggle<cr>", { noremap = true })
+
+-- neotest
+vim.keymap.set("n", "<leader>r", ":TestNearest<cr>")
+vim.keymap.set("n", "<leader>R", ":TestFile<cr>")
+vim.keymap.set("n", "<leader>ro", ":TestOutput<cr>")
+vim.keymap.set("n", "<leader>rs", ":TestSummary<cr>")
+

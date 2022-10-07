@@ -37,24 +37,6 @@ Plug 'moorereason/vim-markdownfmt'
 let g:markdownfmt_command = 'mdfmt'
 " }}}
 
-" testing support {{{
-Plug 'janko-m/vim-test'
-
-function! DockerComposeStrategy(cmd)
-  let docker_cmd = 'docker compose exec web ' . a:cmd
-  call test#strategy#neovim(docker_cmd)
-endfunction
-
-let g:test#custom_strategies = {'docker-compose': function('DockerComposeStrategy')}
-
-" hacky af but it'll do for now
-if getcwd() == '/Users/maeve/projects/aha/aha-app'
-  let test#strategy = 'docker-compose'
-else
-  let test#strategy = 'neovim'
-endif
-"}}}
-
 " python {{{
 " autocompletion
 Plug 'davidhalter/jedi-vim'
@@ -66,14 +48,6 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 " manage my imports for me
 let g:go_fmt_command = 'goimports'
-" }}}
-
-" syntax highlighting {{{
-" hilite all the languages automatically
-Plug 'sheerun/vim-polyglot'
-
-" trace hi links (used for debugging vim colorschemes)
-Plug 'gerw/vim-HiLinkTrace'
 " }}}
 
 " terraform {{{
@@ -298,10 +272,6 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>
 
 " linting
 nnoremap <leader>p :T bundle exec pronto run -c origin/master<cr>
-
-" testing
-nnoremap <leader>r :TestNearest<cr>
-nnoremap <leader>R :TestFile<cr>
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)

@@ -326,6 +326,103 @@ return require("packer").startup(function(use)
 		},
 	})
 
+	-- syntax highlighting, folding, and other parsery stuff
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = function()
+			require("nvim-treesitter.install").update({ with_sync = true })
+		end,
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				ensure_installed = {
+					"bash",
+					"c",
+					"cpp",
+					"css",
+					"dockerfile",
+					"go",
+					"graphql",
+					"html",
+					"java",
+					"javascript",
+					"json",
+					"lua",
+					"markdown",
+					"regex",
+					"ruby",
+					"rust",
+					"sql",
+					"toml",
+					"typescript",
+					"vim",
+					"yaml",
+				},
+				auto_install = true,
+				highlight = {
+					enabled = true,
+				},
+			})
+		end,
+	})
+
+	-- testing
+	use({
+		"nvim-neotest/neotest",
+		tag = "v1.36.1",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			"antoinemadec/FixCursorHold.nvim",
+      "nvim-neotest/neotest-go",
+      "haydenmeade/neotest-jest",
+			"olimorris/neotest-rspec",
+      "rouge8/neotest-rust",
+			"nvim-neotest/neotest-vim-test",
+			"vim-test/vim-test",
+		},
+		config = function()
+			local neotest = require("neotest")
+			neotest.setup({
+				adapters = {
+          require("neotest-go")({}),
+          require("neotest-jest")({}),
+					require("neotest-rspec")({
+						rspec_cmd = function()
+							return vim.tbl_flatten({
+								"bundle",
+								"exec",
+								"rspec",
+							})
+						end,
+					}),
+          require("neotest-rust")({}),
+					-- fall back to vim-test for other filetypes
+					require("neotest-vim-test")({ ignore_file_types = {"go","javascript", "ruby"} }),
+				}
+			})
+
+			vim.api.nvim_create_user_command("TestNearest", function(opts)
+				neotest.run.run()
+			end, {})
+
+			vim.api.nvim_create_user_command("TestFile", function(opts)
+				neotest.run.run(vim.fn.expand("%"))
+			end, {})
+
+			vim.api.nvim_create_user_command("TestSuite", function(opts)
+				neotest.run.run(vim.fn.getcwd())
+			end, {})
+
+			vim.api.nvim_create_user_command("TestOutput", function(opts)
+        neotest.output.open()
+			end, {})
+
+			vim.api.nvim_create_user_command("TestSummary", function(opts)
+        neotest.summary.toggle()
+			end, {})
+		end,
+	})
+
 	-- viml plugins where I couldn't find a lua alternative
 
 	-- transform various constructs from one-line to multi-line
@@ -337,7 +434,7 @@ return require("packer").startup(function(use)
 		"vim-ruby/vim-ruby",
 		config = function()
 			vim.g.ruby_operators = 1
-		end
+		end,
 	})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
