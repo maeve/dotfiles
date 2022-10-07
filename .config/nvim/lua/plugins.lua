@@ -373,10 +373,10 @@ return require("packer").startup(function(use)
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
 			"antoinemadec/FixCursorHold.nvim",
-      "nvim-neotest/neotest-go",
-      "haydenmeade/neotest-jest",
+			"nvim-neotest/neotest-go",
+			"haydenmeade/neotest-jest",
 			"olimorris/neotest-rspec",
-      "rouge8/neotest-rust",
+			"rouge8/neotest-rust",
 			"nvim-neotest/neotest-vim-test",
 			"vim-test/vim-test",
 		},
@@ -384,8 +384,8 @@ return require("packer").startup(function(use)
 			local neotest = require("neotest")
 			neotest.setup({
 				adapters = {
-          require("neotest-go")({}),
-          require("neotest-jest")({}),
+					require("neotest-go")({}),
+					require("neotest-jest")({}),
 					require("neotest-rspec")({
 						rspec_cmd = function()
 							return vim.tbl_flatten({
@@ -395,10 +395,10 @@ return require("packer").startup(function(use)
 							})
 						end,
 					}),
-          require("neotest-rust")({}),
+					require("neotest-rust")({}),
 					-- fall back to vim-test for other filetypes
-					require("neotest-vim-test")({ ignore_file_types = {"go","javascript", "ruby"} }),
-				}
+					require("neotest-vim-test")({ ignore_file_types = { "go", "javascript", "ruby" } }),
+				},
 			})
 
 			vim.api.nvim_create_user_command("TestNearest", function(opts)
@@ -414,12 +414,22 @@ return require("packer").startup(function(use)
 			end, {})
 
 			vim.api.nvim_create_user_command("TestOutput", function(opts)
-        neotest.output.open()
+				neotest.output.open()
 			end, {})
 
 			vim.api.nvim_create_user_command("TestSummary", function(opts)
-        neotest.summary.toggle()
+				neotest.summary.toggle()
 			end, {})
+		end,
+	})
+
+	use({
+		"akinsho/toggleterm.nvim",
+		tag = "*",
+		config = function()
+      require("toggleterm").setup({
+        open_mapping = [[<leader>ts]]
+      })
 		end,
 	})
 

@@ -24,13 +24,6 @@ if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
 endif
 " }}}
 
-
-" terminal goodies {{{
-Plug 'kassio/neoterm'
-let g:neoterm_repl_ruby = 'pry'
-let g:neoterm_default_mod = ':botright'
-" }}}
-
 " markdown formatting {{{
 Plug 'moorereason/vim-markdownfmt'
 " use mdfmt with support for front matter
@@ -251,21 +244,6 @@ nnoremap <leader>v :vsp<cr>
 noremap <leader>ff :e.<cr>
 nmap <leader>fx <Plug>VinegarSplitUp
 nmap <leader>fv <Plug>VinegarVerticalSplitUp
-
-" terminal
-
-" exit terminal mode
-tnoremap <esc> <c-\><c-n>
-" show/hide last open terminal
-nnoremap <leader>ts :botright Ttoggle<cr>
-" clear terminal
-nnoremap <leader>tk :call neoterm#clear()<cr>
-" kills the current job (send a <c-c>)
-nnoremap <leader>tq :call neoterm#kill()<cr>
-" repl support
-nnoremap <leader>tE :TREPLSendFile<cr>
-nnoremap <leader>te :TREPLSendLine<cr>
-vnoremap <leader>te :TREPLSendSelection<cr>
 
 " remove trailing spaces
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>

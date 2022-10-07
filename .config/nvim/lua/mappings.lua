@@ -18,4 +18,3 @@ vim.keymap.set("n", "<leader>r", ":TestNearest<cr>")
 vim.keymap.set("n", "<leader>R", ":TestFile<cr>")
 vim.keymap.set("n", "<leader>ro", ":TestOutput<cr>")
 vim.keymap.set("n", "<leader>rs", ":TestSummary<cr>")
-
