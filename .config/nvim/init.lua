@@ -52,9 +52,6 @@ let g:terraform_align=1
 " auto-close code blocks
 Plug 'tpope/vim-endwise'
 
-" auto-close paired punctuation (brackets, parens, quotes)
-Plug 'jiangmiao/auto-pairs'
-
 " coffeescript support
 Plug 'kchmck/vim-coffee-script'
 

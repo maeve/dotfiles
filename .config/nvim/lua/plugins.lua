@@ -433,6 +433,13 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	use({
+		"windwp/nvim-autopairs",
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
+	})
+
 	-- viml plugins where I couldn't find a lua alternative
 
 	-- transform various constructs from one-line to multi-line
