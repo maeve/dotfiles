@@ -65,6 +65,22 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	-- sometimes you really do just need a file system tree
+	use({
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons"
+		},
+		tag = "nightly", -- optional, updated every week. (see issue #1193)
+    config = function()
+      -- disable netrw
+      vim.g.loaded = 1
+      vim.g.loaded_netrwPlugin = 1
+
+      require("nvim-tree").setup({})
+    end
+	})
+
 	-- change surrounding delimiters (e.g. changing "" to '')
 	use({
 		"kylechui/nvim-surround",
@@ -329,6 +345,9 @@ return require("packer").startup(function(use)
 	-- syntax highlighting, folding, and other parsery stuff
 	use({
 		"nvim-treesitter/nvim-treesitter",
+		requires = {
+			"RRethy/nvim-treesitter-endwise",
+		},
 		run = function()
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
@@ -360,6 +379,9 @@ return require("packer").startup(function(use)
 				auto_install = true,
 				highlight = {
 					enabled = true,
+				},
+				endwise = {
+					enable = true,
 				},
 			})
 		end,

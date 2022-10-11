@@ -49,9 +49,6 @@ let g:terraform_fmt_on_save=1
 let g:terraform_align=1
 " }}}
 
-" auto-close code blocks
-Plug 'tpope/vim-endwise'
-
 " coffeescript support
 Plug 'kchmck/vim-coffee-script'
 
