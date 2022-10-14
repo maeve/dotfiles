@@ -24,12 +24,6 @@ if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
 endif
 " }}}
 
-" markdown formatting {{{
-Plug 'moorereason/vim-markdownfmt'
-" use mdfmt with support for front matter
-let g:markdownfmt_command = 'mdfmt'
-" }}}
-
 " python {{{
 " autocompletion
 Plug 'davidhalter/jedi-vim'
@@ -48,12 +42,6 @@ Plug 'hashivim/vim-terraform'
 let g:terraform_fmt_on_save=1
 let g:terraform_align=1
 " }}}
-
-" coffeescript support
-Plug 'kchmck/vim-coffee-script'
-
-" syntax highlighting for liquid templates
-Plug 'tpope/vim-liquid'
 
 " vertical alignment on things like = signs
 Plug 'junegunn/vim-easy-align'
