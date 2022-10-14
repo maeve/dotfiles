@@ -6,34 +6,6 @@ vim.cmd([[colorscheme tokyonight]])
 vim.cmd([[
 set nocompatible
 
-" Plugins {{{
-
-" Install vim-plug {{{
-if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-" }}}
-
-call plug#begin('~/.local/share/nvim/plugged')
-
-" Install missing plugins on startup {{{
-if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
-  autocmd VimEnter * PlugInstall | q
-endif
-" }}}
-
-" readline style insertion
-Plug 'tpope/vim-rsi'
-
-" paired mappings (e.g. cnext/cprevious)
-Plug 'tpope/vim-unimpaired'
-
-call plug#end()
-
-" }}}
-
 " Global {{{
 " abandoned buffers are hidden instead of unloaded
 " coc.nvim TextEdit might faili if hidden is not set

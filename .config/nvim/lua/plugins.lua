@@ -491,6 +491,8 @@ return require("packer").startup(function(use)
 	use({ "AndrewRadev/splitjoin.vim" })
 	use({ "tpope/vim-rails" })
 	use({ "junegunn/vim-easy-align" })
+	use({ "tpope/vim-rsi" })
+	use({ "tpope/vim-unimpaired" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
