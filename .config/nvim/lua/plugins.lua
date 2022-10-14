@@ -69,22 +69,22 @@ return require("packer").startup(function(use)
 	use({
 		"nvim-tree/nvim-tree.lua",
 		requires = {
-			"nvim-tree/nvim-web-devicons"
+			"nvim-tree/nvim-web-devicons",
 		},
 		tag = "nightly", -- optional, updated every week. (see issue #1193)
-    config = function()
-      -- disable netrw
-      vim.g.loaded = 1
-      vim.g.loaded_netrwPlugin = 1
+		config = function()
+			-- disable netrw
+			vim.g.loaded = 1
+			vim.g.loaded_netrwPlugin = 1
 
-      require("nvim-tree").setup({})
-    end
+			require("nvim-tree").setup({})
+		end,
 	})
 
 	-- change surrounding delimiters (e.g. changing "" to '')
 	use({
 		"kylechui/nvim-surround",
-		tag = "v1.0.0",
+		tag = "*",
 		config = function()
 			require("nvim-surround").setup()
 		end,
@@ -94,7 +94,6 @@ return require("packer").startup(function(use)
 	-- linting, formatting, etc.
 	use({
 		"williamboman/mason.nvim",
-
 		requires = {
 			-- lsp
 			"neovim/nvim-lspconfig",
@@ -390,7 +389,7 @@ return require("packer").startup(function(use)
 	-- testing
 	use({
 		"nvim-neotest/neotest",
-		tag = "v1.36.1",
+		tag = "*",
 		requires = {
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
@@ -399,8 +398,6 @@ return require("packer").startup(function(use)
 			"haydenmeade/neotest-jest",
 			"olimorris/neotest-rspec",
 			"rouge8/neotest-rust",
-			"nvim-neotest/neotest-vim-test",
-			"vim-test/vim-test",
 		},
 		config = function()
 			local neotest = require("neotest")
@@ -418,8 +415,6 @@ return require("packer").startup(function(use)
 						end,
 					}),
 					require("neotest-rust")({}),
-					-- fall back to vim-test for other filetypes
-					require("neotest-vim-test")({ ignore_file_types = { "go", "javascript", "ruby" } }),
 				},
 			})
 
