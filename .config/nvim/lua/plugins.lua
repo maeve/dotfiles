@@ -473,10 +473,17 @@ return require("packer").startup(function(use)
 		"gbprod/yanky.nvim",
 		config = function()
 			require("yanky").setup({
-        system_clipboard = {
-          sync_with_ring = true,
-        },
+				system_clipboard = {
+					sync_with_ring = true,
+				},
 			})
+		end,
+	})
+
+	use({
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
 		end,
 	})
 	-- vimscript plugins where I couldn't find a lua alternative

@@ -24,9 +24,6 @@ if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
 endif
 " }}}
 
-" code comments
-Plug 'tpope/vim-commentary'
-
 " readline style insertion
 Plug 'tpope/vim-rsi'
 
