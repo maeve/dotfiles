@@ -469,6 +469,16 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	use({
+		"gbprod/yanky.nvim",
+		config = function()
+			require("yanky").setup({
+        system_clipboard = {
+          sync_with_ring = true,
+        },
+			})
+		end,
+	})
 	-- vimscript plugins where I couldn't find a lua alternative
 
 	use({ "AndrewRadev/splitjoin.vim" })

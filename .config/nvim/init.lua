@@ -24,9 +24,6 @@ if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
 endif
 " }}}
 
-" killring/yank history
-Plug 'bfredl/nvim-miniyank'
-
 " code comments
 Plug 'tpope/vim-commentary'
 
@@ -210,20 +207,6 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-
-" killring/yank history
-
-" ignore shared clipboard and only paste from history in vim
-"map <leader>p <Plug>(miniyank-startput)
-"map <leader>P <Plug>(miniyank-startPut)
-
-" first paste from shared clipboard, and then you can cycle back
-" into vim history
-map p <Plug>(miniyank-autoput)
-map P <Plug>(miniyank-autoPut)
-
-" cycle backwards through yank history
-map <leader>n <Plug>(miniyank-cycle)
 
 " Diff shortcuts
 nnoremap <leader>dg :diffget<cr>
