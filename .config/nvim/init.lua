@@ -24,12 +24,6 @@ if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
 endif
 " }}}
 
-" terraform {{{
-Plug 'hashivim/vim-terraform'
-let g:terraform_fmt_on_save=1
-let g:terraform_align=1
-" }}}
-
 " vertical alignment on things like = signs
 Plug 'junegunn/vim-easy-align'
 
