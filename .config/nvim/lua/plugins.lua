@@ -458,6 +458,14 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	use({
+		"ray-x/go.nvim",
+		requires = "ray-x/guihua.lua",
+		config = function()
+			require("go").setup({})
+		end,
+	})
+
 	-- viml plugins where I couldn't find a lua alternative
 
 	-- transform various constructs from one-line to multi-line

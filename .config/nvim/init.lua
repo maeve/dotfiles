@@ -24,13 +24,6 @@ if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
 endif
 " }}}
 
-" go {{{
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-
-" manage my imports for me
-let g:go_fmt_command = 'goimports'
-" }}}
-
 " terraform {{{
 Plug 'hashivim/vim-terraform'
 let g:terraform_fmt_on_save=1
