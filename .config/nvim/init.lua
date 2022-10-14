@@ -24,9 +24,6 @@ if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
 endif
 " }}}
 
-" buffer management
-Plug 'jlanzarotta/bufexplorer'
-
 " killring/yank history
 Plug 'bfredl/nvim-miniyank'
 
@@ -35,9 +32,6 @@ Plug 'tpope/vim-commentary'
 
 " readline style insertion
 Plug 'tpope/vim-rsi'
-
-" base64 support
-Plug 'christianrondeau/vim-base64'
 
 " paired mappings (e.g. cnext/cprevious)
 Plug 'tpope/vim-unimpaired'
