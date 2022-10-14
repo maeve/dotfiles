@@ -24,9 +24,6 @@ if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
 endif
 " }}}
 
-" vertical alignment on things like = signs
-Plug 'junegunn/vim-easy-align'
-
 " buffer management
 Plug 'jlanzarotta/bufexplorer'
 

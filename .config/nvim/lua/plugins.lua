@@ -469,12 +469,11 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	-- viml plugins where I couldn't find a lua alternative
+	-- vimscript plugins where I couldn't find a lua alternative
 
-	-- transform various constructs from one-line to multi-line
-	-- in a variety of programming languages
 	use({ "AndrewRadev/splitjoin.vim" })
 	use({ "tpope/vim-rails" })
+	use({ "junegunn/vim-easy-align" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
