@@ -24,12 +24,6 @@ if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
 endif
 " }}}
 
-" python {{{
-" autocompletion
-Plug 'davidhalter/jedi-vim'
-let g:jedi#use_splits_not_buffers = 'left'
-" }}}
-
 " go {{{
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 

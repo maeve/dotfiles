@@ -122,6 +122,7 @@ return require("packer").startup(function(use)
 					"golangci_lint_ls",
 					"graphql",
 					"html",
+					"jedi_language_server",
 					"jsonls",
 					"jdtls",
 					"tsserver",
