@@ -97,11 +97,6 @@ if has("clipboard")
   endif
 endif
 
-" leaders
-let mapleader=","
-let maplocalleader="\\"
-"}}}
-
 " go {{{
 augroup golangstyle
   autocmd!
@@ -136,78 +131,6 @@ augroup mdstyle
   autocmd FileType markdown nmap <leader>s :<C-u>call markdownfmt#Format()<CR>
   autocmd FileType markdown setlocal spell
 augroup END
-" }}}
-
-" Bindings {{{
-
-" split window navigation
-nnoremap <leader>h <c-w>h
-nnoremap <leader>j <c-w>j
-nnoremap <leader>k <c-w>k
-nnoremap <leader>l <c-w>l
-
-tnoremap <leader>h <c-\><c-n><c-w>h
-tnoremap <leader>j <c-\><c-n><c-w>j
-tnoremap <leader>k <c-\><c-n><c-w>k
-tnoremap <leader>l <c-\><c-n><c-w>l
-
-" Home row navigation in terminal mode
-tnoremap <c-h> <left>
-tnoremap <c-j> <down>
-tnoremap <c-k> <up>
-tnoremap <c-l> <down>
-
-nnoremap <leader>x :sp<cr>
-nnoremap <leader>v :vsp<cr>
-
-" file explorer
-noremap <leader>ff :e.<cr>
-nmap <leader>fx <Plug>VinegarSplitUp
-nmap <leader>fv <Plug>VinegarVerticalSplitUp
-
-" remove trailing spaces
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>
-
-" linting
-nnoremap <leader>p :T bundle exec pronto run -c origin/master<cr>
-
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-
-" Diff shortcuts
-nnoremap <leader>dg :diffget<cr>
-nnoremap <leader>dp :diffput<cr>
-
-" shortcuts for :Gdiff 3-way merge
-nnoremap <leader>d2 :diffget //2<cr>
-nnoremap <leader>d3 :diffget //3<cr>
-
-" list nav
-nnoremap <leader>qq :cclose<cr>
-nnoremap <leader>ql :lclose<cr>
-
-" no arrow keys
-noremap <left> <nop>
-noremap <down> <nop>
-noremap <up> <nop>
-noremap <right> <nop>
-
-" no home row navigation
-" noremap h <nop>
-" noremap j <nop>
-" noremap k <nop>
-" noremap l <nop>
-
-" cycle to next/previous ALE warning/error
-nnoremap ]r :ALENextWrap<CR>
-nnoremap [r :ALEPreviousWrap<CR>
-
-" pretty print json
-nnoremap <leader>jq :%!jq .<cr>
-
 " }}}
 
 " file-specific fold options
