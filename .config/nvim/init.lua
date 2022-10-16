@@ -71,54 +71,28 @@ vim.opt.diffopt:append("vertical") -- default diff to vertical split
 -- allow mouse interaction in all modes
 vim.o.mouse = "a"
 
-vim.cmd([[
-" Global {{{
+-- shared clipboard
+vim.o.clipboard = "unnamedplus"
 
-" shared clipboard
-if has("clipboard")
-  set clipboard=unnamed " copy to the system clipboard
+-- go-specific configuration
+local golangstyle = vim.api.nvim_create_augroup("golangstyle", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "go",
+	callback = function()
+		vim.wo.tabstop = 2
+		vim.wo.shiftwidth = 2
+		vim.wo.expandtab = false
+	end,
+	group = golangstyle,
+})
 
-  if has("unnamedplus") " X11 support
-    set clipboard+=unnamedplus
-  endif
-endif
-
-" go {{{
-augroup golangstyle
-  autocmd!
-  autocmd FileType go set tabstop=2 shiftwidth=2 noexpandtab
-
-  " run :GoBuild or :GoTestCompile based on the go file
-  " ripped right out of https://github.com/fatih/vim-go-tutorial
-  function! s:build_go_files()
-    let l:file = expand('%')
-    if l:file =~# '^\f\+_test\.go$'
-      call go#test#Test(0, 1)
-    elseif l:file =~# '^\f\+\.go$'
-      call go#cmd#Build(0)
-    endif
-  endfunction
-
-  autocmd FileType go nmap <leader>gb :<C-u>call <SID>build_go_files()<CR>
-  autocmd FileType go nmap <leader>gr <Plug>(go-run)
-  autocmd FileType go nmap <leader>gT <Plug>(go-test)
-  autocmd FileType go nmap <leader>gt <Plug>(go-test-func)
-  autocmd FileType go nmap <leader>gc <Plug>(go-coverage-toggle)
-
-  " rails.vim-inspired switch commands, stolen from vim-go docs
-  autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
-  autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
-  autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
-augroup END
-" }}}
-
-" markdown {{{
-augroup mdstyle
-  autocmd FileType markdown nmap <leader>s :<C-u>call markdownfmt#Format()<CR>
-  autocmd FileType markdown setlocal spell
-augroup END
-" }}}
-
-" file-specific fold options
-" vim:foldmethod=marker:foldlevel=0
-]])
+-- markdown specific configuration
+local mdstyle = vim.api.nvim_create_augroup("mdstyle", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "markdown",
+	callback = function()
+		vim.wo.spell = true
+		vim.wo.spelllang = "en_us"
+	end,
+	group = mdstyle
+})

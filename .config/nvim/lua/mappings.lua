@@ -25,6 +25,9 @@ vim.keymap.set("t", "<c-l>", "<c-><c-w>l", { noremap = true })
 -- remove trailing spaces
 vim.keymap.set("n", "<leader>W", ":%s/s+$//<cr>:let @/=''<cr>", { noremap = true })
 
+-- toggle show listchars (tabs, trailing spaces)
+vim.keymap.set("n", "<leader>tl", ":set list!<cr>", { noremap = true })
+
 -- Diff shortcuts
 vim.keymap.set("n", "<leader>dg", ":diffget<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>dp", ":diffput<cr>", { noremap = true })
