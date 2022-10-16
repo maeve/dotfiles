@@ -1,5 +1,6 @@
 tap "homebrew/cask"
 tap "homebrew/services"
+tap "homebrew/cask-fonts"
 
 # set arguments for all 'brew install --cask' commands
 cask_args appdir: "/Applications"
@@ -35,6 +36,10 @@ cask "1password"
 cask "chromedriver"
 cask "docker"
 cask "firefox"
+cask "font-caskaydia-cove-nerd-font"
+cask "font-fira-code-nerd-font"
+cask "font-hack-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
 cask "google-chrome"
 cask "iterm2"
 cask "skitch"
