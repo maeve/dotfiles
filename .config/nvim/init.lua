@@ -1,92 +1,78 @@
 require("plugins")
 require("mappings")
 
+-- Abandoned buffers are hidden instead of unloaded
+vim.o.hidden = true
+
+-- some language servers have issues with backup files
+vim.o.backup = false
+vim.o.writebackup = false
+
+-- more space for displaying messages from commands
+vim.o.cmdheight = 2
+
+-- tell vim to look for file-specific settings in a special comment
+-- at the beginning or end of each file
+vim.o.modelines = 1
+
+-- auto-reload files when modified externally
+-- https://unix.stackexchange.com/a/383044
+vim.o.autoread = true
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+	command = "if mode() != 'c' | checktime | endif",
+	pattern = { "*" },
+})
+
+-- autosave before make
+vim.o.autowrite = true
+-- do not autosave before quit
+vim.o.autowriteall = true
+
+-- line numbers
+vim.o.number = true
+vim.o.numberwidth = 3
+
+-- include additional context when scrolling
+vim.o.scrolloff = 1
+
+-- wrapping
+vim.o.wrap = true
+vim.o.textwidth = 79
+vim.opt.formatoptions:append("qrn1")
+
+-- quiet please
+vim.o.visuabell = true
+
+-- dark mode
+vim.o.background = "dark"
+
+-- There's no good lua equivalent for this
 vim.cmd([[colorscheme tokyonight]])
 
+-- show tab chars and trailing spaces
+vim.opt.listchars.tab = "▷⋅"
+vim.opt.listchars.trail = "·"
+vim.opt.list = true
+
+-- tabs/indents should be 2 spaces
+vim.o.tabstop = 2 -- render tab chars as two spaces
+vim.o.softtabstop = 2 -- number of spaces that pressing tab counts for
+vim.o.expandtab = ture -- only insert spaces, never tab chars
+vim.o.shiftwidth = 2 -- indents (e.g. with '>') are two spaces
+
+-- ms after typing stops before writing swap file
+vim.o.updatetime = 250
+
+-- split window behavior
+vim.opt.splitbelow = true -- open horizontal split below current window
+vim.opt.splitright = true -- open vertical split to right of current window
+vim.opt.diffopt:append("vertical") -- default diff to vertical split
+
+-- allow mouse interaction in all modes
+vim.o.mouse = "a"
+
 vim.cmd([[
-set nocompatible
-
 " Global {{{
-" abandoned buffers are hidden instead of unloaded
-" coc.nvim TextEdit might faili if hidden is not set
-set hidden
-
-" some language servers have issues with backup files
-set nobackup
-set nowritebackup
-
-" more space for displaying messages from commands
-set cmdheight=2
-
-" tell vim to look for file-specific settings in a special comment
-" at the beginning or end of each file
-set modelines=1
-
-" autoread filesystem changes
-" (sort of, see https://github.com/neovim/neovim/issues/1936)
-set autoread
-au FocusGained * :checktime
-
-" autosave before make
-" (I am specifically NOT setting autowriteall because sometimes
-" I like to be able to quit a buffer without saving)
-set autowrite
-
-" line numbers
-set number " display in the left gutter
-set numberwidth=3 " width of line number gutter
-
-" include additional context when scrolling
-set scrolloff=1
-
-" wrapping
-set wrap
-set textwidth=79
-set formatoptions=qrn1
-
-set visualbell " quiet please
-
-" colors {{{
-set background=dark
-
-" load generated base16 colorscheme
-" if filereadable(expand('~/.vimrc_background'))
-"   let base16colorspace=256
-"   source ~/.vimrc_background
-" endif
-
-" override default highlighting for spelling errors to be readable
-hi SpellBad ctermfg=0
-
-" We have to configure plugin-specific highlight groups after vim-plug has
-" already finished initializing
-hi link ALEErrorSign ErrorMsg
-hi link ALEInfoSign Question
-hi ALEError cterm=undercurl ctermfg=1 ctermbg=0
-hi ALEWarning cterm=undercurl ctermfg=3 ctermbg=0
-hi ALEInfo cterm=undercurl ctermfg=4 ctermbg=0
-"}}}
-
-" show tab chars and trailing spaces
-set listchars=tab:▷⋅,trail:·
-set list
-
-" tabs/indents should be 2 spaces
-set tabstop=2 " render tab chars as two spaces
-set softtabstop=2 " number of spaces that pressing tab counts for
-set expandtab " only insert spaces, never tab chars
-set shiftwidth=2 " indents (e.g. with '>') are two spaces
-
-" make plugins like vim-gitgutter snappy
-set updatetime=250 " ms after typing stops before writing swap file
-
-" split windows
-set splitbelow " open horizontal split below current window
-set splitright " open vertical split to right of current window
-set diffopt+=vertical " default diff to vertical split
-
-" allow mouse interaction in all modes
-set mouse=a
 
 " shared clipboard
 if has("clipboard")
