@@ -1,9 +1,8 @@
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]])
+local packer_user_config = vim.api.nvim_create_augroup("packer_user_config", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePost", {
+	pattern = "plugins.lua",
+	command = "source <afile> | PackerCompile",
+})
 
 local ensure_packer = function()
 	local fn = vim.fn
@@ -17,6 +16,7 @@ local ensure_packer = function()
 end
 
 local packer_bootstrap = ensure_packer()
+
 
 return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
@@ -33,36 +33,7 @@ return require("packer").startup(function(use)
 			},
 			{ "nvim-telescope/telescope-file-browser.nvim" },
 		},
-		config = function()
-			local telescope = require("telescope")
-			local telescopeConfig = require("telescope.config")
-
-			-- Clone the default Telescope configuration
-			local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
-
-			-- I want to search in hidden/dot files.
-			table.insert(vimgrep_arguments, "--hidden")
-			-- I don't want to search in the `.git` directory.
-			table.insert(vimgrep_arguments, "--glob")
-			table.insert(vimgrep_arguments, "!.git/*")
-
-			telescope.setup({
-				defaults = {
-					vimgrep_arguments = vimgrep_arguments,
-				},
-				extensions = {
-					file_browser = {
-						cwd_to_path = true,
-					},
-				},
-				pickers = {
-					find_files = {
-						find_command = { "rg", "--files", "--hidden", "--glob", "!.git/*" },
-					},
-				},
-			})
-			telescope.load_extension("file_browser")
-		end,
+		config = [[require('config.telescope')]]
 	})
 
 	-- sometimes you really do just need a file system tree
