@@ -83,9 +83,9 @@ local golangstyle = vim.api.nvim_create_augroup("golangstyle", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "go",
 	callback = function()
-		vim.wo.tabstop = 2
-		vim.wo.shiftwidth = 2
-		vim.wo.expandtab = false
+		vim.bo.tabstop = 2
+		vim.bo.shiftwidth = 2
+		vim.bo.expandtab = false
 	end,
 	group = golangstyle,
 })
@@ -95,8 +95,10 @@ local mdstyle = vim.api.nvim_create_augroup("mdstyle", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "markdown",
 	callback = function()
+		vim.bo.expandtab = true
+
 		vim.wo.spell = true
-		vim.wo.spelllang = "en_us"
+		vim.bo.spelllang = "en_us"
 	end,
 	group = mdstyle,
 })

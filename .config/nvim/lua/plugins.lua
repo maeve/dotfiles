@@ -20,6 +20,8 @@ local packer_bootstrap = ensure_packer()
 return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 
+	use("nvim-lua/plenary.nvim")
+
 	-- fuzzy find in various contexts, including file browsing
 	use({
 		"nvim-telescope/telescope.nvim",
@@ -35,7 +37,7 @@ return require("packer").startup(function(use)
 		config = [[require('config.telescope')]],
 	})
 
-	-- sometimes you really do just need a file system tree
+	-- sometimes you really do just need a fs tree view
 	use({
 		"nvim-tree/nvim-tree.lua",
 		requires = {
