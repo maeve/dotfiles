@@ -6,6 +6,7 @@ local vimgrep_arguments = { unpack(telescope_config.values.vimgrep_arguments) }
 
 -- I want to search in hidden/dot files.
 table.insert(vimgrep_arguments, "--hidden")
+table.insert(vimgrep_arguments, "--no-ignore")
 -- I don't want to search in the `.git` directory.
 table.insert(vimgrep_arguments, "--glob")
 table.insert(vimgrep_arguments, "!.git/*")
@@ -25,6 +26,8 @@ telescope.setup({
 	pickers = {
 		find_files = {
 			hidden = true,
+			no_ignore = true,
+			follow = true,
 		},
 	},
 })

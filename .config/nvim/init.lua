@@ -1,3 +1,7 @@
+-- eagerly disable netrw (will be replaced by plugins)
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
 require("plugins")
 require("mappings")
 
@@ -94,5 +98,5 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.wo.spell = true
 		vim.wo.spelllang = "en_us"
 	end,
-	group = mdstyle
+	group = mdstyle,
 })

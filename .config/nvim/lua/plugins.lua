@@ -17,7 +17,6 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-
 return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 
@@ -33,7 +32,7 @@ return require("packer").startup(function(use)
 			},
 			{ "nvim-telescope/telescope-file-browser.nvim" },
 		},
-		config = [[require('config.telescope')]]
+		config = [[require('config.telescope')]],
 	})
 
 	-- sometimes you really do just need a file system tree
@@ -43,13 +42,7 @@ return require("packer").startup(function(use)
 			"nvim-tree/nvim-web-devicons",
 		},
 		tag = "nightly", -- optional, updated every week. (see issue #1193)
-		config = function()
-			-- disable netrw
-			vim.g.loaded = 1
-			vim.g.loaded_netrwPlugin = 1
-
-			require("nvim-tree").setup({})
-		end,
+		config = [[require('config.tree')]],
 	})
 
 	-- change surrounding delimiters (e.g. changing "" to '')
