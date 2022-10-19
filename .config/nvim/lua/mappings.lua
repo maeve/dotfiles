@@ -60,6 +60,7 @@ vim.keymap.set("n", "<leader>fg", builtin.live_grep, { noremap = true })
 vim.keymap.set("n", "<leader>fb", builtin.buffers, { noremap = true })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { noremap = true })
 vim.keymap.set("n", "<leader>fc", builtin.command_history, { noremap = true })
+vim.keymap.set("n", "<leader>fs", builtin.grep_string, { noremap = true })
 
 -- fuzzy file nav via telescope (replaces netrw and vim-vinegar)
 local browse_current_file = function()

@@ -205,6 +205,7 @@ return require("packer").startup(function(use)
 		requires = {
 			"nvim-lua/plenary.nvim",
 			"sindrets/diffview.nvim",
+			"nvim-tree/nvim-web-devicons",
 		},
 		config = function()
 			require("neogit").setup({
