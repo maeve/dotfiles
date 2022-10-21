@@ -51,9 +51,11 @@ return require("packer").startup(function(use)
 	use({
 		"kylechui/nvim-surround",
 		tag = "*",
-		config = function()
-			require("nvim-surround").setup()
-		end,
+		requires = {
+			{ "nvim-treesitter/nvim-treesitter" },
+			{ "nvim-treesitter/nvim-treesitter-textobjects" },
+		},
+		config = [[require('config.surround')]],
 	})
 
 	-- external tooling for LSP servers, autocompletion,
