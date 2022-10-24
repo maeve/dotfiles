@@ -79,6 +79,15 @@ return require("packer").startup(function(use)
 		config = [[require('config.mason')]],
 	})
 
+	-- debugging
+	use({
+		"mfussenegger/nvim-dap",
+		requires = {
+			"suketa/nvim-dap-ruby",
+		},
+		config = [[require('config.dap')]],
+	})
+
 	-- diagnostics
 	use({
 		"folke/trouble.nvim",

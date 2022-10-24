@@ -72,8 +72,8 @@ vim.keymap.set("n", "-", browse_current_file, { noremap = true })
 vim.keymap.set("n", "<leader>ft", ":NvimTreeFindFileToggle<cr>", { noremap = true })
 
 -- git
-vim.keymap.set("n", "<leader>g", ":Neogit<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>b", ":GitBlameToggle<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>gg", ":Neogit<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>gb", ":GitBlameToggle<cr>", { noremap = true })
 
 -- neotest
 vim.keymap.set("n", "<leader>r", ":TestNearest<cr>")
@@ -93,3 +93,11 @@ vim.keymap.set("n", "[n", "<Plug>(YankyCycleBackward)")
 -- Start interactive EasyAlign in visual mode (e.g. vipga)
 -- Start interactive EasyAlign for a motion/text object (e.g. gaip)
 vim.keymap.set({ "n", "x" }, "ga", "<Plug>(EasyAlign)")
+
+-- debugging
+local dap = require("dap")
+vim.keymap.set("n", "<leader>bb", dap.toggle_breakpoint, { noremap = true })
+vim.keymap.set("n", "<leader>bc", dap.continue, { noremap = true })
+vim.keymap.set("n", "<leader>bn", dap.step_over, { noremap = true })
+vim.keymap.set("n", "<leader>bs", dap.step_into, { noremap = true })
+vim.keymap.set("n", "<leader>br", dap.repl.open, { noremap = true })
