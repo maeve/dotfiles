@@ -96,8 +96,22 @@ vim.keymap.set({ "n", "x" }, "ga", "<Plug>(EasyAlign)")
 
 -- debugging
 local dap = require("dap")
-vim.keymap.set("n", "<leader>bb", dap.toggle_breakpoint, { noremap = true })
-vim.keymap.set("n", "<leader>bc", dap.continue, { noremap = true })
-vim.keymap.set("n", "<leader>bn", dap.step_over, { noremap = true })
-vim.keymap.set("n", "<leader>bs", dap.step_into, { noremap = true })
-vim.keymap.set("n", "<leader>br", dap.repl.open, { noremap = true })
+
+vim.keymap.set("n", "<A-c>", dap.continue, { silent = true, noremap = true })
+vim.keymap.set("n", "<A-n>", dap.step_over, { silent = true, noremap = true })
+vim.keymap.set("n", "<A-i>", dap.step_into, { silent = true, noremap = true })
+vim.keymap.set("n", "<A-o>", dap.step_out, { silent = true, noremap = true })
+vim.keymap.set("n", "<A-u>", dap.up, { silent = true, noremap = true })
+vim.keymap.set("n", "<A-d>", dap.down, { silent = true, noremap = true })
+
+vim.keymap.set("n", "<leader>bb", dap.toggle_breakpoint, { silent = true, noremap = true })
+vim.keymap.set("n", "<leader>bc", function()
+	dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
+end, { silent = true, noremap = true })
+vim.keymap.set("n", "<leader>bp", function()
+	dap.set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
+end, { silent = true, noremap = true })
+vim.keymap.set("n", "<leader>bk", dap.clear_breakpoints, { silent = true, noremap = true })
+
+vim.keymap.set("n", "<leader>br", dap.repl.open, { silent = true, noremap = true })
+vim.keymap.set("n", "<leader>bl", dap.run_last, { silent = true, noremap = true })
