@@ -115,3 +115,11 @@ vim.keymap.set("n", "<leader>bk", dap.clear_breakpoints, { silent = true, norema
 
 vim.keymap.set("n", "<leader>br", dap.repl.open, { silent = true, noremap = true })
 vim.keymap.set("n", "<leader>bl", dap.run_last, { silent = true, noremap = true })
+
+-- diagnostics
+vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>", { silent = true, noremap = true })
+vim.keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", { silent = true, noremap = true })
+vim.keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", { silent = true, noremap = true })
+vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", { silent = true, noremap = true })
+vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { silent = true, noremap = true })
+vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", { silent = true, noremap = true })
