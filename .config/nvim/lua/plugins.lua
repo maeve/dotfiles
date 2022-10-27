@@ -83,6 +83,7 @@ return require("packer").startup(function(use)
 	use({
 		"mfussenegger/nvim-dap",
 		requires = {
+			"rcarriga/nvim-dap-ui",
 			"suketa/nvim-dap-ruby",
 		},
 		config = [[require('config.dap')]],

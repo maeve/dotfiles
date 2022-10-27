@@ -96,6 +96,7 @@ vim.keymap.set({ "n", "x" }, "ga", "<Plug>(EasyAlign)")
 
 -- debugging
 local dap = require("dap")
+local dapui = require("dapui")
 
 vim.keymap.set("n", "<A-c>", dap.continue, { silent = true, noremap = true })
 vim.keymap.set("n", "<A-n>", dap.step_over, { silent = true, noremap = true })
@@ -112,6 +113,8 @@ vim.keymap.set("n", "<leader>bp", function()
 	dap.set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
 end, { silent = true, noremap = true })
 vim.keymap.set("n", "<leader>bk", dap.clear_breakpoints, { silent = true, noremap = true })
+
+vim.keymap.set("n", "<leader>dd", dapui.toggle, { silent = true, noremap = true })
 
 vim.keymap.set("n", "<leader>br", dap.repl.open, { silent = true, noremap = true })
 vim.keymap.set("n", "<leader>bl", dap.run_last, { silent = true, noremap = true })
