@@ -75,18 +75,14 @@ return require("packer").startup(function(use)
 			-- linting/formatting
 			"jose-elias-alvarez/null-ls.nvim",
 			"jayp0521/mason-null-ls.nvim",
-		},
-		config = [[require('config.mason')]],
-	})
 
-	-- debugging
-	use({
-		"mfussenegger/nvim-dap",
-		requires = {
+			-- debugging
+			"mfussenegger/nvim-dap",
+			"jayp0521/mason-nvim-dap.nvim",
 			"rcarriga/nvim-dap-ui",
 			"suketa/nvim-dap-ruby",
 		},
-		config = [[require('config.dap')]],
+		config = [[require('config.mason')]],
 	})
 
 	-- diagnostics

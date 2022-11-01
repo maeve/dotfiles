@@ -110,3 +110,8 @@ mason_null_ls.setup_handlers({
 		null_ls.register(null_ls.builtins.diagnostics.sqlfluff)
 	end,
 })
+
+dap = require("dap")
+require("dapui").setup()
+require("dap-ruby").setup({})
+require("mason-nvim-dap").setup()

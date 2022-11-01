@@ -90,8 +90,20 @@ Set the colors in iterm2:
 
 ## Plugins
 
+In no particular order:
+
 - General-purpose utility functions: [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 - Fuzzy finding: [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
   backed by [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim),
   extended with [telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim).
 - Tree-based file browsing (convenient for exploring unfamiliar repos): [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
+- Change surrounding delimiters: [nvim-surround](https://github.com/kylechui/nvim-surround)
+- Package manager for downloading third-party tooling: [mason.nvim](https://github.com/williamboman/mason.nvim)
+  - Manage LSP servers: [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
+  - Manage null-ls linters/formatters: [mason-null-ls.nvim](https://github.com/jayp0521/mason-null-ls.nvim)
+  - Manage DAP servers: [mason-nvim-dap.nvim](https://github.com/jayp0521/mason-nvim-dap.nvim)
+- Autocompletion: [coq.nvim](https://github.com/ms-jpq/coq_nvim)
+- Linting/formatting: [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
+- Debugging: [nvim-dap](https://github.com/mfussenegger/nvim-dap)
+  - with a slick UI: [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
+  - and ruby/rspec support: [nvim-dap-ruby](https://github.com/suketa/nvim-dap-ruby)
