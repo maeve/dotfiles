@@ -272,11 +272,7 @@ return require("packer").startup(function(use)
 	use({
 		"akinsho/toggleterm.nvim",
 		tag = "*",
-		config = function()
-			require("toggleterm").setup({
-				open_mapping = [[<leader>ts]],
-			})
-		end,
+		config = [[require('config.toggleterm')]],
 	})
 
 	use({
