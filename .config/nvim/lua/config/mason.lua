@@ -95,7 +95,28 @@ mason_null_ls.setup_handlers({
 		null_ls.register(null_ls.builtins.diagnostics.markdownlint)
 	end,
 	prettierd = function()
-		null_ls.register(null_ls.builtins.formatting.prettierd)
+		null_ls.register(
+			null_ls.builtins.formatting.prettierd.with({
+				filetypes = {
+					"javascript",
+					"javascriptreact",
+					"typescript",
+					"typescriptreact",
+					"vue",
+					"css",
+					"scss",
+					"less",
+					"html",
+					"json",
+					"jsonc",
+					-- "yaml",
+					"markdown",
+					"markdown.mdx",
+					"graphql",
+					"handlebars",
+				},
+			})
+		)
 	end,
 	rubocop = function()
 		null_ls.register(null_ls.builtins.diagnostics.rubocop)
