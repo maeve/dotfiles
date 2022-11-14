@@ -303,6 +303,12 @@ return require("packer").startup(function(use)
 			require("Comment").setup()
 		end,
 	})
+
+	use({
+		"lukas-reineke/indent-blankline.nvim",
+		config = [[require('config.indent_blankline')]],
+	})
+
 	-- vimscript plugins where I couldn't find a lua alternative
 
 	use({ "AndrewRadev/splitjoin.vim" })

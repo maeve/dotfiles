@@ -54,9 +54,10 @@ vim.o.background = "dark"
 vim.cmd([[colorscheme tokyonight]])
 
 -- show tab chars and trailing spaces
+vim.opt.list = true
 vim.opt.listchars.tab = "▷⋅"
 vim.opt.listchars.trail = "·"
-vim.opt.list = true
+vim.opt.listchars.eol = "↴"
 
 -- tabs/indents should be 2 spaces
 vim.o.tabstop = 2 -- render tab chars as two spaces
