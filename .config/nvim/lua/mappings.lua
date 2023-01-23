@@ -11,16 +11,12 @@ vim.keymap.set("n", "<leader>j", "<c-w>j", { noremap = true })
 vim.keymap.set("n", "<leader>k", "<c-w>k", { noremap = true })
 vim.keymap.set("n", "<leader>l", "<c-w>l", { noremap = true })
 
-vim.keymap.set("t", "<leader>h", "<c-><c-w>h", { noremap = true })
-vim.keymap.set("t", "<leader>j", "<c-><c-w>j", { noremap = true })
-vim.keymap.set("t", "<leader>k", "<c-><c-w>k", { noremap = true })
-vim.keymap.set("t", "<leader>l", "<c-><c-w>l", { noremap = true })
-
--- Home row navigation in terminal mode
-vim.keymap.set("t", "<c-h>", "<c-><c-w>h", { noremap = true })
-vim.keymap.set("t", "<c-j>", "<c-><c-w>j", { noremap = true })
-vim.keymap.set("t", "<c-k>", "<c-><c-w>k", { noremap = true })
-vim.keymap.set("t", "<c-l>", "<c-><c-w>l", { noremap = true })
+-- Make it easier to move out of toggleterm without closing it
+vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], { noremap = true })
+vim.keymap.set("t", "<c-h>", [[<cmd>wincmd h<cr>]], { noremap = true })
+vim.keymap.set("t", "<c-j>", [[<cmd>wincmd j<cr>]], { noremap = true })
+vim.keymap.set("t", "<c-k>", [[<cmd>wincmd k<cr>]], { noremap = true })
+vim.keymap.set("t", "<c-l>", [[<cmd>wincmd l<cr>]], { noremap = true })
 
 -- remove trailing spaces
 vim.keymap.set("n", "<leader>W", ":%s/s+$//<cr>:let @/=''<cr>", { noremap = true })
