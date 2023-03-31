@@ -309,6 +309,8 @@ return require("packer").startup(function(use)
 		config = [[require('config.indent_blankline')]],
 	})
 
+	use({ "github/copilot.vim" })
+
 	-- vimscript plugins where I couldn't find a lua alternative
 
 	use({ "AndrewRadev/splitjoin.vim" })
