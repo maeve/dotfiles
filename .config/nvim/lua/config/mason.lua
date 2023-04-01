@@ -60,6 +60,7 @@ mason_null_ls.setup({
 		"markdownlint",
 		"prettierd",
 		"rubocop",
+		"rustfmt",
 		"shellcheck",
 		"stylua",
 		"sqlfluff",
@@ -95,31 +96,32 @@ mason_null_ls.setup_handlers({
 		null_ls.register(null_ls.builtins.diagnostics.markdownlint)
 	end,
 	prettierd = function()
-		null_ls.register(
-			null_ls.builtins.formatting.prettierd.with({
-				filetypes = {
-					"javascript",
-					"javascriptreact",
-					"typescript",
-					"typescriptreact",
-					"vue",
-					"css",
-					"scss",
-					"less",
-					"html",
-					"json",
-					"jsonc",
-					-- "yaml",
-					"markdown",
-					"markdown.mdx",
-					"graphql",
-					"handlebars",
-				},
-			})
-		)
+		null_ls.register(null_ls.builtins.formatting.prettierd.with({
+			filetypes = {
+				"javascript",
+				"javascriptreact",
+				"typescript",
+				"typescriptreact",
+				"vue",
+				"css",
+				"scss",
+				"less",
+				"html",
+				"json",
+				"jsonc",
+				-- "yaml",
+				"markdown",
+				"markdown.mdx",
+				"graphql",
+				"handlebars",
+			},
+		}))
 	end,
 	rubocop = function()
 		null_ls.register(null_ls.builtins.diagnostics.rubocop)
+	end,
+	rustfmt = function()
+		null_ls.register(null_ls.builtins.formatting.rustfmt)
 	end,
 	shellcheck = function()
 		null_ls.register(null_ls.builtins.diagnostics.shellcheck)
