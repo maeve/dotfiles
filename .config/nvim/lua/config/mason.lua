@@ -1,6 +1,10 @@
 vim.g.coq_settings = { auto_start = "shut-up" }
 local coq = require("coq")
 
+require("coq_3p")({
+	{ src = "copilot", short_name = "COP", accept_key = "<A-tab>" },
+})
+
 require("mason").setup()
 require("mason-lspconfig").setup(coq.lsp_ensure_capabilities({
 	ensure_installed = {
