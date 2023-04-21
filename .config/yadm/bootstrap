@@ -87,5 +87,7 @@ if [ "$system_type" = "Darwin" ]; then
 		source "$HOME/.cargo/env"
 	fi
 
+	mkdir -p $HOME/.local/share/eclipse
+	curl https://github.com/google/styleguide/blob/gh-pages/eclipse-java-google-style.xml --output "$HOME/.local/share/eclipse/eclipse-java-google-style.xml"
   echo "Don't forget to restart your shell!"
 fi

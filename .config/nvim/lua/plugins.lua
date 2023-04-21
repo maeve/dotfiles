@@ -85,6 +85,11 @@ return require("packer").startup(function(use)
 		config = [[require('config.mason')]],
 	})
 
+	use({
+		"mfussenegger/nvim-jdtls",
+		config = [[require('config.java')]],
+	})
+
 	-- diagnostics
 	use({
 		"folke/trouble.nvim",
