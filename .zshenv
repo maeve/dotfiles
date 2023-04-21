@@ -13,3 +13,4 @@ export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
 # Always prefer local binstubs over global command
 export PATH=./bin:$PATH
 . "$HOME/.cargo/env"
+. "$HOME/.asdf/plugins/java/set-java-home.zsh"
