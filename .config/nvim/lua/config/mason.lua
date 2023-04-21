@@ -2,7 +2,7 @@ vim.g.coq_settings = { auto_start = "shut-up" }
 local coq = require("coq")
 
 require("coq_3p")({
-	{ src = "copilot", short_name = "COP", accept_key = "<A-tab>" },
+	{ src = "copilot", short_name = "COP", accept_key = "<A-space>" },
 })
 
 require("mason").setup()
