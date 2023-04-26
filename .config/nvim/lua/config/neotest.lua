@@ -4,13 +4,7 @@ neotest.setup({
 		require("neotest-go")({}),
 		require("neotest-jest")({}),
 		require("neotest-rspec")({
-			rspec_cmd = function()
-				return vim.tbl_flatten({
-					"bundle",
-					"exec",
-					"rspec",
-				})
-			end,
+			rspec_cmd = "dcrspec"
 		}),
 		require("neotest-rust")({}),
 	},

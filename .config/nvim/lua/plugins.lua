@@ -74,11 +74,11 @@ return require("packer").startup(function(use)
 
 			-- linting/formatting
 			"jose-elias-alvarez/null-ls.nvim",
-			"jayp0521/mason-null-ls.nvim",
+			"jay-babu/mason-null-ls.nvim",
 
 			-- debugging
 			"mfussenegger/nvim-dap",
-			"jayp0521/mason-nvim-dap.nvim",
+			"jay-babu/mason-nvim-dap.nvim",
 			"rcarriga/nvim-dap-ui",
 			"suketa/nvim-dap-ruby",
 		},

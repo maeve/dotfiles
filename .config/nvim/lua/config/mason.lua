@@ -69,72 +69,72 @@ mason_null_ls.setup({
 		"sqlfluff",
 	},
 	automatic_installation = true,
-})
-mason_null_ls.setup_handlers({
-	function(source_name)
-		-- all sources with no handler end up here
-	end,
-	cpplint = function()
-		null_ls.register(null_ls.builtins.diagnostics.cpplint)
-	end,
-	erb_lint = function()
-		null_ls.register(null_ls.builtins.diagnostics.erb_lint)
-	end,
-	eslint_d = function()
-		null_ls.register(null_ls.builtins.diagnostics.eslint_d)
-	end,
-	gitlint = function()
-		null_ls.register(null_ls.builtins.diagnostics.gitlint)
-	end,
-	golangci_lint = function()
-		null_ls.register(null_ls.builtins.diagnostics.golangci_lint)
-	end,
-	hadolint = function()
-		null_ls.register(null_ls.builtins.diagnostics.hadolint)
-	end,
-	jq = function()
-		null_ls.register(null_ls.builtins.formatting.jq)
-	end,
-	markdownlint = function()
-		null_ls.register(null_ls.builtins.diagnostics.markdownlint)
-	end,
-	prettierd = function()
-		null_ls.register(null_ls.builtins.formatting.prettierd.with({
-			filetypes = {
-				"javascript",
-				"javascriptreact",
-				"typescript",
-				"typescriptreact",
-				"vue",
-				"css",
-				"scss",
-				"less",
-				"html",
-				"json",
-				"jsonc",
-				-- "yaml",
-				"markdown",
-				"markdown.mdx",
-				"graphql",
-				"handlebars",
-			},
-		}))
-	end,
-	rubocop = function()
-		null_ls.register(null_ls.builtins.diagnostics.rubocop)
-	end,
-	rustfmt = function()
-		null_ls.register(null_ls.builtins.formatting.rustfmt)
-	end,
-	shellcheck = function()
-		null_ls.register(null_ls.builtins.diagnostics.shellcheck)
-	end,
-	stylua = function()
-		null_ls.register(null_ls.builtins.formatting.stylua)
-	end,
-	sqlfluff = function()
-		null_ls.register(null_ls.builtins.diagnostics.sqlfluff)
-	end,
+	handlers = {
+		function(source_name)
+			-- all sources with no handler end up here
+		end,
+		cpplint = function()
+			null_ls.register(null_ls.builtins.diagnostics.cpplint)
+		end,
+		erb_lint = function()
+			null_ls.register(null_ls.builtins.diagnostics.erb_lint)
+		end,
+		eslint_d = function()
+			null_ls.register(null_ls.builtins.diagnostics.eslint_d)
+		end,
+		gitlint = function()
+			null_ls.register(null_ls.builtins.diagnostics.gitlint)
+		end,
+		golangci_lint = function()
+			null_ls.register(null_ls.builtins.diagnostics.golangci_lint)
+		end,
+		hadolint = function()
+			null_ls.register(null_ls.builtins.diagnostics.hadolint)
+		end,
+		jq = function()
+			null_ls.register(null_ls.builtins.formatting.jq)
+		end,
+		markdownlint = function()
+			null_ls.register(null_ls.builtins.diagnostics.markdownlint)
+		end,
+		prettierd = function()
+			null_ls.register(null_ls.builtins.formatting.prettierd.with({
+				filetypes = {
+					"javascript",
+					"javascriptreact",
+					"typescript",
+					"typescriptreact",
+					"vue",
+					"css",
+					"scss",
+					"less",
+					"html",
+					"json",
+					"jsonc",
+					-- "yaml",
+					"markdown",
+					"markdown.mdx",
+					"graphql",
+					"handlebars",
+				},
+			}))
+		end,
+		rubocop = function()
+			null_ls.register(null_ls.builtins.diagnostics.rubocop)
+		end,
+		rustfmt = function()
+			null_ls.register(null_ls.builtins.formatting.rustfmt)
+		end,
+		shellcheck = function()
+			null_ls.register(null_ls.builtins.diagnostics.shellcheck)
+		end,
+		stylua = function()
+			null_ls.register(null_ls.builtins.formatting.stylua)
+		end,
+		sqlfluff = function()
+			null_ls.register(null_ls.builtins.diagnostics.sqlfluff)
+		end,
+	}
 })
 
 dap = require("dap")
