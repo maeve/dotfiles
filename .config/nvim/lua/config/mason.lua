@@ -2,7 +2,7 @@ vim.g.coq_settings = { auto_start = "shut-up" }
 local coq = require("coq")
 
 require("coq_3p")({
-	{ src = "copilot", short_name = "COP", accept_key = "<A-space>" },
+	{ src = "copilot", short_name = "COP", accept_key = "<S-Space>" },
 })
 
 require("mason").setup()
@@ -12,14 +12,13 @@ require("mason-lspconfig").setup(coq.lsp_ensure_capabilities({
 		"clangd",
 		"cssls",
 		"dockerls",
-		"golangci_lint_ls",
 		"graphql",
 		"html",
 		"jedi_language_server",
 		"jsonls",
 		"jdtls",
 		"tsserver",
-		"sumneko_lua",
+		"lua_ls",
 		"marksman",
 		"solargraph",
 		"rust_analyzer",

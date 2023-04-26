@@ -85,10 +85,10 @@ return require("packer").startup(function(use)
 		config = [[require('config.mason')]],
 	})
 
-	use({
-		"mfussenegger/nvim-jdtls",
-		config = [[require('config.java')]],
-	})
+	-- use({
+	-- 	"mfussenegger/nvim-jdtls",
+	-- 	config = [[require('config.java')]],
+	-- })
 
 	-- diagnostics
 	use({
@@ -291,17 +291,21 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use({
-		"gbprod/yanky.nvim",
-		config = function()
-			require("yanky").setup({
-				system_clipboard = {
-					sync_with_ring = true,
-				},
-			})
-		end,
+	-- See https://github.com/gbprod/yanky.nvim/issues/75
+	use({ "gbprod/yanky.nvim" })
+	require("yanky").setup({
+		system_clipboard = {
+			sync_with_ring = true,
+		},
 	})
 
+	use({
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	})
+	
 	use({
 		"numToStr/Comment.nvim",
 		config = function()
