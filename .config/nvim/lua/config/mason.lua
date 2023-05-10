@@ -132,9 +132,11 @@ mason_null_ls.setup({
 			null_ls.register(null_ls.builtins.formatting.stylua)
 		end,
 		sqlfluff = function()
-			null_ls.register(null_ls.builtins.diagnostics.sqlfluff)
+			null_ls.register(null_ls.builtins.diagnostics.sqlfluff.with({
+				extra_args = { "--dialect", "postgres" },
+			}))
 		end,
-	}
+	},
 })
 
 dap = require("dap")
