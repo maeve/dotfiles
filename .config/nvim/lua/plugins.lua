@@ -305,13 +305,6 @@ return require("packer").startup(function(use)
 			require("Comment").setup()
 		end,
 	})
-	
-	use({
-		"numToStr/Comment.nvim",
-		config = function()
-			require("Comment").setup()
-		end,
-	})
 
 	use({
 		"lukas-reineke/indent-blankline.nvim",
@@ -319,6 +312,8 @@ return require("packer").startup(function(use)
 	})
 
 	use({ "github/copilot.vim" })
+
+	use({ "folke/neodev.nvim" })
 
 	-- vimscript plugins where I couldn't find a lua alternative
 

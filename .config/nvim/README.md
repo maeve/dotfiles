@@ -107,3 +107,20 @@ In no particular order:
 - Debugging: [nvim-dap](https://github.com/mfussenegger/nvim-dap)
   - with a slick UI: [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
   - and ruby/rspec support: [nvim-dap-ruby](https://github.com/suketa/nvim-dap-ruby)
+- Pretty diagnostics and lists: [trouble.nvim](https://github.com/folke/trouble.nvim)
+- Git:
+  - [neogit](https://github.com/TimUntersberger/neogit)
+  - [diffview.nvim](https://github.com/sindrets/diffview.nvim)
+  - [git-blame.nvim](https://github.com/f-person/git-blame.nvim)
+  - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+- Colors: [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
+- Status line: [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
+- Syntax highlighting: [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) extended with [nvim-treesitter-endwise](https://github.com/RRethy/nvim-treesitter-endwise) for automatically closing blocks
+- Test management: [neotest](https://github.com/nvim-neotest/neotest)
+  with:
+  - [neotest-go](https://github.com/nvim-neotest/neotest-go)
+  - [neotest-jest](https://github.com/haydenmeade/neotest-jest)
+  - [neotest-rspec](https://github.com/olimorris/neotest-rspec)
+  - [neotest-rust](https://github.com/rouge8/neotest-rust)
+- Terminal manager:
+  [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
