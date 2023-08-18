@@ -45,7 +45,7 @@ vim.o.textwidth = 79
 vim.opt.formatoptions:append("qrn1")
 
 -- quiet please
-vim.o.visuabell = true
+vim.o.visualbell = true
 
 -- dark mode
 vim.o.background = "dark"

@@ -47,17 +47,6 @@ return require("packer").startup(function(use)
 		config = [[require('config.tree')]],
 	})
 
-	-- change surrounding delimiters (e.g. changing "" to '')
-	use({
-		"kylechui/nvim-surround",
-		tag = "*",
-		requires = {
-			{ "nvim-treesitter/nvim-treesitter" },
-			{ "nvim-treesitter/nvim-treesitter-textobjects" },
-		},
-		config = [[require('config.surround')]],
-	})
-
 	-- external tooling for LSP servers, autocompletion,
 	-- linting, formatting, etc.
 	use({
@@ -85,15 +74,10 @@ return require("packer").startup(function(use)
 		config = [[require('config.mason')]],
 	})
 
-	-- use({
-	-- 	"mfussenegger/nvim-jdtls",
-	-- 	config = [[require('config.java')]],
-	-- })
-
 	-- diagnostics
 	use({
 		"folke/trouble.nvim",
-		requires = "kyazdani42/nvim-web-devicons",
+		requires = "nvim-tree/nvim-web-devicons",
 		config = [[require('config.trouble')]],
 	})
 
@@ -199,17 +183,16 @@ return require("packer").startup(function(use)
 	-- status line
 	use({
 		"nvim-lualine/lualine.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", opt = true },
-		config = {
+		requires = { "nvim-tree/nvim-web-devicons", opt = true },
+		config = function()
 			require("lualine").setup({
 				options = {
 					theme = "tokyonight",
 				},
-			}),
-		},
+			})
+		end,
 	})
 
-	-- syntax highlighting, folding, and other parsery stuff
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		requires = {
@@ -252,6 +235,17 @@ return require("packer").startup(function(use)
 				},
 			})
 		end,
+	})
+
+	-- change surrounding delimiters (e.g. changing "" to '')
+	use({
+		"kylechui/nvim-surround",
+		tag = "*",
+		requires = {
+			{ "nvim-treesitter/nvim-treesitter" },
+			{ "nvim-treesitter/nvim-treesitter-textobjects" },
+		},
+		config = [[require('config.surround')]],
 	})
 
 	-- testing
@@ -322,7 +316,6 @@ return require("packer").startup(function(use)
 	use({ "junegunn/vim-easy-align" })
 	use({ "tpope/vim-rsi" })
 	use({ "tpope/vim-unimpaired" })
-
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then
