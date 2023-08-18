@@ -287,11 +287,7 @@ return require("packer").startup(function(use)
 
 	-- See https://github.com/gbprod/yanky.nvim/issues/75
 	use({ "gbprod/yanky.nvim" })
-	require("yanky").setup({
-		system_clipboard = {
-			sync_with_ring = true,
-		},
-	})
+	require("yanky").setup({})
 
 	use({
 		"numToStr/Comment.nvim",
@@ -316,6 +312,7 @@ return require("packer").startup(function(use)
 	use({ "junegunn/vim-easy-align" })
 	use({ "tpope/vim-rsi" })
 	use({ "tpope/vim-unimpaired" })
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then
