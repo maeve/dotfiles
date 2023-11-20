@@ -1,0 +1,33 @@
+require("nvim-treesitter.configs").setup({
+	ensure_installed = {
+		"bash",
+		"c",
+		"cpp",
+		"css",
+		"dockerfile",
+		"go",
+		"graphql",
+		"html",
+		"java",
+		"javascript",
+		"json",
+		"lua",
+		"markdown",
+		"regex",
+		"ruby",
+		"rust",
+		"sql",
+		"terraform",
+		"toml",
+		"typescript",
+		"vim",
+		"yaml",
+	},
+	auto_install = true,
+	highlight = {
+		enabled = true,
+	},
+	endwise = {
+		enable = true,
+	},
+})
