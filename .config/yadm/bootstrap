@@ -70,15 +70,15 @@ if [ "$system_type" = "Darwin" ]; then
   # Neovim will bootstrap itself the first time it is opened
   if command -v nvim >/dev/null 2>&1; then
     echo "Bootstrapping neovim"
-    nvim '+PackerCompile' '+PackerInstall' '+qall'
+    nvim '+PackerSync' '+COQdeps' '+qall'
   fi
 
   echo "Updating the yadm repo origin URL"
   yadm remote set-url origin "git@github.com:maeve/dotfiles.git"
 
   if [ ! -d "$HOME/.docker" ]; then
-    echo "Bootstrapping docker"
-    open /Applications/Docker.app
+    echo "Bootstrapping orbstack"
+    open /Applications/Orbstack.app
   fi
 
 	if [ ! -d "$HOME/.cargo" ]; then
