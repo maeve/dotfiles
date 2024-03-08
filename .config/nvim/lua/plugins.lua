@@ -204,6 +204,26 @@ return require("packer").startup(function(use)
 		config = [[require('config.treesitter')]],
 	})
 
+	use({
+		"cameron-wags/rainbow_csv.nvim",
+		config = function()
+			require("rainbow_csv").setup()
+		end,
+		-- optional lazy-loading below
+		module = {
+			"rainbow_csv",
+			"rainbow_csv.fns",
+		},
+		ft = {
+			"csv",
+			"tsv",
+			"csv_semicolon",
+			"csv_whitespace",
+			"csv_pipe",
+			"rfc_csv",
+			"rfc_semicolon",
+		},
+	})
 	-- change surrounding delimiters (e.g. changing "" to '')
 	use({
 		"kylechui/nvim-surround",
@@ -259,7 +279,9 @@ return require("packer").startup(function(use)
 	use({
 		"numToStr/Comment.nvim",
 		config = function()
-			require("Comment").setup()
+			require("Comment").setup({
+				mappings = { basic = true },
+			})
 		end,
 	})
 
