@@ -76,6 +76,7 @@ vim.keymap.set("n", "<leader>r", ":TestNearest<cr>")
 vim.keymap.set("n", "<leader>R", ":TestFile<cr>")
 vim.keymap.set("n", "<leader>ro", ":TestOutput<cr>")
 vim.keymap.set("n", "<leader>rs", ":TestSummary<cr>")
+vim.keymap.set("n", "<leader>rp", ":TestOutputPanel<cr>")
 
 -- killring/yank history
 vim.keymap.set({ "n", "x" }, "p", "<Plug>(YankyPutAfter)")

@@ -1,8 +1,8 @@
 local neotest = require("neotest")
 neotest.setup({
 	adapters = {
-		require("neotest-go")({}),
-		require("neotest-jest")({}),
+		-- require("neotest-go")({}),
+		-- require("neotest-jest")({}),
 		require("neotest-rspec")({
 			rspec_cmd = function()
 				return vim.tbl_flatten({
@@ -46,6 +46,10 @@ end, {})
 
 vim.api.nvim_create_user_command("TestOutput", function(opts)
 	neotest.output.open()
+end, {})
+
+vim.api.nvim_create_user_command("TestOutputPanel", function(opts)
+	neotest.output_panel.open()
 end, {})
 
 vim.api.nvim_create_user_command("TestSummary", function(opts)
