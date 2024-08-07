@@ -62,7 +62,7 @@ vim.opt.listchars.eol = "↴"
 -- tabs/indents should be 2 spaces
 vim.o.tabstop = 2 -- render tab chars as two spaces
 vim.o.softtabstop = 2 -- number of spaces that pressing tab counts for
-vim.o.expandtab = ture -- only insert spaces, never tab chars
+vim.o.expandtab = true -- only insert spaces, never tab chars
 vim.o.shiftwidth = 2 -- indents (e.g. with '>') are two spaces
 
 -- ms after typing stops before writing swap file
