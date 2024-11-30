@@ -17,7 +17,7 @@ require("mason-lspconfig").setup(coq.lsp_ensure_capabilities({
 		"jedi_language_server",
 		"jsonls",
 		"jdtls",
-		"tsserver",
+		"ts_ls",
 		"lua_ls",
 		"marksman",
 		"rubocop@1.36.0",

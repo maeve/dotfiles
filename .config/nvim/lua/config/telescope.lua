@@ -1,7 +1,7 @@
 local telescope = require("telescope")
 local telescope_config = require("telescope.config")
 local fb_actions = telescope.extensions.file_browser.actions
-local trouble = require("trouble.providers.telescope")
+local trouble = require("trouble.sources.telescope")
 
 -- Clone the default Telescope configuration
 local vimgrep_arguments = { unpack(telescope_config.values.vimgrep_arguments) }
@@ -31,10 +31,10 @@ telescope.setup({
 					["<c-p>"] = fb_actions.move,
 					["<c-y>"] = fb_actions.copy,
 					["<c-a>"] = fb_actions.select_all,
-					["<c-t>"] = trouble.open_with_trouble,
+					["<c-t>"] = trouble.open,
 				},
 				n = {
-					["<c-t>"] = trouble.open_with_trouble,
+					["<c-t>"] = trouble.open,
 				},
 			},
 		},

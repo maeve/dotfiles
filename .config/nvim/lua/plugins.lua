@@ -66,6 +66,7 @@ return require("packer").startup(function(use)
 			"jay-babu/mason-null-ls.nvim",
 
 			-- debugging
+			"nvim-neotest/nvim-nio",
 			"mfussenegger/nvim-dap",
 			"jay-babu/mason-nvim-dap.nvim",
 			"rcarriga/nvim-dap-ui",
@@ -113,9 +114,6 @@ return require("packer").startup(function(use)
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("gitsigns").setup({
-				yadm = {
-					enable = true,
-				},
 				on_attach = function(bufnr)
 					local gs = package.loaded.gitsigns
 
