@@ -56,11 +56,6 @@ return require("packer").startup(function(use)
 			"neovim/nvim-lspconfig",
 			"williamboman/mason-lspconfig.nvim",
 
-			-- autocompletion
-			{ "ms-jpq/coq_nvim", branch = "coq" },
-			{ "ms-jpq/coq.artifacts", branch = "artifacts" },
-			{ "ms-jpq/coq.thirdparty", branch = "3p" },
-
 			-- linting/formatting
 			"jose-elias-alvarez/null-ls.nvim",
 			"jay-babu/mason-null-ls.nvim",

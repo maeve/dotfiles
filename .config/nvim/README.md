@@ -102,7 +102,7 @@ In no particular order:
   - Manage LSP servers: [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
   - Manage null-ls linters/formatters: [mason-null-ls.nvim](https://github.com/jayp0521/mason-null-ls.nvim)
   - Manage DAP servers: [mason-nvim-dap.nvim](https://github.com/jayp0521/mason-nvim-dap.nvim)
-- Autocompletion: [coq.nvim](https://github.com/ms-jpq/coq_nvim)
+- Autocompletion: [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - Linting/formatting: [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
 - Debugging: [nvim-dap](https://github.com/mfussenegger/nvim-dap)
   - with a slick UI: [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
