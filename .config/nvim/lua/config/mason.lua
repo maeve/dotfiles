@@ -13,7 +13,7 @@ require("mason-lspconfig").setup({
 		"ts_ls",
 		"lua_ls",
 		"marksman",
-		"rubocop@1.36.0",
+		"rubocop",
 		"solargraph",
 		"rust_analyzer",
 		"sqlls",

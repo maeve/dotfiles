@@ -70,6 +70,28 @@ return require("packer").startup(function(use)
 		config = [[require('config.mason')]],
 	})
 
+	-- Autocompletion
+	use({
+		"hrsh7th/nvim-cmp",
+		requires = {
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-calc",
+			"hrsh7th/cmp-cmdline",
+			"hrsh7th/cmp-emoji",
+			"petertriho/cmp-git",
+			"octaltree/cmp-look",
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-nvim-lua",
+			"hrsh7th/cmp-path",
+			"f3fora/cmp-spell",
+			"tamago324/cmp-zsh",
+
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
+		},
+		config = [[require('config.cmp')]],
+	})
+
 	-- diagnostics
 	use({
 		"folke/trouble.nvim",
