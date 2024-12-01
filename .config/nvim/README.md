@@ -90,7 +90,7 @@ Set the colors in iterm2:
 
 ## Plugins
 
-In no particular order:
+Plugins are managed with [lazy.nvim](https://github.com/folke/lazy.nvim). In no particular order:
 
 - General-purpose utility functions: [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 - Fuzzy finding: [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)

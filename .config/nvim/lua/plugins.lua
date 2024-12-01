@@ -1,58 +1,37 @@
-local packer_user_config = vim.api.nvim_create_augroup("packer_user_config", { clear = true })
-vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = "plugins.lua",
-  command = "source <afile> | PackerCompile",
-})
-
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
-    vim.cmd([[packadd packer.nvim]])
-    return true
-  end
-  return false
-end
-
-local packer_bootstrap = ensure_packer()
-
-return require("packer").startup(function(use)
-  use("wbthomason/packer.nvim")
-
-  use("nvim-lua/plenary.nvim")
+return {
+  "nvim-lua/plenary.nvim",
 
   -- fuzzy find in various contexts, including file browsing
-  use({
+  {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.4",
-    requires = {
+    version = "0.1.4",
+    dependencies = {
       { "nvim-lua/plenary.nvim" },
       {
         "nvim-telescope/telescope-fzf-native.nvim",
-        run =
+        build =
         "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
       },
       { "nvim-telescope/telescope-file-browser.nvim" },
     },
     config = [[require('config.telescope')]],
-  })
+  },
 
   -- sometimes you really do just need a fs tree view
-  use({
+  {
     "nvim-tree/nvim-tree.lua",
-    requires = {
+    dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
-    tag = "nightly", -- optional, updated every week. (see issue #1193)
+    version = "nightly", -- optional, updated every week. (see issue #1193)
     config = [[require('config.tree')]],
-  })
+  },
 
   -- external tooling for LSP servers, autocompletion,
   -- linting, formatting, etc.
-  use({
+  {
     "williamboman/mason.nvim",
-    requires = {
+    dependencies = {
       -- lsp
       "neovim/nvim-lspconfig",
       "williamboman/mason-lspconfig.nvim",
@@ -69,13 +48,12 @@ return require("packer").startup(function(use)
       "suketa/nvim-dap-ruby",
     },
     config = [[require('config.mason')]],
-  })
+  },
 
   -- Autocompletion
-  use({
+  {
     "hrsh7th/nvim-cmp",
-    after = { "mason.nvim" },
-    requires = {
+    dependencies = {
       "hrsh7th/cmp-buffer",
       -- "hrsh7th/cmp-calc",
       "hrsh7th/cmp-cmdline",
@@ -93,19 +71,19 @@ return require("packer").startup(function(use)
       "saadparwaiz1/cmp_luasnip",
     },
     config = [[require('config.cmp')]],
-  })
+  },
 
   -- diagnostics
-  use({
+  {
     "folke/trouble.nvim",
-    requires = "nvim-tree/nvim-web-devicons",
+    dependencies = "nvim-tree/nvim-web-devicons",
     config = [[require('config.trouble')]],
-  })
+  },
 
   -- git client
-  use({
+  {
     "TimUntersberger/neogit",
-    requires = {
+    dependencies = {
       "nvim-lua/plenary.nvim",
       "sindrets/diffview.nvim",
       "nvim-tree/nvim-web-devicons",
@@ -118,19 +96,19 @@ return require("packer").startup(function(use)
         },
       })
     end,
-  })
+  },
 
   -- git blame
-  use({
+  {
     "f-person/git-blame.nvim",
     config = function()
       vim.g.gitblame_enabled = 0
       require("gitblame")
     end,
-  })
+  },
 
   -- git gutter signs (also blame but seems slower than git-blame)
-  use({
+  {
     "lewis6991/gitsigns.nvim",
     config = function()
       require("gitsigns").setup({
@@ -186,22 +164,22 @@ return require("packer").startup(function(use)
         end,
       })
     end,
-  })
+  },
 
   -- Colors
-  use({
+  {
     "folke/tokyonight.nvim",
     config = function()
       require("tokyonight").setup({
         style = "storm",
       })
     end,
-  })
+  },
 
   -- status line
-  use({
+  {
     "nvim-lualine/lualine.nvim",
-    requires = { "nvim-tree/nvim-web-devicons", opt = true },
+    dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
     config = function()
       require("lualine").setup({
         options = {
@@ -209,20 +187,20 @@ return require("packer").startup(function(use)
         },
       })
     end,
-  })
+  },
 
-  use({
+  {
     "nvim-treesitter/nvim-treesitter",
-    requires = {
+    dependencies = {
       "RRethy/nvim-treesitter-endwise",
     },
-    run = function()
+    build = function()
       require("nvim-treesitter.install").update({ with_sync = true })
     end,
     config = [[require('config.treesitter')]],
-  })
+  },
 
-  use({
+  {
     "cameron-wags/rainbow_csv.nvim",
     config = function()
       require("rainbow_csv").setup()
@@ -241,23 +219,23 @@ return require("packer").startup(function(use)
       "rfc_csv",
       "rfc_semicolon",
     },
-  })
+  },
   -- change surrounding delimiters (e.g. changing "" to '')
-  use({
+  {
     "kylechui/nvim-surround",
-    tag = "*",
-    requires = {
+    version = "*",
+    dependencies = {
       { "nvim-treesitter/nvim-treesitter" },
       { "nvim-treesitter/nvim-treesitter-textobjects" },
     },
     config = [[require('config.surround')]],
-  })
+  },
 
   -- testing
-  use({
+  {
     "nvim-neotest/neotest",
-    tag = "*",
-    requires = {
+    version = "*",
+    dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
       "antoinemadec/FixCursorHold.nvim",
@@ -267,62 +245,60 @@ return require("packer").startup(function(use)
       "rouge8/neotest-rust",
     },
     config = [[require ("config.neotest")]],
-  })
+  },
 
-  use({
+  {
     "akinsho/toggleterm.nvim",
-    tag = "*",
+    version = "*",
     config = [[require('config.toggleterm')]],
-  })
+  },
 
-  use({
+  {
     "windwp/nvim-autopairs",
     config = function()
       require("nvim-autopairs").setup({})
     end,
-  })
+  },
 
-  use({
+  {
     "ray-x/go.nvim",
-    requires = "ray-x/guihua.lua",
+    dependencies = "ray-x/guihua.lua",
     config = function()
       require("go").setup({})
     end,
-  })
+  },
 
   -- See https://github.com/gbprod/yanky.nvim/issues/75
-  use({ "gbprod/yanky.nvim" })
-  require("yanky").setup({})
+  {
+	  "gbprod/yanky.nvim",
+	  config = function()
+		  require("yanky").setup({})
+	  end
+  },
 
-  use({
+  {
     "numToStr/Comment.nvim",
     config = function()
       require("Comment").setup({
         mappings = { basic = true },
       })
     end,
-  })
+  },
 
-  use({
+  {
     "lukas-reineke/indent-blankline.nvim",
     config = [[require('config.indent_blankline')]],
-  })
+  },
 
-  use({ "github/copilot.vim" })
+  "github/copilot.vim",
 
-  use({ "folke/neodev.nvim" })
+  "folke/neodev.nvim",
 
   -- vimscript plugins where I couldn't find a lua alternative
 
-  use({ "AndrewRadev/splitjoin.vim" })
-  use({ "tpope/vim-rails" })
-  use({ "junegunn/vim-easy-align" })
-  use({ "tpope/vim-rsi" })
-  use({ "tpope/vim-unimpaired" })
-
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require("packer").sync()
-  end
-end)
+  "AndrewRadev/splitjoin.vim",
+  "tpope/vim-rails",
+  "junegunn/vim-easy-align",
+  "tpope/vim-rsi",
+  "tpope/vim-unimpaired",
+}

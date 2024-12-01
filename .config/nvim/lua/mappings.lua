@@ -1,6 +1,3 @@
-vim.g.mapleader = ","
-vim.g.maplocalleader = "\\"
-
 -- open split windows
 vim.keymap.set("n", "<leader>x", ":sp<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>v", ":vsp<cr>", { noremap = true })
@@ -60,7 +57,7 @@ vim.keymap.set("n", "<leader>fs", builtin.grep_string, { noremap = true })
 
 -- fuzzy file nav via telescope (replaces netrw and vim-vinegar)
 local browse_current_file = function()
-	require("telescope").extensions.file_browser.file_browser({ path = "%:p:h" })
+  require("telescope").extensions.file_browser.file_browser({ path = "%:p:h" })
 end
 vim.keymap.set("n", "-", browse_current_file, { noremap = true })
 
@@ -104,10 +101,10 @@ vim.keymap.set("n", "<A-d>", dap.down, { silent = true, noremap = true })
 
 vim.keymap.set("n", "<leader>bb", dap.toggle_breakpoint, { silent = true, noremap = true })
 vim.keymap.set("n", "<leader>bc", function()
-	dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
+  dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
 end, { silent = true, noremap = true })
 vim.keymap.set("n", "<leader>bp", function()
-	dap.set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
+  dap.set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
 end, { silent = true, noremap = true })
 vim.keymap.set("n", "<leader>bk", dap.clear_breakpoints, { silent = true, noremap = true })
 
