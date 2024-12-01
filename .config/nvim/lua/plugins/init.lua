@@ -1,6 +1,4 @@
 return {
-  "nvim-lua/plenary.nvim",
-
   -- fuzzy find in various contexts, including file browsing
   {
     "nvim-telescope/telescope.nvim",

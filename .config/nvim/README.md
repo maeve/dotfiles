@@ -92,7 +92,7 @@ Set the colors in iterm2:
 
 Plugins are managed with [lazy.nvim](https://github.com/folke/lazy.nvim). In no particular order:
 
-- General-purpose utility functions: [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
+- Colors: [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
 - Fuzzy finding: [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
   backed by [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim),
   extended with [telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim).
@@ -113,7 +113,6 @@ Plugins are managed with [lazy.nvim](https://github.com/folke/lazy.nvim). In no 
   - [diffview.nvim](https://github.com/sindrets/diffview.nvim)
   - [git-blame.nvim](https://github.com/f-person/git-blame.nvim)
   - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
-- Colors: [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
 - Status line: [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 - Syntax highlighting: [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) extended with [nvim-treesitter-endwise](https://github.com/RRethy/nvim-treesitter-endwise) for automatically closing blocks
 - Test management: [neotest](https://github.com/nvim-neotest/neotest)
