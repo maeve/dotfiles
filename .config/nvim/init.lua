@@ -55,9 +55,6 @@ vim.o.visualbell = true
 -- dark mode
 vim.o.background = "dark"
 
--- There's no good lua equivalent for this
-vim.cmd([[colorscheme tokyonight]])
-
 -- show tab chars and trailing spaces
 vim.opt.list = true
 vim.opt.listchars.tab = "▷⋅"
