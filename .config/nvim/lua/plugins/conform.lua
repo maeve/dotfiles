@@ -4,8 +4,22 @@ return {
 		lazy = true,
 		opts = {
 			formatters_by_ft = {
+				css = { "prettierd" },
+				graphql = { "prettierd" },
+				handlebars = { "prettierd" },
+				html = { "prettierd" },
+				javascript = { "prettierd" },
+				javascriptreact = { "prettierd" },
+				json = { "prettierd" },
+				jsonc = { "prettierd" },
+				less = { "prettierd" },
 				lua = { "stylua" },
+				markdown = { "prettierd" },
 				rust = { "rustfmt" },
+				scss = { "prettierd" },
+				typescript = { "prettierd" },
+				typescriptreact = { "prettierd" },
+				vue = { "prettierd" },
 			},
 			format_on_save = {
 				-- These options will be passed to conform.format()
@@ -20,9 +34,7 @@ return {
 			"williamboman/mason.nvim",
 			"stevearc/conform.nvim",
 		},
-		events = {
-			"BufWritePre",
-		},
+		event = { "VeryLazy" },
 		opts = {},
 	},
 }
