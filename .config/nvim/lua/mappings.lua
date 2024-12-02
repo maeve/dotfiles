@@ -45,9 +45,6 @@ vim.keymap.set("n", "<leader>ql", ":lclose<cr>", { noremap = true })
 -- vim.keymap.set({ "n", "v" }, "k", "<nop>", { noremap = true })
 -- vim.keymap.set({ "n", "v" }, "l", "<nop>", { noremap = true })
 
--- git
-vim.keymap.set("n", "<leader>gb", ":GitBlameToggle<cr>", { noremap = true })
-
 -- killring/yank history
 vim.keymap.set({ "n", "x" }, "p", "<Plug>(YankyPutAfter)")
 vim.keymap.set({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
