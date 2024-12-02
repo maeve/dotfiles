@@ -94,13 +94,6 @@ return {
 		},
 	},
 
-	{
-		"windwp/nvim-autopairs",
-		config = function()
-			require("nvim-autopairs").setup({})
-		end,
-	},
-
 	-- See https://github.com/gbprod/yanky.nvim/issues/75
 	{
 		"gbprod/yanky.nvim",
