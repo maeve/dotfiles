@@ -45,14 +45,6 @@ vim.keymap.set("n", "<leader>ql", ":lclose<cr>", { noremap = true })
 -- vim.keymap.set({ "n", "v" }, "k", "<nop>", { noremap = true })
 -- vim.keymap.set({ "n", "v" }, "l", "<nop>", { noremap = true })
 
--- killring/yank history
-vim.keymap.set({ "n", "x" }, "p", "<Plug>(YankyPutAfter)")
-vim.keymap.set({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
-vim.keymap.set({ "n", "x" }, "gp", "<Plug>(YankyGPutAfter)")
-vim.keymap.set({ "n", "x" }, "gP", "<Plug>(YankyGPutBefore)")
-vim.keymap.set("n", "]n", "<Plug>(YankyCycleForward)")
-vim.keymap.set("n", "[n", "<Plug>(YankyCycleBackward)")
-
 -- EasyAlign
 -- Start interactive EasyAlign in visual mode (e.g. vipga)
 -- Start interactive EasyAlign for a motion/text object (e.g. gaip)

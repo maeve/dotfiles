@@ -4,14 +4,6 @@ return {
 		cmd = "Mason",
 		opts = {},
 	},
-	-- See https://github.com/gbprod/yanky.nvim/issues/75
-	{
-		"gbprod/yanky.nvim",
-		config = function()
-			require("yanky").setup({})
-		end,
-	},
-
 	{
 		"numToStr/Comment.nvim",
 		config = function()
