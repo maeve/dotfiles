@@ -34,7 +34,7 @@ return {
 			"williamboman/mason.nvim",
 			"stevearc/conform.nvim",
 		},
-		event = { "VeryLazy" },
+		event = { "BufReadPre", "BufNewFile" },
 		opts = {},
 	},
 }
