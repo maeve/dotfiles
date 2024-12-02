@@ -22,29 +22,6 @@ return {
     config = [[require('config.mason')]],
   },
 
-  -- Autocompletion
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-buffer",
-      -- "hrsh7th/cmp-calc",
-      "hrsh7th/cmp-cmdline",
-      -- "hrsh7th/cmp-emoji",
-      "petertriho/cmp-git",
-      "hrsh7th/cmp-nvim-lsp",
-      -- "hrsh7th/cmp-nvim-lua",
-      "hrsh7th/cmp-path",
-      -- "f3fora/cmp-spell",
-      -- "tamago324/cmp-zsh",
-
-      -- nvim-cmp request a snippets plugin; several are supported,
-      -- I chose LuaSnip because why not
-      "L3MON4D3/LuaSnip",
-      "saadparwaiz1/cmp_luasnip",
-    },
-    config = [[require('config.cmp')]],
-  },
-
   -- git client
   {
     "TimUntersberger/neogit",
