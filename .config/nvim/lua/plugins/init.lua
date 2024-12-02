@@ -45,13 +45,6 @@ return {
     config = [[require('config.cmp')]],
   },
 
-  -- diagnostics
-  {
-    "folke/trouble.nvim",
-    dependencies = "nvim-tree/nvim-web-devicons",
-    config = [[require('config.trouble')]],
-  },
-
   -- git client
   {
     "TimUntersberger/neogit",
