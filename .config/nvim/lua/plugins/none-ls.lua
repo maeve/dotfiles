@@ -30,18 +30,12 @@ return {
 			})
 			mason_null_ls.setup({
 				ensure_installed = {
-					"jq",
 					"prettierd",
-					"rustfmt",
-					"stylua",
 				},
 				automatic_installation = true,
 				handlers = {
 					function(source_name)
 						-- all sources with no handler end up here
-					end,
-					jq = function()
-						null_ls.register(null_ls.builtins.formatting.jq)
 					end,
 					prettierd = function()
 						null_ls.register(null_ls.builtins.formatting.prettierd.with({
@@ -64,12 +58,6 @@ return {
 								"handlebars",
 							},
 						}))
-					end,
-					rustfmt = function()
-						null_ls.register(null_ls.builtins.formatting.rustfmt)
-					end,
-					stylua = function()
-						null_ls.register(null_ls.builtins.formatting.stylua)
 					end,
 				},
 			})
