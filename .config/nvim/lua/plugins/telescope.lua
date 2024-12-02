@@ -12,6 +12,17 @@ return {
       },
       { "nvim-telescope/telescope-file-browser.nvim" },
     },
+    cmd = "Telescope",
+    keys = {
+      { "<leader><leader>", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+      { "<leader>ff", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Find in current buffer" },
+      { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
+      { "<leader>fb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true ignore_current_buffer=true<cr>", desc = "Buffers" },
+      { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help pages" },
+      { "<leader>fc", "<cmd>Telescope command_history<cr>", desc = "Command History" },
+      { "-", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>", desc = "Browse files" }
+    },
+
     config = function()
       local telescope = require("telescope")
       local telescope_config = require("telescope.config")

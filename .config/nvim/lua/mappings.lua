@@ -45,22 +45,6 @@ vim.keymap.set("n", "<leader>ql", ":lclose<cr>", { noremap = true })
 -- vim.keymap.set({ "n", "v" }, "k", "<nop>", { noremap = true })
 -- vim.keymap.set({ "n", "v" }, "l", "<nop>", { noremap = true })
 
--- fuzzy finding
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader><leader>", builtin.find_files, { noremap = true })
-vim.keymap.set("n", "<leader>ff", builtin.current_buffer_fuzzy_find, { noremap = true })
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, { noremap = true })
-vim.keymap.set("n", "<leader>fb", builtin.buffers, { noremap = true })
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, { noremap = true })
-vim.keymap.set("n", "<leader>fc", builtin.command_history, { noremap = true })
-vim.keymap.set("n", "<leader>fs", builtin.grep_string, { noremap = true })
-
--- fuzzy file nav via telescope (replaces netrw and vim-vinegar)
-local browse_current_file = function()
-  require("telescope").extensions.file_browser.file_browser({ path = "%:p:h" })
-end
-vim.keymap.set("n", "-", browse_current_file, { noremap = true })
-
 -- tree file nav (because sometiems you just need it)
 vim.keymap.set("n", "<leader>ft", ":NvimTreeFindFileToggle<cr>", { noremap = true })
 
