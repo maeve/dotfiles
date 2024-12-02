@@ -124,16 +124,6 @@ return {
       "rfc_semicolon",
     },
   },
-  -- change surrounding delimiters (e.g. changing "" to '')
-  {
-    "kylechui/nvim-surround",
-    version = "*",
-    dependencies = {
-      { "nvim-treesitter/nvim-treesitter" },
-      { "nvim-treesitter/nvim-treesitter-textobjects" },
-    },
-    config = [[require('config.surround')]],
-  },
 
   {
     "akinsho/toggleterm.nvim",
