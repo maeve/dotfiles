@@ -91,19 +91,6 @@ return {
   },
 
 
-  -- status line
-  {
-    "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
-    config = function()
-      require("lualine").setup({
-        options = {
-          theme = "tokyonight",
-        },
-      })
-    end,
-  },
-
   {
     "cameron-wags/rainbow_csv.nvim",
     config = function()
