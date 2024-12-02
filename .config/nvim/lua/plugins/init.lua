@@ -248,11 +248,6 @@ return {
     end,
   },
 
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    config = [[require('config.indent_blankline')]],
-  },
-
   "github/copilot.vim",
 
   "folke/neodev.nvim",
