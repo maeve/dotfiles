@@ -1,9 +1,7 @@
 return {
 	{
-		"zbirenbaum/copilot.lua",
+		"github/copilot.vim",
 		cmd = "Copilot",
 		event = "InsertEnter",
-		main = "copilot",
-		opts = {},
 	},
 }
