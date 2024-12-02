@@ -1,20 +1,4 @@
 return {
-  -- fuzzy find in various contexts, including file browsing
-  {
-    "nvim-telescope/telescope.nvim",
-    version = "0.1.4",
-    dependencies = {
-      { "nvim-lua/plenary.nvim" },
-      {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        build =
-        "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-      },
-      { "nvim-telescope/telescope-file-browser.nvim" },
-    },
-    config = [[require('config.telescope')]],
-  },
-
   -- sometimes you really do just need a fs tree view
   {
     "nvim-tree/nvim-tree.lua",
