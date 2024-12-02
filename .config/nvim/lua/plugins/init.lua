@@ -1,6 +1,7 @@
 return {
 	{
 		"williamboman/mason.nvim",
+		cmd = "Mason",
 		opts = {},
 	},
 
@@ -90,18 +91,6 @@ return {
 			"csv_pipe",
 			"rfc_csv",
 			"rfc_semicolon",
-		},
-	},
-
-	{
-		"akinsho/toggleterm.nvim",
-		version = "*",
-		opts = {
-			size = 20,
-			persist_size = false,
-			open_mapping = [[<C-\>]],
-			insert_mappings = true,
-			terminal_mappings = true,
 		},
 	},
 
