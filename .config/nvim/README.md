@@ -90,36 +90,4 @@ Set the colors in iterm2:
 
 ## Plugins
 
-Plugins are managed with [lazy.nvim](https://github.com/folke/lazy.nvim). In no particular order:
-
-- Colors: [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
-- Fuzzy finding: [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-  backed by [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim),
-  extended with [telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim).
-- Tree-based file browsing (convenient for exploring unfamiliar repos): [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
-- Change surrounding delimiters: [nvim-surround](https://github.com/kylechui/nvim-surround)
-- Package manager for downloading third-party tooling: [mason.nvim](https://github.com/williamboman/mason.nvim)
-  - Manage LSP servers: [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
-  - Manage null-ls linters/formatters: [mason-null-ls.nvim](https://github.com/jayp0521/mason-null-ls.nvim)
-  - Manage DAP servers: [mason-nvim-dap.nvim](https://github.com/jayp0521/mason-nvim-dap.nvim)
-- Autocompletion: [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-- Linting/formatting: [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
-- Debugging: [nvim-dap](https://github.com/mfussenegger/nvim-dap)
-  - with a slick UI: [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
-  - and ruby/rspec support: [nvim-dap-ruby](https://github.com/suketa/nvim-dap-ruby)
-- Pretty diagnostics and lists: [trouble.nvim](https://github.com/folke/trouble.nvim)
-- Git:
-  - [neogit](https://github.com/TimUntersberger/neogit)
-  - [diffview.nvim](https://github.com/sindrets/diffview.nvim)
-  - [git-blame.nvim](https://github.com/f-person/git-blame.nvim)
-  - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
-- Status line: [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
-- Syntax highlighting: [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) extended with [nvim-treesitter-endwise](https://github.com/RRethy/nvim-treesitter-endwise) for automatically closing blocks
-- Test management: [neotest](https://github.com/nvim-neotest/neotest)
-  with:
-  - [neotest-go](https://github.com/nvim-neotest/neotest-go)
-  - [neotest-jest](https://github.com/haydenmeade/neotest-jest)
-  - [neotest-rspec](https://github.com/olimorris/neotest-rspec)
-  - [neotest-rust](https://github.com/rouge8/neotest-rust)
-- Terminal manager:
-  [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
+Plugins are managed with [lazy.nvim](https://github.com/folke/lazy.nvim).
