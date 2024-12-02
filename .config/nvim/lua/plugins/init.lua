@@ -146,22 +146,6 @@ return {
     config = [[require('config.surround')]],
   },
 
-  -- testing
-  {
-    "nvim-neotest/neotest",
-    version = "*",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "antoinemadec/FixCursorHold.nvim",
-      "nvim-neotest/neotest-go",
-      "haydenmeade/neotest-jest",
-      "olimorris/neotest-rspec",
-      "rouge8/neotest-rust",
-    },
-    config = [[require ("config.neotest")]],
-  },
-
   {
     "akinsho/toggleterm.nvim",
     version = "*",
