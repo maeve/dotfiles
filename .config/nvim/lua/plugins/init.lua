@@ -125,14 +125,6 @@ return {
     end,
   },
 
-  {
-    "ray-x/go.nvim",
-    dependencies = "ray-x/guihua.lua",
-    config = function()
-      require("go").setup({})
-    end,
-  },
-
   -- See https://github.com/gbprod/yanky.nvim/issues/75
   {
 	  "gbprod/yanky.nvim",
