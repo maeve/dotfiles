@@ -4,14 +4,6 @@ return {
 		cmd = "Mason",
 		opts = {},
 	},
-	{
-		"numToStr/Comment.nvim",
-		config = function()
-			require("Comment").setup({
-				mappings = { basic = true },
-			})
-		end,
-	},
 
 	"github/copilot.vim",
 
