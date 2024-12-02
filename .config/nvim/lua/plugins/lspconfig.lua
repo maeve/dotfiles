@@ -1,15 +1,10 @@
 return {
 	{
-		"williamboman/mason.nvim",
-		opts = {}
-	},
-	{
 		"williamboman/mason-lspconfig.nvim",
-		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			"williamboman/mason.nvim",
-			"neovim/nvim-lspconfig",
 		},
+		lazy = true,
 		opts = {
 			ensure_installed = {
 				"bashls",
@@ -34,5 +29,12 @@ return {
 			},
 			automatic_installation = true,
 		},
+	},
+	{
+		"neovim/nvim-lspconfig",
+		dependencies = {
+			"williamboman/mason-lspconfig.nvim",
+		},
+		event = { "BufReadPre", "BufNewFile" },
 	},
 }
