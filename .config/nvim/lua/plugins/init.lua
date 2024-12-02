@@ -105,17 +105,6 @@ return {
   },
 
   {
-    "nvim-treesitter/nvim-treesitter",
-    dependencies = {
-      "RRethy/nvim-treesitter-endwise",
-    },
-    build = function()
-      require("nvim-treesitter.install").update({ with_sync = true })
-    end,
-    config = [[require('config.treesitter')]],
-  },
-
-  {
     "cameron-wags/rainbow_csv.nvim",
     config = function()
       require("rainbow_csv").setup()
