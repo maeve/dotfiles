@@ -46,7 +46,6 @@ vim.keymap.set("n", "<leader>ql", ":lclose<cr>", { noremap = true })
 -- vim.keymap.set({ "n", "v" }, "l", "<nop>", { noremap = true })
 
 -- git
-vim.keymap.set("n", "<leader>gg", ":Neogit<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>gb", ":GitBlameToggle<cr>", { noremap = true })
 
 -- neotest

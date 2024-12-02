@@ -22,24 +22,6 @@ return {
     config = [[require('config.mason')]],
   },
 
-  -- git client
-  {
-    "TimUntersberger/neogit",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "sindrets/diffview.nvim",
-      "nvim-tree/nvim-web-devicons",
-    },
-    config = function()
-      require("neogit").setup({
-        kind = "split",
-        integrations = {
-          diffview = true,
-        },
-      })
-    end,
-  },
-
   -- git blame
   {
     "f-person/git-blame.nvim",
