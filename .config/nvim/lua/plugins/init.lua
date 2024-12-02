@@ -1,14 +1,4 @@
 return {
-  -- sometimes you really do just need a fs tree view
-  {
-    "nvim-tree/nvim-tree.lua",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-    version = "nightly", -- optional, updated every week. (see issue #1193)
-    config = [[require('config.tree')]],
-  },
-
   -- external tooling for LSP servers, autocompletion,
   -- linting, formatting, etc.
   {

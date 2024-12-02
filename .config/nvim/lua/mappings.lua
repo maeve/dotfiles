@@ -45,9 +45,6 @@ vim.keymap.set("n", "<leader>ql", ":lclose<cr>", { noremap = true })
 -- vim.keymap.set({ "n", "v" }, "k", "<nop>", { noremap = true })
 -- vim.keymap.set({ "n", "v" }, "l", "<nop>", { noremap = true })
 
--- tree file nav (because sometiems you just need it)
-vim.keymap.set("n", "<leader>ft", ":NvimTreeFindFileToggle<cr>", { noremap = true })
-
 -- git
 vim.keymap.set("n", "<leader>gg", ":Neogit<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>gb", ":GitBlameToggle<cr>", { noremap = true })
