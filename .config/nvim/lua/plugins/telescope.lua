@@ -48,6 +48,16 @@ return {
 				"<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>",
 				desc = "Browse files",
 			},
+			{
+				"<leader>fs",
+				"<cmd>Telescope grep_string<cr>",
+				desc = "Grep for string",
+			},
+			{
+				"<leader>fl",
+				"<cmd>Telescope git_files<cr>",
+				desc = "Git ls-files",
+			},
 		},
 
 		config = function()
