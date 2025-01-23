@@ -73,6 +73,14 @@ return {
 					}),
 					-- require("neotest-rust")({}),
 				},
+				discovery = {
+					-- Improve performance in large projects by only AST-parsing the
+					-- currently opened buffer
+					enabled = false,
+					-- Number of workers to parse files concurrently. Set 0 to use
+					-- all available CPU cores, or 1 if experiencing neovim lag
+					concurrent = 1,
+				},
 				summary = {
 					follow = true,
 					expand_errors = true,
