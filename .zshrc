@@ -1,5 +1,3 @@
-export PATH="/usr/local/opt/libpq/bin:$PATH"
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -99,7 +97,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export BUNDLER_PARALLELISM=10
-eval "$(/opt/homebrew/bin/brew shellenv)"
-source /opt/homebrew/opt/asdf/libexec/asdf.sh
+[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"

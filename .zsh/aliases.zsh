@@ -2,7 +2,8 @@ compdef g="git"
 setopt complete_aliases
 
 alias bgl="ops breakglass staging"
-
+alias bgl-prod="ops breakglass production --role=Elevated-EngineeringRO"
+alias tp="terraform plan -lock=false"
 
 alias dcrails="docker compose exec web rails"
 alias dcrubocop="docker compose exec web rubocop"

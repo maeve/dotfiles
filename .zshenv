@@ -11,11 +11,12 @@ if [ "$system_type" = "Darwin" ]; then
 fi
 
 export ASDF_BUILD_VERSION='master'
+export ASDF_DATA_DIR="$HOME/.asdf"
+
+export BUNDLER_PARALLELISM=10
+
+. "$HOME/.cargo/env"
+. "$ASDF_DATA_DIR/plugins/java/set-java-home.zsh"
 
 # Local config
-[[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
-
-# Always prefer local binstubs over global command
-export PATH=./bin:$HOME/.local/bin:$PATH
-. "$HOME/.cargo/env"
-. "$HOME/.asdf/plugins/java/set-java-home.zsh"
+[[ -f "$HOME/.zshenv.local" ]] && source "$HOME/.zshenv.local"
