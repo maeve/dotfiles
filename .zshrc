@@ -98,3 +98,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+
+export RPROMPT=
