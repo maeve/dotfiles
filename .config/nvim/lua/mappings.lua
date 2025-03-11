@@ -49,3 +49,38 @@ vim.keymap.set("n", "<leader>ql", ":lclose<cr>", { noremap = true })
 -- Start interactive EasyAlign in visual mode (e.g. vipga)
 -- Start interactive EasyAlign for a motion/text object (e.g. gaip)
 vim.keymap.set({ "n", "x" }, "ga", "<Plug>(EasyAlign)")
+
+-- Chat with LLM about code
+vim.keymap.set("n", "<leader>lc", "<cmd>Chat vsplit %<CR>", { noremap = true, desc = "Chat with the current buffer" })
+vim.keymap.set("v", "<leader>lc", "<cmd>Chat vsplit<CR>", { noremap = true, desc = "Chat with selected code" })
+vim.keymap.set(
+	"n",
+	"<leader>ld",
+	"<cmd>Chat vsplit %:h<CR>",
+	{ noremap = true, desc = "Chat with the current directory" }
+)
+
+-- Only set <C-a> mappings if not in telescope buffer
+local function set_add_keymap()
+	local opts = { noremap = true, silent = true }
+	-- Check if current buffer is not a telescope prompt
+	if vim.bo.filetype ~= "TelescopePrompt" and vim.bo.filetype ~= "oil" then
+		vim.keymap.set("n", "<C-a>", ":Add<CR>", vim.tbl_extend("force", opts, { desc = "Add context to LLM" }))
+		vim.keymap.set(
+			"v",
+			"<C-a>",
+			":Add<CR>",
+			vim.tbl_extend("force", opts, { desc = "Add selected context to LLM" })
+		)
+	end
+end
+
+-- Set up an autocmd to run when entering buffers
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+	callback = function()
+		set_add_keymap()
+	end,
+})
+
+-- Speech to text
+vim.keymap.set("i", "<C-o>", "<cmd>Stt<CR>", { noremap = true, silent = true, desc = "Speech to text" })
