@@ -100,3 +100,5 @@ source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 
 export RPROMPT=
+eval "$(/opt/homebrew/bin/brew shellenv)"
+source /opt/homebrew/opt/asdf/libexec/asdf.sh
