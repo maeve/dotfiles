@@ -1,3 +1,7 @@
+# We have to load dependencies before we load oh-my-zsh plugins
+eval "$(/opt/homebrew/bin/brew shellenv)"
+source /opt/homebrew/opt/asdf/libexec/asdf.sh
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -100,5 +104,4 @@ source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 
 export RPROMPT=
-eval "$(/opt/homebrew/bin/brew shellenv)"
-source /opt/homebrew/opt/asdf/libexec/asdf.sh
+export GPG_TTY=$(tty)

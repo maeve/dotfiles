@@ -2,6 +2,7 @@
 [user]
 	name = Maeve Revels
 	email = maeve@aha.io
+	signingkey = 6D2C6135CDC12BD1
 [core]
 	editor = nvim
 	excludesfile = ~/.gitignore_global
@@ -26,6 +27,7 @@
   cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [commit]
 	verbose = false
+	gpgsign = true
 [pull]
 	rebase = true
 [init]
@@ -37,3 +39,5 @@
 	smudge = git-lfs smudge -- %f
 [maintenance]
 	repo = /Users/maeve/projects/aha/aha-app
+[tag]
+	gpgSign = true
