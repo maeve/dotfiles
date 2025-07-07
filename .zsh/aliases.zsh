@@ -13,3 +13,5 @@ alias dcbundle="docker compose exec web bundle"
 alias dcbash="docker compose exec web bash"
 alias dcrake="docker compose exec web rake"
 alias dclogin="ops docker login staging"
+
+alias mitm="mitmweb --mode regular@8082 --ssl-insecure"
