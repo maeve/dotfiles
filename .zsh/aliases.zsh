@@ -3,15 +3,17 @@ setopt complete_aliases
 
 alias bgl="ops breakglass staging"
 alias bgl-prod="ops breakglass production --role=Elevated-EngineeringRO"
-alias ll="ls -lah"
-alias tp="terraform plan -lock=false"
 
+alias dcattach="docker compose attach"
+alias dcbash="docker compose exec web bash"
+alias dcbundle="docker compose exec web bundle"
+alias dclogin="ops docker login staging"
 alias dcrails="docker compose exec web rails"
+alias dcrake="docker compose exec web rake"
 alias dcrubocop="docker compose exec web rubocop"
 alias dcrspec="docker compose exec web rspec"
-alias dcbundle="docker compose exec web bundle"
-alias dcbash="docker compose exec web bash"
-alias dcrake="docker compose exec web rake"
-alias dclogin="ops docker login staging"
 
+alias ll="ls -lah"
 alias mitm="mitmweb --mode regular@8082 --ssl-insecure"
+alias tp="terraform plan -lock=false"
+
