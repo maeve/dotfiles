@@ -6,8 +6,9 @@ if [ "$system_type" = "Darwin" ]; then
 	# export PATH="$openssl_dir/bin:$PATH"
 	# export LIBRARY_PATH="$LIBRARY_PATH:$openssl_dir/lib"
 	# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$openssl_dir"
-	# export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
-	# export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
+	export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
+	export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
+  export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 fi
 
 export ASDF_BUILD_VERSION='master'
