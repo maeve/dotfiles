@@ -14,6 +14,6 @@ alias dcrubocop="docker compose exec web rubocop"
 alias dcrspec="docker compose exec web rspec"
 
 alias ll="ls -lah"
-alias mitm="mitmweb --mode regular@8082 --ssl-insecure"
+alias mitm="mitmweb --mode regular@8082 --ssl-insecure --quiet"
 alias tp="terraform plan -lock=false"
 
